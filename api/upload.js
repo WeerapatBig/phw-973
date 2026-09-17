@@ -2,7 +2,9 @@
 const { rejected, putFile } = require('./_lib');
 
 const ALLOWED = { png: 1, jpg: 1, jpeg: 1, webp: 1, gif: 1 };
-const MAX_BYTES = 4 * 1024 * 1024;
+// Vercel refuses a request body over ~4.5 MB before this function ever runs,
+// and base64 inflates by ~33% — so the real decoded ceiling is about 3 MB.
+const MAX_BYTES = 3 * 1024 * 1024;
 
 module.exports = async (req, res) => {
   if (rejected(req, res)) return;
@@ -21,7 +23,7 @@ module.exports = async (req, res) => {
   const bytes = Buffer.from(base64, 'base64');
   if (!bytes.length) return res.status(400).json({ error: 'That file appears to be empty' });
   if (bytes.length > MAX_BYTES) {
-    return res.status(413).json({ error: 'Image is larger than 4 MB — please shrink it first' });
+    return res.status(413).json({ error: 'Image is larger than 3 MB after encoding — please save it smaller' });
   }
 
   const stem = String(filename).replace(/\.[^.]*$/, '')

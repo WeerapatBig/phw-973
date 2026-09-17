@@ -45,10 +45,16 @@
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(Object.assign({ password: pw }, payload))
     }).then(function (r) {
+      // A rejection from the host (e.g. 413 body-too-large) never reaches our
+      // function, so it comes back as HTML, not JSON. Say something human.
       return r.json().then(function (data) {
         if (!r.ok) throw new Error(data.error || ('HTTP ' + r.status));
         return data;
-      }, function () { throw new Error('HTTP ' + r.status); });
+      }, function () {
+        throw new Error(r.status === 413
+          ? 'The file is too big to send. Try a smaller image.'
+          : 'The server returned an unexpected response (HTTP ' + r.status + ').');
+      });
     });
   }
 
@@ -141,18 +147,66 @@
 
   /* ---------------- image upload ---------------- */
 
-  function uploadFile(file) {
+  // The widest the site ever shows an image is about 700px, so 1600 is already
+  // generous on a retina screen. Shrinking here keeps phone screenshots (often
+  // 5-10 MB) under the upload limit AND keeps the guide fast for readers.
+  var MAX_EDGE = 1600;
+  var MAX_UPLOAD = 3 * 1024 * 1024;   // decoded bytes; base64 adds ~33% on the wire
+
+  function shrink(file) {
+    // Animated GIFs would lose their animation on a canvas — send them as they are.
+    if (file.type === 'image/gif') {
+      return Promise.resolve({ blob: file, ext: 'gif' });
+    }
     return new Promise(function (resolve, reject) {
-      if (!/^image\//.test(file.type)) return reject(new Error('That file is not an image.'));
-      if (file.size > 4 * 1024 * 1024) return reject(new Error('Image is larger than 4 MB — please shrink it first.'));
-      var fr = new FileReader();
-      fr.onerror = function () { reject(new Error('Could not read the file.')); };
-      fr.onload = function () {
-        var base64 = String(fr.result).split(',')[1];
-        api('/api/upload', { filename: file.name, base64: base64 })
-          .then(function (r) { resolve(r.path); }, reject);
+      var url = URL.createObjectURL(file);
+      var img = new Image();
+      img.onerror = function () {
+        URL.revokeObjectURL(url);
+        reject(new Error('That file could not be read as an image.'));
       };
-      fr.readAsDataURL(file);
+      img.onload = function () {
+        URL.revokeObjectURL(url);
+        var scale = Math.min(1, MAX_EDGE / Math.max(img.naturalWidth, img.naturalHeight));
+        var w = Math.round(img.naturalWidth * scale);
+        var h = Math.round(img.naturalHeight * scale);
+
+        var c = document.createElement('canvas');
+        c.width = w;
+        c.height = h;
+        c.getContext('2d').drawImage(img, 0, 0, w, h);
+
+        // webp keeps transparency and is much smaller; jpeg only if webp is refused.
+        c.toBlob(function (blob) {
+          if (blob && blob.type === 'image/webp') return resolve({ blob: blob, ext: 'webp' });
+          c.toBlob(function (jpeg) {
+            if (!jpeg) return reject(new Error('The image could not be converted.'));
+            resolve({ blob: jpeg, ext: 'jpg' });
+          }, 'image/jpeg', 0.85);
+        }, 'image/webp', 0.85);
+      };
+      img.src = url;
+    });
+  }
+
+  function uploadFile(file) {
+    if (!/^image\//.test(file.type)) {
+      return Promise.reject(new Error('That file is not an image.'));
+    }
+    return shrink(file).then(function (out) {
+      if (out.blob.size > MAX_UPLOAD) {
+        throw new Error('Even after shrinking, this image is over 3 MB. Please save it as a JPG first.');
+      }
+      var name = file.name.replace(/\.[^.]*$/, '') + '.' + out.ext;
+      return new Promise(function (resolve, reject) {
+        var fr = new FileReader();
+        fr.onerror = function () { reject(new Error('Could not read the file.')); };
+        fr.onload = function () {
+          api('/api/upload', { filename: name, base64: String(fr.result).split(',')[1] })
+            .then(function (r) { resolve(r.path); }, reject);
+        };
+        fr.readAsDataURL(out.blob);
+      });
     });
   }
 
