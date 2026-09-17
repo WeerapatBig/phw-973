@@ -31,10 +31,6 @@
             {
               "type": "text",
               "html": "Season 3 contains a complete story. Playing through it earns you prizes — and <strong>Nien</strong>."
-            },
-            {
-              "type": "text",
-              "html": "Written by <strong>Super Beta27</strong>\n<br>\nEdited by <strong>HaremEd</strong>"
             }
           ]
         },
@@ -674,6 +670,10 @@
               "type": "tip",
               "warn": false,
               "html": "Talent trees for all of these live in the alliance Discord — <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\"><strong>open the talent-tree archive</strong></a>. You need to be a member of the server for the link to open."
+            },
+            {
+              "type": "text",
+              "html": "Thank you for reading this and thank you for your time.\n<br>\nWritten by <strong>Super Beta27</strong>\n<br>\nEdited by <strong>HaremEd</strong>"
             }
           ]
         }
