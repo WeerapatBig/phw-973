@@ -1,0 +1,12 @@
+{
+  "name": "Phoenix of War 973",
+  "short_name": "PHW",
+  "icons": [
+    { "src": "favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "favicon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "theme_color": "#120c08",
+  "background_color": "#0d0b0a",
+  "display": "standalone"
+}

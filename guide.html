@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Season 3 Guide — Phoenix of War 973</title>
+<meta name="description" content="Phoenix of War 973 — complete Season 3 guide: features, Nien, the map, policies, skills and heroes.">
+<link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#120c08">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">PHOENIX OF WAR <span class="tag">973</span></a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="guide.html" aria-current="page">How to Play</a>
+      <a href="https://discord.gg/R8CC3CfdZ4" target="_blank" rel="noopener">Discord</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="hero" style="padding:64px 0 44px;">
+    <div class="wrap">
+      <p class="sub" id="pg-eyebrow">How to Play</p>
+      <h1 id="pg-title">Season 3 Guide</h1>
+      <p class="motto" id="pg-intro" style="font-size:17px;color:var(--muted);max-width:60ch;"></p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap guide-layout">
+
+      <aside class="toc">
+        <p>Contents</p>
+        <div id="pg-toc"></div>
+      </aside>
+
+      <div class="guide-body" id="pg-body">
+        <p class="wip">Loading the guide&hellip;</p>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">Phoenix of War 973 &middot; From ashes, to flame.</div>
+</footer>
+
+<script src="render.js"></script>
+<script src="lightbox.js"></script>
+<script>
+fetch('content/guide.json', { cache: 'no-cache' })
+  .then(function (r) {
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  })
+  .then(function (doc) {
+    PHW.render(doc, {
+      eyebrow: document.getElementById('pg-eyebrow'),
+      title:   document.getElementById('pg-title'),
+      intro:   document.getElementById('pg-intro'),
+      toc:     document.getElementById('pg-toc'),
+      body:    document.getElementById('pg-body')
+    });
+  })
+  .catch(function (err) {
+    document.getElementById('pg-body').innerHTML =
+      '<div class="tip warn"><p><strong>The guide could not be loaded.</strong> ' +
+      'Please refresh the page, and tell an officer if it keeps happening. (' + err.message + ')</p></div>';
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "phw-973",
+  "private": true,
+  "description": "Phoenix of War 973 — alliance site. Static pages plus Vercel functions for the officer editor.",
+  "scripts": {
+    "dev": "node dev-server.js"
+  }
+}

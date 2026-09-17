@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin — Phoenix of War 973</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<!-- ===== login ===== -->
+<div class="adm-login" id="login">
+  <h1>Phoenix of War 973</h1>
+  <p>Officer access</p>
+  <form id="login-form">
+    <input class="adm-field" type="password" id="pw" placeholder="Admin password"
+           autocomplete="current-password" required>
+    <p class="adm-err" id="login-err"></p>
+    <button class="btn-sm primary" style="width:100%;padding:12px" type="submit" id="login-btn">Unlock</button>
+  </form>
+  <p style="margin-top:28px"><a href="index.html">&larr; Back to the site</a></p>
+</div>
+
+<!-- ===== editor ===== -->
+<div class="adm-shell" id="editor" hidden>
+
+  <div class="adm-bar">
+    <h1>Guide editor</h1>
+    <span class="adm-state" id="state">Loaded</span>
+    <span class="adm-spacer"></span>
+    <button class="btn-sm" id="btn-preview">Preview</button>
+    <button class="btn-sm primary" id="btn-save" disabled>Save &amp; publish</button>
+    <button class="btn-sm" id="btn-out">Sign out</button>
+  </div>
+
+  <p class="adm-err" id="err"></p>
+
+  <div class="adm-cols">
+    <aside class="adm-side">
+      <h2>Sections</h2>
+      <div id="sec-list"></div>
+      <button class="btn-sm" style="width:100%;margin-top:10px" id="btn-add-sec">+ New section</button>
+    </aside>
+
+    <div id="pane"></div>
+  </div>
+</div>
+
+<!-- ===== preview ===== -->
+<dialog class="lb" id="preview-dlg">
+  <div class="lb-bar">
+    <strong style="flex:1;font:600 14px var(--font-body)">Preview &mdash; this is how the page will look</strong>
+    <button class="lb-btn lb-close" id="preview-close">&times;</button>
+  </div>
+  <div style="overflow:auto;padding:28px 20px">
+    <div class="wrap">
+      <div class="guide-body" id="preview-body"></div>
+    </div>
+  </div>
+</dialog>
+
+<script src="render.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
