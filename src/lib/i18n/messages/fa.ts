@@ -1,0 +1,68 @@
+import type { Dict } from "./en";
+
+const fa: Partial<Dict> = {
+  "nav.home": "خانه",
+  "nav.guide": "راهنما",
+  "nav.rules": "قوانین",
+  "nav.discord": "Discord",
+
+  "profile.title": "زبان و نام",
+  "profile.guest": "مهمان",
+
+  "onb.welcome": "به Phoenix of War 973 خوش آمدید",
+  "onb.langTitle": "زبان خود را انتخاب کنید",
+  "onb.langHint": "هر زمان می‌توانید از نوار بالا تغییرش دهید.",
+  "onb.continue": "ادامه",
+  "onb.nameTitle": "شما چه کسی هستید؟",
+  "onb.nameHint": "این نام در نظرات و قلب‌های شما نمایش داده می‌شود و فقط در همین مرورگر ذخیره می‌شود.",
+  "onb.namePlaceholder": "نام درون‌بازی شما",
+  "onb.start": "شروع",
+  "onb.back": "بازگشت",
+  "onb.skip": "رد شدن",
+
+  "hub.categories": "دسته‌بندی‌ها",
+  "hub.searchPlaceholder": "جستجو در همه‌ی راهنماها…",
+  "hub.resultsOne": "۱ راهنما پیدا شد",
+  "hub.resultsMany": "{n} راهنما پیدا شد",
+  "hub.resultsFor": "نتایج «{q}» در تمام دسته‌بندی‌ها.",
+  "hub.noMatch": "هیچ راهنمایی با «{q}» مطابقت ندارد.",
+  "hub.untitledCategory": "(دسته‌بندی بدون نام)",
+  "hub.untitledGuide": "(راهنمای بدون نام)",
+  "hub.noGuides": "این دسته‌بندی هنوز راهنمایی ندارد.",
+  "hub.nothingYet": "هنوز چیزی اینجا نوشته نشده است.",
+  "hub.commentsOne": "۱ نظر",
+  "hub.commentsMany": "{n} نظر",
+
+  "reader.breadcrumbGuide": "راهنما",
+  "reader.breadcrumbCategory": "دسته‌بندی",
+  "reader.backToGuide": "بازگشت به راهنما",
+  "reader.loadingComments": "در حال بارگذاری نظرات…",
+
+  "heart.heart": "قلب",
+  "heart.hearted": "قلب داده شد",
+  "heart.heartTitle": "به این راهنما قلب بدهید",
+  "heart.unheartTitle": "قلب خود را بردارید",
+
+  "cmt.title": "نظرات",
+  "cmt.note": "مهربان باشید و در موضوع بمانید. هر زمان می‌توانید نظرات خود را ویرایش یا حذف کنید.",
+  "cmt.namePlaceholder": "نام شما (روی نظرات شما نمایش داده می‌شود)",
+  "cmt.bodyPlaceholder": "یک نظر، نکته یا سؤال اضافه کنید…",
+  "cmt.post": "ارسال نظر",
+  "cmt.posting": "در حال ارسال…",
+  "cmt.reply": "پاسخ",
+  "cmt.save": "ذخیره",
+  "cmt.cancel": "لغو",
+  "cmt.edit": "ویرایش",
+  "cmt.delete": "حذف",
+  "cmt.deleted": "این نظر حذف شد.",
+  "cmt.empty": "هنوز نظری نیست — اولین نفر باشید.",
+  "cmt.edited": "ویرایش‌شده",
+  "cmt.justNow": "همین حالا",
+  "cmt.minutes": "{n} دقیقه پیش",
+  "cmt.hours": "{n} ساعت پیش",
+  "cmt.days": "{n} روز پیش",
+  "cmt.confirmDelete": "این نظر حذف شود؟",
+  "cmt.confirmDeleteThread": "این نظر و همه‌ی پاسخ‌هایش حذف شوند؟",
+};
+
+export default fa;

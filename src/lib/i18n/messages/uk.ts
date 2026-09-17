@@ -1,0 +1,68 @@
+import type { Dict } from "./en";
+
+const uk: Partial<Dict> = {
+  "nav.home": "Головна",
+  "nav.guide": "Гайд",
+  "nav.rules": "Правила",
+  "nav.discord": "Discord",
+
+  "profile.title": "Мова та ім’я",
+  "profile.guest": "Гість",
+
+  "onb.welcome": "Ласкаво просимо до Phoenix of War 973",
+  "onb.langTitle": "Оберіть мову",
+  "onb.langHint": "Ви можете змінити її будь-коли на верхній панелі.",
+  "onb.continue": "Продовжити",
+  "onb.nameTitle": "Хто ви?",
+  "onb.nameHint": "Це ім’я відображається у ваших коментарях і вподобаннях. Воно зберігається лише в цьому браузері.",
+  "onb.namePlaceholder": "Ваше ім’я в грі",
+  "onb.start": "Почати",
+  "onb.back": "Назад",
+  "onb.skip": "Пропустити",
+
+  "hub.categories": "Категорії",
+  "hub.searchPlaceholder": "Пошук по всіх гайдах…",
+  "hub.resultsOne": "Знайдено 1 гайд",
+  "hub.resultsMany": "Знайдено {n} гайдів",
+  "hub.resultsFor": "Результати для «{q}» у всіх категоріях.",
+  "hub.noMatch": "Немає гайдів, що збігаються з «{q}».",
+  "hub.untitledCategory": "(категорія без назви)",
+  "hub.untitledGuide": "(гайд без назви)",
+  "hub.noGuides": "У цій категорії ще немає гайдів.",
+  "hub.nothingYet": "Тут ще нічого не написано.",
+  "hub.commentsOne": "1 коментар",
+  "hub.commentsMany": "{n} коментарів",
+
+  "reader.breadcrumbGuide": "Гайд",
+  "reader.breadcrumbCategory": "Категорія",
+  "reader.backToGuide": "Назад до гайду",
+  "reader.loadingComments": "Завантаження коментарів…",
+
+  "heart.heart": "Вподобати",
+  "heart.hearted": "Вподобано",
+  "heart.heartTitle": "Вподобати цей гайд",
+  "heart.unheartTitle": "Прибрати вподобання",
+
+  "cmt.title": "Коментарі",
+  "cmt.note": "Будьте доброзичливі та не відхиляйтеся від теми. Свої коментарі ви можете редагувати або видаляти будь-коли.",
+  "cmt.namePlaceholder": "Ваше ім’я (показується у ваших коментарях)",
+  "cmt.bodyPlaceholder": "Додайте коментар, пораду чи запитання…",
+  "cmt.post": "Опублікувати коментар",
+  "cmt.posting": "Публікація…",
+  "cmt.reply": "Відповісти",
+  "cmt.save": "Зберегти",
+  "cmt.cancel": "Скасувати",
+  "cmt.edit": "Редагувати",
+  "cmt.delete": "Видалити",
+  "cmt.deleted": "Цей коментар було видалено.",
+  "cmt.empty": "Коментарів ще немає — станьте першим.",
+  "cmt.edited": "відредаговано",
+  "cmt.justNow": "щойно",
+  "cmt.minutes": "{n} хв тому",
+  "cmt.hours": "{n} год тому",
+  "cmt.days": "{n} дн тому",
+  "cmt.confirmDelete": "Видалити цей коментар?",
+  "cmt.confirmDeleteThread": "Видалити цей коментар та всі відповіді на нього?",
+};
+
+export default uk;

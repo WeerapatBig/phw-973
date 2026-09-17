@@ -1,0 +1,68 @@
+import type { Dict } from "./en";
+
+const it: Partial<Dict> = {
+  "nav.home": "Home",
+  "nav.guide": "Guida",
+  "nav.rules": "Regole",
+  "nav.discord": "Discord",
+
+  "profile.title": "Lingua e nome",
+  "profile.guest": "Ospite",
+
+  "onb.welcome": "Benvenuto in Phoenix of War 973",
+  "onb.langTitle": "Scegli la tua lingua",
+  "onb.langHint": "Puoi cambiarla in qualsiasi momento dalla barra in alto.",
+  "onb.continue": "Continua",
+  "onb.nameTitle": "Chi sei?",
+  "onb.nameHint": "Questo nome appare sui tuoi commenti e cuori. Viene salvato solo in questo browser.",
+  "onb.namePlaceholder": "Il tuo nome in gioco",
+  "onb.start": "Inizia",
+  "onb.back": "Indietro",
+  "onb.skip": "Salta",
+
+  "hub.categories": "Categorie",
+  "hub.searchPlaceholder": "Cerca tra tutte le guide…",
+  "hub.resultsOne": "Trovata 1 guida",
+  "hub.resultsMany": "Trovate {n} guide",
+  "hub.resultsFor": "Risultati per “{q}” in ogni categoria.",
+  "hub.noMatch": "Nessuna guida corrisponde a “{q}”.",
+  "hub.untitledCategory": "(categoria senza titolo)",
+  "hub.untitledGuide": "(guida senza titolo)",
+  "hub.noGuides": "Questa categoria non ha ancora guide.",
+  "hub.nothingYet": "Non è ancora stato scritto nulla qui.",
+  "hub.commentsOne": "1 commento",
+  "hub.commentsMany": "{n} commenti",
+
+  "reader.breadcrumbGuide": "Guida",
+  "reader.breadcrumbCategory": "Categoria",
+  "reader.backToGuide": "Torna alla guida",
+  "reader.loadingComments": "Caricamento commenti…",
+
+  "heart.heart": "Cuore",
+  "heart.hearted": "Cuore dato",
+  "heart.heartTitle": "Metti un cuore a questa guida",
+  "heart.unheartTitle": "Rimuovi il tuo cuore",
+
+  "cmt.title": "Commenti",
+  "cmt.note": "Sii gentile e resta in tema. Puoi modificare o eliminare i tuoi commenti in qualsiasi momento.",
+  "cmt.namePlaceholder": "Il tuo nome (mostrato sui tuoi commenti)",
+  "cmt.bodyPlaceholder": "Aggiungi un commento, un consiglio o una domanda…",
+  "cmt.post": "Pubblica commento",
+  "cmt.posting": "Pubblicazione…",
+  "cmt.reply": "Rispondi",
+  "cmt.save": "Salva",
+  "cmt.cancel": "Annulla",
+  "cmt.edit": "Modifica",
+  "cmt.delete": "Elimina",
+  "cmt.deleted": "Questo commento è stato eliminato.",
+  "cmt.empty": "Nessun commento ancora — sii il primo.",
+  "cmt.edited": "modificato",
+  "cmt.justNow": "adesso",
+  "cmt.minutes": "{n} min fa",
+  "cmt.hours": "{n} h fa",
+  "cmt.days": "{n} g fa",
+  "cmt.confirmDelete": "Eliminare questo commento?",
+  "cmt.confirmDeleteThread": "Eliminare questo commento e tutte le sue risposte?",
+};
+
+export default it;

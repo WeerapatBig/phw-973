@@ -1,0 +1,68 @@
+import type { Dict } from "./en";
+
+const zh: Partial<Dict> = {
+  "nav.home": "首页",
+  "nav.guide": "攻略",
+  "nav.rules": "规则",
+  "nav.discord": "Discord",
+
+  "profile.title": "语言与昵称",
+  "profile.guest": "访客",
+
+  "onb.welcome": "欢迎来到 Phoenix of War 973",
+  "onb.langTitle": "选择您的语言",
+  "onb.langHint": "您随时可以从顶部栏更改语言。",
+  "onb.continue": "继续",
+  "onb.nameTitle": "您是谁？",
+  "onb.nameHint": "此名称会显示在您的评论和点赞中，且仅存储在此浏览器中。",
+  "onb.namePlaceholder": "您的游戏昵称",
+  "onb.start": "开始",
+  "onb.back": "返回",
+  "onb.skip": "跳过",
+
+  "hub.categories": "分类",
+  "hub.searchPlaceholder": "搜索全部攻略…",
+  "hub.resultsOne": "找到 1 条攻略",
+  "hub.resultsMany": "找到 {n} 条攻略",
+  "hub.resultsFor": "在全部分类中搜索“{q}”的结果。",
+  "hub.noMatch": "没有符合“{q}”的攻略。",
+  "hub.untitledCategory": "（未命名分类）",
+  "hub.untitledGuide": "（未命名攻略）",
+  "hub.noGuides": "此分类下暂无攻略。",
+  "hub.nothingYet": "这里还没有任何内容。",
+  "hub.commentsOne": "1 条评论",
+  "hub.commentsMany": "{n} 条评论",
+
+  "reader.breadcrumbGuide": "攻略",
+  "reader.breadcrumbCategory": "分类",
+  "reader.backToGuide": "返回指南",
+  "reader.loadingComments": "正在加载评论…",
+
+  "heart.heart": "点赞",
+  "heart.hearted": "已点赞",
+  "heart.heartTitle": "点赞这篇攻略",
+  "heart.unheartTitle": "取消点赞",
+
+  "cmt.title": "评论",
+  "cmt.note": "请友善发言并保持话题相关。您可以随时编辑或删除自己的评论。",
+  "cmt.namePlaceholder": "您的名字（将显示在您的评论上）",
+  "cmt.bodyPlaceholder": "添加一条评论、提示或问题…",
+  "cmt.post": "发表评论",
+  "cmt.posting": "发表中…",
+  "cmt.reply": "回复",
+  "cmt.save": "保存",
+  "cmt.cancel": "取消",
+  "cmt.edit": "编辑",
+  "cmt.delete": "删除",
+  "cmt.deleted": "此评论已被删除。",
+  "cmt.empty": "暂无评论 — 来抢沙发吧。",
+  "cmt.edited": "已编辑",
+  "cmt.justNow": "刚刚",
+  "cmt.minutes": "{n} 分钟前",
+  "cmt.hours": "{n} 小时前",
+  "cmt.days": "{n} 天前",
+  "cmt.confirmDelete": "删除此评论？",
+  "cmt.confirmDeleteThread": "删除此评论及其所有回复？",
+};
+
+export default zh;

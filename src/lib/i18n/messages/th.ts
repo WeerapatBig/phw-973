@@ -1,0 +1,68 @@
+import type { Dict } from "./en";
+
+const th: Partial<Dict> = {
+  "nav.home": "หน้าแรก",
+  "nav.guide": "คู่มือ",
+  "nav.rules": "กฎกติกา",
+  "nav.discord": "Discord",
+
+  "profile.title": "ภาษาและชื่อ",
+  "profile.guest": "ผู้เยี่ยมชม",
+
+  "onb.welcome": "ยินดีต้อนรับสู่ Phoenix of War 973",
+  "onb.langTitle": "เลือกภาษาของคุณ",
+  "onb.langHint": "คุณสามารถเปลี่ยนได้ทุกเมื่อจากแถบด้านบน",
+  "onb.continue": "ดำเนินการต่อ",
+  "onb.nameTitle": "คุณคือใคร?",
+  "onb.nameHint": "ชื่อนี้จะแสดงบนความคิดเห็นและหัวใจของคุณ โดยถูกเก็บไว้ในเบราว์เซอร์นี้เท่านั้น",
+  "onb.namePlaceholder": "ชื่อในเกมของคุณ",
+  "onb.start": "เริ่มต้น",
+  "onb.back": "ย้อนกลับ",
+  "onb.skip": "ข้าม",
+
+  "hub.categories": "หมวดหมู่",
+  "hub.searchPlaceholder": "ค้นหาคู่มือทั้งหมด…",
+  "hub.resultsOne": "พบคู่มือ 1 รายการ",
+  "hub.resultsMany": "พบคู่มือ {n} รายการ",
+  "hub.resultsFor": "ผลลัพธ์สำหรับ “{q}” ในทุกหมวดหมู่",
+  "hub.noMatch": "ไม่มีคู่มือที่ตรงกับ “{q}”",
+  "hub.untitledCategory": "(หมวดหมู่ที่ไม่มีชื่อ)",
+  "hub.untitledGuide": "(คู่มือที่ไม่มีชื่อ)",
+  "hub.noGuides": "หมวดหมู่นี้ยังไม่มีคู่มือ",
+  "hub.nothingYet": "ยังไม่มีใครเขียนอะไรที่นี่",
+  "hub.commentsOne": "1 ความคิดเห็น",
+  "hub.commentsMany": "{n} ความคิดเห็น",
+
+  "reader.breadcrumbGuide": "คู่มือ",
+  "reader.breadcrumbCategory": "หมวดหมู่",
+  "reader.backToGuide": "กลับไปที่คู่มือ",
+  "reader.loadingComments": "กำลังโหลดความคิดเห็น…",
+
+  "heart.heart": "หัวใจ",
+  "heart.hearted": "ให้หัวใจแล้ว",
+  "heart.heartTitle": "ให้หัวใจกับคู่มือนี้",
+  "heart.unheartTitle": "นำหัวใจของคุณออก",
+
+  "cmt.title": "ความคิดเห็น",
+  "cmt.note": "กรุณาแสดงความคิดเห็นอย่างสุภาพและตรงประเด็น คุณสามารถแก้ไขหรือลบความคิดเห็นของคุณได้ทุกเมื่อ",
+  "cmt.namePlaceholder": "ชื่อของคุณ (แสดงบนความคิดเห็นของคุณ)",
+  "cmt.bodyPlaceholder": "เพิ่มความคิดเห็น เคล็ดลับ หรือคำถาม…",
+  "cmt.post": "โพสต์ความคิดเห็น",
+  "cmt.posting": "กำลังโพสต์…",
+  "cmt.reply": "ตอบกลับ",
+  "cmt.save": "บันทึก",
+  "cmt.cancel": "ยกเลิก",
+  "cmt.edit": "แก้ไข",
+  "cmt.delete": "ลบ",
+  "cmt.deleted": "ความคิดเห็นนี้ถูกลบแล้ว",
+  "cmt.empty": "ยังไม่มีความคิดเห็น — เป็นคนแรกเลย",
+  "cmt.edited": "แก้ไขแล้ว",
+  "cmt.justNow": "เมื่อสักครู่",
+  "cmt.minutes": "{n} นาทีที่แล้ว",
+  "cmt.hours": "{n} ชั่วโมงที่แล้ว",
+  "cmt.days": "{n} วันที่แล้ว",
+  "cmt.confirmDelete": "ลบความคิดเห็นนี้?",
+  "cmt.confirmDeleteThread": "ลบความคิดเห็นนี้และข้อความตอบกลับทั้งหมด?",
+};
+
+export default th;

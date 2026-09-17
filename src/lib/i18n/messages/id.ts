@@ -1,0 +1,68 @@
+import type { Dict } from "./en";
+
+const id: Partial<Dict> = {
+  "nav.home": "Beranda",
+  "nav.guide": "Panduan",
+  "nav.rules": "Peraturan",
+  "nav.discord": "Discord",
+
+  "profile.title": "Bahasa & nama",
+  "profile.guest": "Tamu",
+
+  "onb.welcome": "Selamat datang di Phoenix of War 973",
+  "onb.langTitle": "Pilih bahasa Anda",
+  "onb.langHint": "Anda dapat mengubahnya kapan saja dari bilah atas.",
+  "onb.continue": "Lanjut",
+  "onb.nameTitle": "Siapa Anda?",
+  "onb.nameHint": "Nama ini muncul di komentar dan hati Anda. Nama ini hanya disimpan di peramban ini.",
+  "onb.namePlaceholder": "Nama dalam game Anda",
+  "onb.start": "Mulai",
+  "onb.back": "Kembali",
+  "onb.skip": "Lewati",
+
+  "hub.categories": "Kategori",
+  "hub.searchPlaceholder": "Cari semua panduan…",
+  "hub.resultsOne": "1 panduan ditemukan",
+  "hub.resultsMany": "{n} panduan ditemukan",
+  "hub.resultsFor": "Hasil untuk “{q}” di semua kategori.",
+  "hub.noMatch": "Tidak ada panduan yang cocok dengan “{q}”.",
+  "hub.untitledCategory": "(kategori tanpa judul)",
+  "hub.untitledGuide": "(panduan tanpa judul)",
+  "hub.noGuides": "Kategori ini belum memiliki panduan.",
+  "hub.nothingYet": "Belum ada yang ditulis di sini.",
+  "hub.commentsOne": "1 komentar",
+  "hub.commentsMany": "{n} komentar",
+
+  "reader.breadcrumbGuide": "Panduan",
+  "reader.breadcrumbCategory": "Kategori",
+  "reader.backToGuide": "Kembali ke Panduan",
+  "reader.loadingComments": "Memuat komentar…",
+
+  "heart.heart": "Suka",
+  "heart.hearted": "Disukai",
+  "heart.heartTitle": "Sukai panduan ini",
+  "heart.unheartTitle": "Hapus suka Anda",
+
+  "cmt.title": "Komentar",
+  "cmt.note": "Bersikaplah baik dan tetap pada topik. Anda dapat mengedit atau menghapus komentar Anda sendiri kapan saja.",
+  "cmt.namePlaceholder": "Nama Anda (ditampilkan di komentar Anda)",
+  "cmt.bodyPlaceholder": "Tambahkan komentar, tips, atau pertanyaan…",
+  "cmt.post": "Kirim komentar",
+  "cmt.posting": "Mengirim…",
+  "cmt.reply": "Balas",
+  "cmt.save": "Simpan",
+  "cmt.cancel": "Batal",
+  "cmt.edit": "Edit",
+  "cmt.delete": "Hapus",
+  "cmt.deleted": "Komentar ini telah dihapus.",
+  "cmt.empty": "Belum ada komentar — jadilah yang pertama.",
+  "cmt.edited": "diedit",
+  "cmt.justNow": "baru saja",
+  "cmt.minutes": "{n} menit lalu",
+  "cmt.hours": "{n} jam lalu",
+  "cmt.days": "{n} hari lalu",
+  "cmt.confirmDelete": "Hapus komentar ini?",
+  "cmt.confirmDeleteThread": "Hapus komentar ini beserta semua balasannya?",
+};
+
+export default id;

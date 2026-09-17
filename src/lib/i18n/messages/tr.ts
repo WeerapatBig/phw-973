@@ -1,0 +1,68 @@
+import type { Dict } from "./en";
+
+const tr: Partial<Dict> = {
+  "nav.home": "Ana Sayfa",
+  "nav.guide": "Rehber",
+  "nav.rules": "Kurallar",
+  "nav.discord": "Discord",
+
+  "profile.title": "Dil ve isim",
+  "profile.guest": "Misafir",
+
+  "onb.welcome": "Phoenix of War 973'e hoş geldiniz",
+  "onb.langTitle": "Dilinizi seçin",
+  "onb.langHint": "Bunu üst çubuktan istediğiniz zaman değiştirebilirsiniz.",
+  "onb.continue": "Devam Et",
+  "onb.nameTitle": "Sen kimsin?",
+  "onb.nameHint": "Bu isim yorumlarınızda ve kalplerinizde görünür. Yalnızca bu tarayıcıda saklanır.",
+  "onb.namePlaceholder": "Oyun içi adınız",
+  "onb.start": "Başla",
+  "onb.back": "Geri",
+  "onb.skip": "Atla",
+
+  "hub.categories": "Kategoriler",
+  "hub.searchPlaceholder": "Tüm rehberlerde ara…",
+  "hub.resultsOne": "1 rehber bulundu",
+  "hub.resultsMany": "{n} rehber bulundu",
+  "hub.resultsFor": "“{q}” için tüm kategorilerdeki sonuçlar.",
+  "hub.noMatch": "“{q}” ile eşleşen rehber yok.",
+  "hub.untitledCategory": "(başlıksız kategori)",
+  "hub.untitledGuide": "(başlıksız rehber)",
+  "hub.noGuides": "Bu kategoride henüz rehber yok.",
+  "hub.nothingYet": "Burada henüz bir şey yazılmamış.",
+  "hub.commentsOne": "1 yorum",
+  "hub.commentsMany": "{n} yorum",
+
+  "reader.breadcrumbGuide": "Rehber",
+  "reader.breadcrumbCategory": "Kategori",
+  "reader.backToGuide": "Rehbere Geri Dön",
+  "reader.loadingComments": "Yorumlar yükleniyor…",
+
+  "heart.heart": "Kalp",
+  "heart.hearted": "Kalp verildi",
+  "heart.heartTitle": "Bu rehbere kalp ver",
+  "heart.unheartTitle": "Kalbini kaldır",
+
+  "cmt.title": "Yorumlar",
+  "cmt.note": "Nazik olun ve konu dışına çıkmayın. Kendi yorumlarınızı istediğiniz zaman düzenleyebilir veya silebilirsiniz.",
+  "cmt.namePlaceholder": "Adınız (yorumlarınızda görünür)",
+  "cmt.bodyPlaceholder": "Bir yorum, ipucu veya soru ekleyin…",
+  "cmt.post": "Yorum Yap",
+  "cmt.posting": "Gönderiliyor…",
+  "cmt.reply": "Yanıtla",
+  "cmt.save": "Kaydet",
+  "cmt.cancel": "İptal",
+  "cmt.edit": "Düzenle",
+  "cmt.delete": "Sil",
+  "cmt.deleted": "Bu yorum silinmiş.",
+  "cmt.empty": "Henüz yorum yok — ilk yorumu siz yapın.",
+  "cmt.edited": "düzenlendi",
+  "cmt.justNow": "az önce",
+  "cmt.minutes": "{n} dk önce",
+  "cmt.hours": "{n} sa önce",
+  "cmt.days": "{n} gün önce",
+  "cmt.confirmDelete": "Bu yorum silinsin mi?",
+  "cmt.confirmDeleteThread": "Bu yorum ve tüm yanıtları silinsin mi?",
+};
+
+export default tr;

@@ -1,0 +1,124 @@
+import { mkdir, readFile, writeFile, access } from "fs/promises";
+import path from "path";
+import { serverClient } from "./supabase";
+import type { LocaleCode } from "./i18n/locales";
+
+// One JSON file per locale under data/translations/, e.g. th.json. Each file
+// maps English source strings to their translation. Existing entries are kept
+// when site content changes — only new or edited English strings are translated
+// later. When Supabase is configured the same file is mirrored to Storage so
+// maps survive on serverless hosts with a read-only filesystem.
+
+export type LocaleMapFile = {
+  locale: string;
+  updatedAt: string;
+  strings: Record<string, string>;
+};
+
+const DIR = path.join(process.cwd(), "data", "translations");
+const BUCKET = "translations";
+
+const locks = new Map<string, Promise<unknown>>();
+
+function withLock<T>(locale: string, fn: () => Promise<T>): Promise<T> {
+  const prev = locks.get(locale) || Promise.resolve();
+  const run = prev.then(fn, fn);
+  locks.set(locale, run.catch(() => {}));
+  return run;
+}
+
+function mapPath(locale: string) {
+  return path.join(DIR, `${locale}.json`);
+}
+
+async function ensureDir() {
+  await mkdir(DIR, { recursive: true });
+}
+
+async function readFromDisk(locale: LocaleCode): Promise<LocaleMapFile | null> {
+  try {
+    const raw = await readFile(mapPath(locale), "utf8");
+    return JSON.parse(raw) as LocaleMapFile;
+  } catch {
+    return null;
+  }
+}
+
+async function readFromStorage(locale: LocaleCode): Promise<LocaleMapFile | null> {
+  const sb = serverClient();
+  if (!sb) return null;
+  const { data, error } = await sb.storage.from(BUCKET).download(`${locale}.json`);
+  if (error || !data) return null;
+  try {
+    return JSON.parse(await data.text()) as LocaleMapFile;
+  } catch {
+    return null;
+  }
+}
+
+async function writeToStorage(locale: LocaleCode, body: string) {
+  const sb = serverClient();
+  if (!sb) return;
+  await sb.storage.from(BUCKET).upload(`${locale}.json`, body, {
+    upsert: true,
+    contentType: "application/json",
+  });
+}
+
+export async function localeMapExists(locale: LocaleCode): Promise<boolean> {
+  if (locale === "en") return true;
+  try {
+    await access(mapPath(locale));
+    return true;
+  } catch {
+    const remote = await readFromStorage(locale);
+    return remote !== null;
+  }
+}
+
+export async function loadLocaleMap(locale: LocaleCode): Promise<Record<string, string>> {
+  if (locale === "en") return {};
+  const local = await readFromDisk(locale);
+  if (local?.strings) return local.strings;
+  const remote = await readFromStorage(locale);
+  if (remote?.strings) {
+    await ensureDir();
+    await writeFile(mapPath(locale), JSON.stringify(remote, null, 2), "utf8");
+    return remote.strings;
+  }
+  return {};
+}
+
+export async function saveLocaleMap(
+  locale: LocaleCode,
+  strings: Record<string, string>
+): Promise<void> {
+  if (locale === "en") return;
+  const payload: LocaleMapFile = {
+    locale,
+    updatedAt: new Date().toISOString(),
+    strings,
+  };
+  const body = JSON.stringify(payload, null, 2);
+  await ensureDir();
+  await writeFile(mapPath(locale), body, "utf8");
+  await writeToStorage(locale, body);
+}
+
+export async function ensureLocaleMapFile(locale: LocaleCode): Promise<void> {
+  if (locale === "en") return;
+  if (await localeMapExists(locale)) return;
+  await saveLocaleMap(locale, {});
+}
+
+export async function mergeIntoLocaleMap(
+  locale: LocaleCode,
+  additions: Record<string, string>
+): Promise<Record<string, string>> {
+  return withLock(locale, async () => {
+    const current = await loadLocaleMap(locale);
+    const merged = { ...current, ...additions };
+    await saveLocaleMap(locale, merged);
+    return merged;
+  });
+}

@@ -1,0 +1,68 @@
+import type { Dict } from "./en";
+
+const vi: Partial<Dict> = {
+  "nav.home": "Trang chủ",
+  "nav.guide": "Hướng dẫn",
+  "nav.rules": "Quy tắc",
+  "nav.discord": "Discord",
+
+  "profile.title": "Ngôn ngữ và tên",
+  "profile.guest": "Khách",
+
+  "onb.welcome": "Chào mừng đến với Phoenix of War 973",
+  "onb.langTitle": "Chọn ngôn ngữ của bạn",
+  "onb.langHint": "Bạn có thể thay đổi ngôn ngữ bất cứ lúc nào từ thanh trên cùng.",
+  "onb.continue": "Tiếp tục",
+  "onb.nameTitle": "Bạn là ai?",
+  "onb.nameHint": "Tên này sẽ hiển thị trên bình luận và trái tim của bạn. Nó chỉ được lưu trong trình duyệt này.",
+  "onb.namePlaceholder": "Tên trong trò chơi của bạn",
+  "onb.start": "Bắt đầu",
+  "onb.back": "Quay lại",
+  "onb.skip": "Bỏ qua",
+
+  "hub.categories": "Danh mục",
+  "hub.searchPlaceholder": "Tìm kiếm tất cả hướng dẫn…",
+  "hub.resultsOne": "Tìm thấy 1 hướng dẫn",
+  "hub.resultsMany": "Tìm thấy {n} hướng dẫn",
+  "hub.resultsFor": "Kết quả cho “{q}” trong mọi danh mục.",
+  "hub.noMatch": "Không có hướng dẫn nào khớp với “{q}”.",
+  "hub.untitledCategory": "(danh mục chưa có tiêu đề)",
+  "hub.untitledGuide": "(hướng dẫn chưa có tiêu đề)",
+  "hub.noGuides": "Danh mục này chưa có hướng dẫn nào.",
+  "hub.nothingYet": "Chưa có gì được viết ở đây.",
+  "hub.commentsOne": "1 bình luận",
+  "hub.commentsMany": "{n} bình luận",
+
+  "reader.breadcrumbGuide": "Hướng dẫn",
+  "reader.breadcrumbCategory": "Danh mục",
+  "reader.backToGuide": "Quay lại Hướng dẫn",
+  "reader.loadingComments": "Đang tải bình luận…",
+
+  "heart.heart": "Trái tim",
+  "heart.hearted": "Đã thả tim",
+  "heart.heartTitle": "Thả tim cho hướng dẫn này",
+  "heart.unheartTitle": "Bỏ trái tim",
+
+  "cmt.title": "Bình luận",
+  "cmt.note": "Hãy tử tế và đúng chủ đề. Bạn có thể chỉnh sửa hoặc xóa bình luận của mình bất cứ lúc nào.",
+  "cmt.namePlaceholder": "Tên của bạn (hiển thị trên bình luận)",
+  "cmt.bodyPlaceholder": "Thêm bình luận, mẹo hoặc câu hỏi…",
+  "cmt.post": "Đăng bình luận",
+  "cmt.posting": "Đang đăng…",
+  "cmt.reply": "Trả lời",
+  "cmt.save": "Lưu",
+  "cmt.cancel": "Hủy",
+  "cmt.edit": "Sửa",
+  "cmt.delete": "Xóa",
+  "cmt.deleted": "Bình luận này đã bị xóa.",
+  "cmt.empty": "Chưa có bình luận nào — hãy là người đầu tiên.",
+  "cmt.edited": "đã chỉnh sửa",
+  "cmt.justNow": "vừa xong",
+  "cmt.minutes": "{n} phút trước",
+  "cmt.hours": "{n} giờ trước",
+  "cmt.days": "{n} ngày trước",
+  "cmt.confirmDelete": "Xóa bình luận này?",
+  "cmt.confirmDeleteThread": "Xóa bình luận này và tất cả phản hồi của nó?",
+};
+
+export default vi;

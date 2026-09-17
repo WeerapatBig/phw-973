@@ -1,0 +1,68 @@
+import type { Dict } from "./en";
+
+const nl: Partial<Dict> = {
+  "nav.home": "Home",
+  "nav.guide": "Gids",
+  "nav.rules": "Regels",
+  "nav.discord": "Discord",
+
+  "profile.title": "Taal en naam",
+  "profile.guest": "Gast",
+
+  "onb.welcome": "Welkom bij Phoenix of War 973",
+  "onb.langTitle": "Kies je taal",
+  "onb.langHint": "Je kunt dit altijd wijzigen via de bovenste balk.",
+  "onb.continue": "Doorgaan",
+  "onb.nameTitle": "Wie ben je?",
+  "onb.nameHint": "Deze naam verschijnt bij je reacties en hearts. Hij wordt alleen opgeslagen in deze browser.",
+  "onb.namePlaceholder": "Je in-game naam",
+  "onb.start": "Starten",
+  "onb.back": "Terug",
+  "onb.skip": "Overslaan",
+
+  "hub.categories": "Categorieën",
+  "hub.searchPlaceholder": "Alle gidsen doorzoeken…",
+  "hub.resultsOne": "1 gids gevonden",
+  "hub.resultsMany": "{n} gidsen gevonden",
+  "hub.resultsFor": "Resultaten voor “{q}” in elke categorie.",
+  "hub.noMatch": "Geen gidsen die overeenkomen met “{q}”.",
+  "hub.untitledCategory": "(categorie zonder naam)",
+  "hub.untitledGuide": "(gids zonder naam)",
+  "hub.noGuides": "Deze categorie heeft nog geen gidsen.",
+  "hub.nothingYet": "Hier is nog niets geschreven.",
+  "hub.commentsOne": "1 reactie",
+  "hub.commentsMany": "{n} reacties",
+
+  "reader.breadcrumbGuide": "Gids",
+  "reader.breadcrumbCategory": "Categorie",
+  "reader.backToGuide": "Terug naar handleiding",
+  "reader.loadingComments": "Reacties laden…",
+
+  "heart.heart": "Hart",
+  "heart.hearted": "Hart gegeven",
+  "heart.heartTitle": "Geef deze gids een hart",
+  "heart.unheartTitle": "Verwijder je hart",
+
+  "cmt.title": "Reacties",
+  "cmt.note": "Wees aardig en blijf bij het onderwerp. Je kunt je eigen reacties op elk moment bewerken of verwijderen.",
+  "cmt.namePlaceholder": "Je naam (wordt bij je reacties weergegeven)",
+  "cmt.bodyPlaceholder": "Voeg een reactie, tip of vraag toe…",
+  "cmt.post": "Reactie plaatsen",
+  "cmt.posting": "Plaatsen…",
+  "cmt.reply": "Reageren",
+  "cmt.save": "Opslaan",
+  "cmt.cancel": "Annuleren",
+  "cmt.edit": "Bewerken",
+  "cmt.delete": "Verwijderen",
+  "cmt.deleted": "Deze reactie is verwijderd.",
+  "cmt.empty": "Nog geen reacties — wees de eerste.",
+  "cmt.edited": "bewerkt",
+  "cmt.justNow": "zopas",
+  "cmt.minutes": "{n} min geleden",
+  "cmt.hours": "{n} u geleden",
+  "cmt.days": "{n} d geleden",
+  "cmt.confirmDelete": "Deze reactie verwijderen?",
+  "cmt.confirmDeleteThread": "Deze reactie en al haar antwoorden verwijderen?",
+};
+
+export default nl;

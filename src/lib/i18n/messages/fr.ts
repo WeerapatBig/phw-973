@@ -1,0 +1,68 @@
+import type { Dict } from "./en";
+
+const fr: Partial<Dict> = {
+  "nav.home": "Accueil",
+  "nav.guide": "Guide",
+  "nav.rules": "Règles",
+  "nav.discord": "Discord",
+
+  "profile.title": "Langue et nom",
+  "profile.guest": "Invité",
+
+  "onb.welcome": "Bienvenue dans Phoenix of War 973",
+  "onb.langTitle": "Choisissez votre langue",
+  "onb.langHint": "Vous pouvez la changer à tout moment depuis la barre du haut.",
+  "onb.continue": "Continuer",
+  "onb.nameTitle": "Qui êtes-vous ?",
+  "onb.nameHint": "Ce nom apparaît sur vos commentaires et vos cœurs. Il n'est stocké que dans ce navigateur.",
+  "onb.namePlaceholder": "Votre nom en jeu",
+  "onb.start": "Commencer",
+  "onb.back": "Retour",
+  "onb.skip": "Passer",
+
+  "hub.categories": "Catégories",
+  "hub.searchPlaceholder": "Rechercher dans tous les guides…",
+  "hub.resultsOne": "1 guide trouvé",
+  "hub.resultsMany": "{n} guides trouvés",
+  "hub.resultsFor": "Résultats pour « {q} » dans toutes les catégories.",
+  "hub.noMatch": "Aucun guide ne correspond à « {q} ».",
+  "hub.untitledCategory": "(catégorie sans titre)",
+  "hub.untitledGuide": "(guide sans titre)",
+  "hub.noGuides": "Cette catégorie n'a pas encore de guides.",
+  "hub.nothingYet": "Rien n'a encore été écrit ici.",
+  "hub.commentsOne": "1 commentaire",
+  "hub.commentsMany": "{n} commentaires",
+
+  "reader.breadcrumbGuide": "Guide",
+  "reader.breadcrumbCategory": "Catégorie",
+  "reader.backToGuide": "Retour au guide",
+  "reader.loadingComments": "Chargement des commentaires…",
+
+  "heart.heart": "Cœur",
+  "heart.hearted": "Cœur donné",
+  "heart.heartTitle": "Donner un cœur à ce guide",
+  "heart.unheartTitle": "Retirer votre cœur",
+
+  "cmt.title": "Commentaires",
+  "cmt.note": "Soyez aimable et restez dans le sujet. Vous pouvez modifier ou supprimer vos propres commentaires à tout moment.",
+  "cmt.namePlaceholder": "Votre nom (affiché sur vos commentaires)",
+  "cmt.bodyPlaceholder": "Ajoutez un commentaire, une astuce ou une question…",
+  "cmt.post": "Publier le commentaire",
+  "cmt.posting": "Publication…",
+  "cmt.reply": "Répondre",
+  "cmt.save": "Enregistrer",
+  "cmt.cancel": "Annuler",
+  "cmt.edit": "Modifier",
+  "cmt.delete": "Supprimer",
+  "cmt.deleted": "Ce commentaire a été supprimé.",
+  "cmt.empty": "Aucun commentaire pour l'instant — soyez le premier.",
+  "cmt.edited": "modifié",
+  "cmt.justNow": "à l'instant",
+  "cmt.minutes": "il y a {n} min",
+  "cmt.hours": "il y a {n} h",
+  "cmt.days": "il y a {n} j",
+  "cmt.confirmDelete": "Supprimer ce commentaire ?",
+  "cmt.confirmDeleteThread": "Supprimer ce commentaire et toutes ses réponses ?",
+};
+
+export default fr;

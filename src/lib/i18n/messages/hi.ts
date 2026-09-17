@@ -1,0 +1,68 @@
+import type { Dict } from "./en";
+
+const hi: Partial<Dict> = {
+  "nav.home": "होम",
+  "nav.guide": "गाइड",
+  "nav.rules": "नियम",
+  "nav.discord": "Discord",
+
+  "profile.title": "भाषा और नाम",
+  "profile.guest": "अतिथि",
+
+  "onb.welcome": "फ़ीनिक्स ऑफ वॉर 973 में आपका स्वागत है",
+  "onb.langTitle": "अपनी भाषा चुनें",
+  "onb.langHint": "आप इसे ऊपर की पट्टी से कभी भी बदल सकते हैं।",
+  "onb.continue": "जारी रखें",
+  "onb.nameTitle": "आप कौन हैं?",
+  "onb.nameHint": "यह नाम आपकी टिप्पणियों और हार्ट पर दिखाई देता है। यह केवल इस ब्राउज़र में संग्रहीत है।",
+  "onb.namePlaceholder": "आपका इन-गेम नाम",
+  "onb.start": "शुरू करें",
+  "onb.back": "वापस",
+  "onb.skip": "छोड़ें",
+
+  "hub.categories": "श्रेणियाँ",
+  "hub.searchPlaceholder": "सभी गाइड खोजें…",
+  "hub.resultsOne": "1 गाइड मिला",
+  "hub.resultsMany": "{n} गाइड मिले",
+  "hub.resultsFor": "हर श्रेणी में “{q}” के परिणाम।",
+  "hub.noMatch": "“{q}” से मेल खाता कोई गाइड नहीं है।",
+  "hub.untitledCategory": "(बिना शीर्षक श्रेणी)",
+  "hub.untitledGuide": "(बिना शीर्षक गाइड)",
+  "hub.noGuides": "इस श्रेणी में अभी कोई गाइड नहीं है।",
+  "hub.nothingYet": "यहाँ अभी कुछ नहीं लिखा गया है।",
+  "hub.commentsOne": "1 टिप्पणी",
+  "hub.commentsMany": "{n} टिप्पणियाँ",
+
+  "reader.breadcrumbGuide": "गाइड",
+  "reader.breadcrumbCategory": "श्रेणी",
+  "reader.backToGuide": "गाइड पर वापस जाएं",
+  "reader.loadingComments": "टिप्पणियाँ लोड हो रही हैं…",
+
+  "heart.heart": "हार्ट",
+  "heart.hearted": "हार्ट किया गया",
+  "heart.heartTitle": "इस गाइड को हार्ट करें",
+  "heart.unheartTitle": "अपना हार्ट हटाएँ",
+
+  "cmt.title": "टिप्पणियाँ",
+  "cmt.note": "दयालु रहें और विषय पर बने रहें। आप अपनी टिप्पणियों को कभी भी संपादित या हटा सकते हैं।",
+  "cmt.namePlaceholder": "आपका नाम (आपकी टिप्पणियों पर दिखाई देगा)",
+  "cmt.bodyPlaceholder": "कोई टिप्पणी, टिप या प्रश्न जोड़ें…",
+  "cmt.post": "टिप्पणी पोस्ट करें",
+  "cmt.posting": "पोस्ट हो रहा है…",
+  "cmt.reply": "जवाब दें",
+  "cmt.save": "सहेजें",
+  "cmt.cancel": "रद्द करें",
+  "cmt.edit": "संपादित करें",
+  "cmt.delete": "हटाएँ",
+  "cmt.deleted": "यह टिप्पणी हटा दी गई थी।",
+  "cmt.empty": "अभी कोई टिप्पणी नहीं — पहली टिप्पणी करने वाले बनें।",
+  "cmt.edited": "संपादित",
+  "cmt.justNow": "अभी-अभी",
+  "cmt.minutes": "{n} मिनट पहले",
+  "cmt.hours": "{n} घंटे पहले",
+  "cmt.days": "{n} दिन पहले",
+  "cmt.confirmDelete": "क्या यह टिप्पणी हटाएँ?",
+  "cmt.confirmDeleteThread": "क्या यह टिप्पणी और इसके सभी जवाब हटाएँ?",
+};
+
+export default hi;

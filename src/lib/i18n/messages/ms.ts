@@ -1,0 +1,68 @@
+import type { Dict } from "./en";
+
+const ms: Partial<Dict> = {
+  "nav.home": "Laman Utama",
+  "nav.guide": "Panduan",
+  "nav.rules": "Peraturan",
+  "nav.discord": "Discord",
+
+  "profile.title": "Bahasa & nama",
+  "profile.guest": "Tetamu",
+
+  "onb.welcome": "Selamat datang ke Phoenix of War 973",
+  "onb.langTitle": "Pilih bahasa anda",
+  "onb.langHint": "Anda boleh menukarnya pada bila-bila masa dari bar atas.",
+  "onb.continue": "Teruskan",
+  "onb.nameTitle": "Siapa anda?",
+  "onb.nameHint": "Nama ini kelihatan pada ulasan dan suka anda. Ia hanya disimpan dalam pelayar ini.",
+  "onb.namePlaceholder": "Nama dalam permainan anda",
+  "onb.start": "Mula",
+  "onb.back": "Kembali",
+  "onb.skip": "Langkau",
+
+  "hub.categories": "Kategori",
+  "hub.searchPlaceholder": "Cari semua panduan…",
+  "hub.resultsOne": "1 panduan dijumpai",
+  "hub.resultsMany": "{n} panduan dijumpai",
+  "hub.resultsFor": "Keputusan untuk “{q}” dalam setiap kategori.",
+  "hub.noMatch": "Tiada panduan sepadan dengan “{q}”.",
+  "hub.untitledCategory": "(kategori tanpa tajuk)",
+  "hub.untitledGuide": "(panduan tanpa tajuk)",
+  "hub.noGuides": "Kategori ini belum ada panduan.",
+  "hub.nothingYet": "Tiada apa-apa yang ditulis di sini lagi.",
+  "hub.commentsOne": "1 ulasan",
+  "hub.commentsMany": "{n} ulasan",
+
+  "reader.breadcrumbGuide": "Panduan",
+  "reader.breadcrumbCategory": "Kategori",
+  "reader.backToGuide": "Kembali ke Panduan",
+  "reader.loadingComments": "Memuatkan ulasan…",
+
+  "heart.heart": "Suka",
+  "heart.hearted": "Disukai",
+  "heart.heartTitle": "Sukai panduan ini",
+  "heart.unheartTitle": "Buang suka anda",
+
+  "cmt.title": "Ulasan",
+  "cmt.note": "Bersikap baik dan kekal pada tajuk. Anda boleh mengedit atau memadam ulasan anda sendiri pada bila-bila masa.",
+  "cmt.namePlaceholder": "Nama anda (ditunjukkan pada ulasan anda)",
+  "cmt.bodyPlaceholder": "Tambah ulasan, tip atau soalan…",
+  "cmt.post": "Siarkan ulasan",
+  "cmt.posting": "Menyiarkan…",
+  "cmt.reply": "Balas",
+  "cmt.save": "Simpan",
+  "cmt.cancel": "Batal",
+  "cmt.edit": "Edit",
+  "cmt.delete": "Padam",
+  "cmt.deleted": "Ulasan ini telah dipadam.",
+  "cmt.empty": "Belum ada ulasan — jadilah yang pertama.",
+  "cmt.edited": "diedit",
+  "cmt.justNow": "baru sahaja",
+  "cmt.minutes": "{n} min lalu",
+  "cmt.hours": "{n} jam lalu",
+  "cmt.days": "{n} hari lalu",
+  "cmt.confirmDelete": "Padam ulasan ini?",
+  "cmt.confirmDeleteThread": "Padam ulasan ini dan semua balasannya?",
+};
+
+export default ms;

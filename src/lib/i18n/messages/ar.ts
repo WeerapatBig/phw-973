@@ -1,0 +1,68 @@
+import type { Dict } from "./en";
+
+const ar: Partial<Dict> = {
+  "nav.home": "الرئيسية",
+  "nav.guide": "الدليل",
+  "nav.rules": "القواعد",
+  "nav.discord": "Discord",
+
+  "profile.title": "اللغة والاسم",
+  "profile.guest": "زائر",
+
+  "onb.welcome": "مرحباً بك في Phoenix of War 973",
+  "onb.langTitle": "اختر لغتك",
+  "onb.langHint": "يمكنك تغييرها في أي وقت من الشريط العلوي.",
+  "onb.continue": "متابعة",
+  "onb.nameTitle": "من أنت؟",
+  "onb.nameHint": "سيظهر هذا الاسم على تعليقاتك وإعجاباتك. يتم تخزينه في هذا المتصفح فقط.",
+  "onb.namePlaceholder": "اسمك داخل اللعبة",
+  "onb.start": "ابدأ",
+  "onb.back": "رجوع",
+  "onb.skip": "تخطي",
+
+  "hub.categories": "الفئات",
+  "hub.searchPlaceholder": "ابحث في جميع الأدلة…",
+  "hub.resultsOne": "تم العثور على دليل واحد",
+  "hub.resultsMany": "تم العثور على {n} أدلة",
+  "hub.resultsFor": "نتائج البحث عن «{q}» في جميع الفئات.",
+  "hub.noMatch": "لا توجد أدلة تطابق «{q}».",
+  "hub.untitledCategory": "(فئة بدون عنوان)",
+  "hub.untitledGuide": "(دليل بدون عنوان)",
+  "hub.noGuides": "لا توجد أدلة في هذه الفئة بعد.",
+  "hub.nothingYet": "لم يُكتب أي شيء هنا بعد.",
+  "hub.commentsOne": "تعليق واحد",
+  "hub.commentsMany": "{n} تعليقات",
+
+  "reader.breadcrumbGuide": "الدليل",
+  "reader.breadcrumbCategory": "الفئة",
+  "reader.backToGuide": "العودة إلى الدليل",
+  "reader.loadingComments": "جارٍ تحميل التعليقات…",
+
+  "heart.heart": "إعجاب",
+  "heart.hearted": "تم الإعجاب",
+  "heart.heartTitle": "أعجب بهذا الدليل",
+  "heart.unheartTitle": "إزالة إعجابك",
+
+  "cmt.title": "التعليقات",
+  "cmt.note": "كن لطيفاً والتزم بموضوع النقاش. يمكنك تعديل أو حذف تعليقاتك في أي وقت.",
+  "cmt.namePlaceholder": "اسمك (يظهر على تعليقاتك)",
+  "cmt.bodyPlaceholder": "أضف تعليقاً أو نصيحة أو سؤالاً…",
+  "cmt.post": "نشر التعليق",
+  "cmt.posting": "جارٍ النشر…",
+  "cmt.reply": "رد",
+  "cmt.save": "حفظ",
+  "cmt.cancel": "إلغاء",
+  "cmt.edit": "تعديل",
+  "cmt.delete": "حذف",
+  "cmt.deleted": "تم حذف هذا التعليق.",
+  "cmt.empty": "لا توجد تعليقات بعد — كن أول من يعلق.",
+  "cmt.edited": "تم التعديل",
+  "cmt.justNow": "الآن",
+  "cmt.minutes": "قبل {n} د",
+  "cmt.hours": "قبل {n} س",
+  "cmt.days": "قبل {n} ي",
+  "cmt.confirmDelete": "حذف هذا التعليق؟",
+  "cmt.confirmDeleteThread": "حذف هذا التعليق وجميع الردود عليه؟",
+};
+
+export default ar;

@@ -1,0 +1,68 @@
+import type { Dict } from "./en";
+
+const sv: Partial<Dict> = {
+  "nav.home": "Hem",
+  "nav.guide": "Guide",
+  "nav.rules": "Regler",
+  "nav.discord": "Discord",
+
+  "profile.title": "Språk och namn",
+  "profile.guest": "Gäst",
+
+  "onb.welcome": "Välkommen till Phoenix of War 973",
+  "onb.langTitle": "Välj ditt språk",
+  "onb.langHint": "Du kan ändra detta när som helst från den översta raden.",
+  "onb.continue": "Fortsätt",
+  "onb.nameTitle": "Vem är du?",
+  "onb.nameHint": "Detta namn visas på dina kommentarer och hjärtan. Det lagras endast i den här webbläsaren.",
+  "onb.namePlaceholder": "Ditt in-game-namn",
+  "onb.start": "Börja",
+  "onb.back": "Tillbaka",
+  "onb.skip": "Hoppa över",
+
+  "hub.categories": "Kategorier",
+  "hub.searchPlaceholder": "Sök i alla guider…",
+  "hub.resultsOne": "1 guide hittades",
+  "hub.resultsMany": "{n} guider hittades",
+  "hub.resultsFor": "Resultat för “{q}” i varje kategori.",
+  "hub.noMatch": "Inga guider matchar “{q}”.",
+  "hub.untitledCategory": "(namnlös kategori)",
+  "hub.untitledGuide": "(namnlös guide)",
+  "hub.noGuides": "Den här kategorin har inga guider ännu.",
+  "hub.nothingYet": "Inget har skrivits här ännu.",
+  "hub.commentsOne": "1 kommentar",
+  "hub.commentsMany": "{n} kommentarer",
+
+  "reader.breadcrumbGuide": "Guide",
+  "reader.breadcrumbCategory": "Kategori",
+  "reader.backToGuide": "Tillbaka till guiden",
+  "reader.loadingComments": "Läser in kommentarer…",
+
+  "heart.heart": "Hjärta",
+  "heart.hearted": "Hjärtad",
+  "heart.heartTitle": "Hjärta den här guiden",
+  "heart.unheartTitle": "Ta bort ditt hjärta",
+
+  "cmt.title": "Kommentarer",
+  "cmt.note": "Var snäll och håll dig till ämnet. Du kan när som helst redigera eller ta bort dina egna kommentarer.",
+  "cmt.namePlaceholder": "Ditt namn (visas på dina kommentarer)",
+  "cmt.bodyPlaceholder": "Lägg till en kommentar, ett tips eller en fråga…",
+  "cmt.post": "Publicera kommentar",
+  "cmt.posting": "Publicerar…",
+  "cmt.reply": "Svara",
+  "cmt.save": "Spara",
+  "cmt.cancel": "Avbryt",
+  "cmt.edit": "Redigera",
+  "cmt.delete": "Ta bort",
+  "cmt.deleted": "Den här kommentaren togs bort.",
+  "cmt.empty": "Inga kommentarer ännu — var den första.",
+  "cmt.edited": "redigerad",
+  "cmt.justNow": "just nu",
+  "cmt.minutes": "{n} min sedan",
+  "cmt.hours": "{n} tim sedan",
+  "cmt.days": "{n} dagar sedan",
+  "cmt.confirmDelete": "Ta bort den här kommentaren?",
+  "cmt.confirmDeleteThread": "Ta bort den här kommentaren och alla dess svar?",
+};
+
+export default sv;

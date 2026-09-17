@@ -1,0 +1,68 @@
+import type { Dict } from "./en";
+
+const pl: Partial<Dict> = {
+  "nav.home": "Strona główna",
+  "nav.guide": "Przewodnik",
+  "nav.rules": "Zasady",
+  "nav.discord": "Discord",
+
+  "profile.title": "Język i nazwa",
+  "profile.guest": "Gość",
+
+  "onb.welcome": "Witaj w Phoenix of War 973",
+  "onb.langTitle": "Wybierz język",
+  "onb.langHint": "Możesz go zmienić w dowolnym momencie z górnego paska.",
+  "onb.continue": "Kontynuuj",
+  "onb.nameTitle": "Kim jesteś?",
+  "onb.nameHint": "Ta nazwa pojawia się przy twoich komentarzach i polubieniach. Zapisywana jest tylko w tej przeglądarce.",
+  "onb.namePlaceholder": "Twoja nazwa w grze",
+  "onb.start": "Start",
+  "onb.back": "Wstecz",
+  "onb.skip": "Pomiń",
+
+  "hub.categories": "Kategorie",
+  "hub.searchPlaceholder": "Szukaj we wszystkich przewodnikach…",
+  "hub.resultsOne": "Znaleziono 1 przewodnik",
+  "hub.resultsMany": "Znaleziono {n} przewodników",
+  "hub.resultsFor": "Wyniki dla „{q}” we wszystkich kategoriach.",
+  "hub.noMatch": "Żaden przewodnik nie pasuje do „{q}”.",
+  "hub.untitledCategory": "(kategoria bez tytułu)",
+  "hub.untitledGuide": "(przewodnik bez tytułu)",
+  "hub.noGuides": "Ta kategoria nie ma jeszcze przewodników.",
+  "hub.nothingYet": "Nic tu jeszcze nie napisano.",
+  "hub.commentsOne": "1 komentarz",
+  "hub.commentsMany": "{n} komentarzy",
+
+  "reader.breadcrumbGuide": "Przewodnik",
+  "reader.breadcrumbCategory": "Kategoria",
+  "reader.backToGuide": "Powrót do poradnika",
+  "reader.loadingComments": "Ładowanie komentarzy…",
+
+  "heart.heart": "Polubienie",
+  "heart.hearted": "Polubione",
+  "heart.heartTitle": "Polub ten przewodnik",
+  "heart.unheartTitle": "Cofnij polubienie",
+
+  "cmt.title": "Komentarze",
+  "cmt.note": "Bądź miły i trzymaj się tematu. Swoje komentarze możesz w każdej chwili edytować lub usunąć.",
+  "cmt.namePlaceholder": "Twoje imię (widoczne przy komentarzach)",
+  "cmt.bodyPlaceholder": "Dodaj komentarz, wskazówkę lub pytanie…",
+  "cmt.post": "Opublikuj komentarz",
+  "cmt.posting": "Publikowanie…",
+  "cmt.reply": "Odpowiedz",
+  "cmt.save": "Zapisz",
+  "cmt.cancel": "Anuluj",
+  "cmt.edit": "Edytuj",
+  "cmt.delete": "Usuń",
+  "cmt.deleted": "Ten komentarz został usunięty.",
+  "cmt.empty": "Brak komentarzy — bądź pierwszy.",
+  "cmt.edited": "edytowano",
+  "cmt.justNow": "przed chwilą",
+  "cmt.minutes": "{n} min temu",
+  "cmt.hours": "{n} godz. temu",
+  "cmt.days": "{n} dni temu",
+  "cmt.confirmDelete": "Usunąć ten komentarz?",
+  "cmt.confirmDeleteThread": "Usunąć ten komentarz i wszystkie odpowiedzi?",
+};
+
+export default pl;

@@ -1,0 +1,68 @@
+import type { Dict } from "./en";
+
+const ja: Partial<Dict> = {
+  "nav.home": "ホーム",
+  "nav.guide": "ガイド",
+  "nav.rules": "ルール",
+  "nav.discord": "Discord",
+
+  "profile.title": "言語と名前",
+  "profile.guest": "ゲスト",
+
+  "onb.welcome": "Phoenix of War 973 へようこそ",
+  "onb.langTitle": "言語を選択",
+  "onb.langHint": "上部バーからいつでも変更できます。",
+  "onb.continue": "続ける",
+  "onb.nameTitle": "あなたは誰ですか？",
+  "onb.nameHint": "この名前はコメントやハートに表示されます。保存されるのはこのブラウザ内だけです。",
+  "onb.namePlaceholder": "ゲーム内の名前",
+  "onb.start": "開始",
+  "onb.back": "戻る",
+  "onb.skip": "スキップ",
+
+  "hub.categories": "カテゴリ",
+  "hub.searchPlaceholder": "すべてのガイドを検索…",
+  "hub.resultsOne": "1件のガイドが見つかりました",
+  "hub.resultsMany": "{n}件のガイドが見つかりました",
+  "hub.resultsFor": "「{q}」の全カテゴリでの検索結果。",
+  "hub.noMatch": "「{q}」に一致するガイドはありません。",
+  "hub.untitledCategory": "（無題のカテゴリ）",
+  "hub.untitledGuide": "（無題のガイド）",
+  "hub.noGuides": "このカテゴリにはまだガイドがありません。",
+  "hub.nothingYet": "まだ何も書かれていません。",
+  "hub.commentsOne": "1件のコメント",
+  "hub.commentsMany": "{n}件のコメント",
+
+  "reader.breadcrumbGuide": "ガイド",
+  "reader.breadcrumbCategory": "カテゴリ",
+  "reader.backToGuide": "ガイドに戻る",
+  "reader.loadingComments": "コメントを読み込んでいます…",
+
+  "heart.heart": "ハート",
+  "heart.hearted": "ハート済み",
+  "heart.heartTitle": "このガイドにハートを送る",
+  "heart.unheartTitle": "ハートを外す",
+
+  "cmt.title": "コメント",
+  "cmt.note": "親切に、話題からそれずに投稿してください。自分のコメントはいつでも編集・削除できます。",
+  "cmt.namePlaceholder": "お名前（コメントに表示されます）",
+  "cmt.bodyPlaceholder": "コメントやヒント、質問を追加…",
+  "cmt.post": "コメントを投稿",
+  "cmt.posting": "投稿しています…",
+  "cmt.reply": "返信",
+  "cmt.save": "保存",
+  "cmt.cancel": "キャンセル",
+  "cmt.edit": "編集",
+  "cmt.delete": "削除",
+  "cmt.deleted": "このコメントは削除されました。",
+  "cmt.empty": "まだコメントはありません — 最初に投稿しましょう。",
+  "cmt.edited": "編集済み",
+  "cmt.justNow": "たった今",
+  "cmt.minutes": "{n}分前",
+  "cmt.hours": "{n}時間前",
+  "cmt.days": "{n}日前",
+  "cmt.confirmDelete": "このコメントを削除しますか？",
+  "cmt.confirmDeleteThread": "このコメントとすべての返信を削除しますか？",
+};
+
+export default ja;

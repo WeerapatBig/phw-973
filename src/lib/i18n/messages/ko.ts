@@ -1,0 +1,68 @@
+import type { Dict } from "./en";
+
+const ko: Partial<Dict> = {
+  "nav.home": "홈",
+  "nav.guide": "가이드",
+  "nav.rules": "규칙",
+  "nav.discord": "Discord",
+
+  "profile.title": "언어 및 이름",
+  "profile.guest": "게스트",
+
+  "onb.welcome": "Phoenix of War 973에 오신 것을 환영합니다",
+  "onb.langTitle": "언어를 선택하세요",
+  "onb.langHint": "상단 바에서 언제든지 변경할 수 있습니다.",
+  "onb.continue": "계속",
+  "onb.nameTitle": "당신은 누구인가요?",
+  "onb.nameHint": "이 이름은 댓글과 하트에 표시됩니다. 이 브라우저에만 저장됩니다.",
+  "onb.namePlaceholder": "게임 내 닉네임",
+  "onb.start": "시작",
+  "onb.back": "뒤로",
+  "onb.skip": "건너뛰기",
+
+  "hub.categories": "카테고리",
+  "hub.searchPlaceholder": "모든 가이드 검색…",
+  "hub.resultsOne": "가이드 1개를 찾았습니다",
+  "hub.resultsMany": "가이드 {n}개를 찾았습니다",
+  "hub.resultsFor": "모든 카테고리에서 “{q}” 검색 결과입니다.",
+  "hub.noMatch": "“{q}”과(와) 일치하는 가이드가 없습니다.",
+  "hub.untitledCategory": "(제목 없는 카테고리)",
+  "hub.untitledGuide": "(제목 없는 가이드)",
+  "hub.noGuides": "이 카테고리에는 아직 가이드가 없습니다.",
+  "hub.nothingYet": "아직 여기에 작성된 내용이 없습니다.",
+  "hub.commentsOne": "댓글 1개",
+  "hub.commentsMany": "댓글 {n}개",
+
+  "reader.breadcrumbGuide": "가이드",
+  "reader.breadcrumbCategory": "카테고리",
+  "reader.backToGuide": "가이드로 돌아가기",
+  "reader.loadingComments": "댓글 불러오는 중…",
+
+  "heart.heart": "하트",
+  "heart.hearted": "하트를 눌렀습니다",
+  "heart.heartTitle": "이 가이드에 하트를 눌러보세요",
+  "heart.unheartTitle": "하트 제거",
+
+  "cmt.title": "댓글",
+  "cmt.note": "친절하게, 주제에 맞게 작성해 주세요. 언제든지 자신의 댓글을 수정하거나 삭제할 수 있습니다.",
+  "cmt.namePlaceholder": "이름 (댓글에 표시됨)",
+  "cmt.bodyPlaceholder": "댓글, 팁 또는 질문을 남겨보세요…",
+  "cmt.post": "댓글 게시",
+  "cmt.posting": "게시 중…",
+  "cmt.reply": "답글",
+  "cmt.save": "저장",
+  "cmt.cancel": "취소",
+  "cmt.edit": "수정",
+  "cmt.delete": "삭제",
+  "cmt.deleted": "이 댓글은 삭제되었습니다.",
+  "cmt.empty": "아직 댓글이 없습니다 — 첫 댓글을 남겨보세요.",
+  "cmt.edited": "수정됨",
+  "cmt.justNow": "방금 전",
+  "cmt.minutes": "{n}분 전",
+  "cmt.hours": "{n}시간 전",
+  "cmt.days": "{n}일 전",
+  "cmt.confirmDelete": "이 댓글을 삭제할까요?",
+  "cmt.confirmDeleteThread": "이 댓글과 모든 답글을 삭제할까요?",
+};
+
+export default ko;

@@ -1,0 +1,68 @@
+import type { Dict } from "./en";
+
+const de: Partial<Dict> = {
+  "nav.home": "Start",
+  "nav.guide": "Guide",
+  "nav.rules": "Regeln",
+  "nav.discord": "Discord",
+
+  "profile.title": "Sprache & Name",
+  "profile.guest": "Gast",
+
+  "onb.welcome": "Willkommen bei Phoenix of War 973",
+  "onb.langTitle": "Wähle deine Sprache",
+  "onb.langHint": "Du kannst sie jederzeit über die obere Leiste ändern.",
+  "onb.continue": "Weiter",
+  "onb.nameTitle": "Wer bist du?",
+  "onb.nameHint": "Dieser Name erscheint bei deinen Kommentaren und Herzen. Er wird nur in diesem Browser gespeichert.",
+  "onb.namePlaceholder": "Dein In-Game-Name",
+  "onb.start": "Start",
+  "onb.back": "Zurück",
+  "onb.skip": "Überspringen",
+
+  "hub.categories": "Kategorien",
+  "hub.searchPlaceholder": "Alle Guides durchsuchen…",
+  "hub.resultsOne": "1 Guide gefunden",
+  "hub.resultsMany": "{n} Guides gefunden",
+  "hub.resultsFor": "Ergebnisse für „{q}“ in allen Kategorien.",
+  "hub.noMatch": "Keine Guides entsprechen „{q}“.",
+  "hub.untitledCategory": "(unbenannte Kategorie)",
+  "hub.untitledGuide": "(unbenannter Guide)",
+  "hub.noGuides": "Diese Kategorie hat noch keine Guides.",
+  "hub.nothingYet": "Hier wurde noch nichts geschrieben.",
+  "hub.commentsOne": "1 Kommentar",
+  "hub.commentsMany": "{n} Kommentare",
+
+  "reader.breadcrumbGuide": "Guide",
+  "reader.breadcrumbCategory": "Kategorie",
+  "reader.backToGuide": "Zurück zum Leitfaden",
+  "reader.loadingComments": "Kommentare werden geladen…",
+
+  "heart.heart": "Herz",
+  "heart.hearted": "Herz vergeben",
+  "heart.heartTitle": "Diesem Guide ein Herz geben",
+  "heart.unheartTitle": "Dein Herz entfernen",
+
+  "cmt.title": "Kommentare",
+  "cmt.note": "Sei nett und bleib beim Thema. Du kannst deine eigenen Kommentare jederzeit bearbeiten oder löschen.",
+  "cmt.namePlaceholder": "Dein Name (wird bei deinen Kommentaren angezeigt)",
+  "cmt.bodyPlaceholder": "Kommentar, Tipp oder Frage hinzufügen…",
+  "cmt.post": "Kommentar veröffentlichen",
+  "cmt.posting": "Wird veröffentlicht…",
+  "cmt.reply": "Antworten",
+  "cmt.save": "Speichern",
+  "cmt.cancel": "Abbrechen",
+  "cmt.edit": "Bearbeiten",
+  "cmt.delete": "Löschen",
+  "cmt.deleted": "Dieser Kommentar wurde gelöscht.",
+  "cmt.empty": "Noch keine Kommentare — sei der Erste.",
+  "cmt.edited": "bearbeitet",
+  "cmt.justNow": "gerade eben",
+  "cmt.minutes": "vor {n} Min.",
+  "cmt.hours": "vor {n} Std.",
+  "cmt.days": "vor {n} Tagen",
+  "cmt.confirmDelete": "Diesen Kommentar löschen?",
+  "cmt.confirmDeleteThread": "Diesen Kommentar und alle Antworten darauf löschen?",
+};
+
+export default de;

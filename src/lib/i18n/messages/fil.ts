@@ -1,0 +1,68 @@
+import type { Dict } from "./en";
+
+const fil: Partial<Dict> = {
+  "nav.home": "Home",
+  "nav.guide": "Gabay",
+  "nav.rules": "Mga Tuntunin",
+  "nav.discord": "Discord",
+
+  "profile.title": "Wika at pangalan",
+  "profile.guest": "Bisita",
+
+  "onb.welcome": "Maligayang pagdating sa Phoenix of War 973",
+  "onb.langTitle": "Piliin ang iyong wika",
+  "onb.langHint": "Maaari mo itong palitan anumang oras mula sa bar sa itaas.",
+  "onb.continue": "Magpatuloy",
+  "onb.nameTitle": "Sino ka?",
+  "onb.nameHint": "Lalabas ang pangalang ito sa iyong mga komento at puso. Nakaimbak lamang ito sa browser na ito.",
+  "onb.namePlaceholder": "Ang iyong pangalan sa laro",
+  "onb.start": "Simulan",
+  "onb.back": "Bumalik",
+  "onb.skip": "Laktawan",
+
+  "hub.categories": "Mga Kategorya",
+  "hub.searchPlaceholder": "Maghanap sa lahat ng gabay…",
+  "hub.resultsOne": "1 gabay ang natagpuan",
+  "hub.resultsMany": "{n} gabay ang natagpuan",
+  "hub.resultsFor": "Mga resulta para sa “{q}” sa lahat ng kategorya.",
+  "hub.noMatch": "Walang gabay na tumutugma sa “{q}”.",
+  "hub.untitledCategory": "(kategoryang walang pamagat)",
+  "hub.untitledGuide": "(gabay na walang pamagat)",
+  "hub.noGuides": "Wala pang gabay ang kategoryang ito.",
+  "hub.nothingYet": "Wala pang naisusulat dito.",
+  "hub.commentsOne": "1 komento",
+  "hub.commentsMany": "{n} komento",
+
+  "reader.breadcrumbGuide": "Gabay",
+  "reader.breadcrumbCategory": "Kategorya",
+  "reader.backToGuide": "Bumalik sa Gabay",
+  "reader.loadingComments": "Naglo-load ng mga komento…",
+
+  "heart.heart": "Puso",
+  "heart.hearted": "Pinuso",
+  "heart.heartTitle": "Pusuin ang gabay na ito",
+  "heart.unheartTitle": "Alisin ang iyong puso",
+
+  "cmt.title": "Mga Komento",
+  "cmt.note": "Maging mabait at manatili sa paksa. Maaari mong i-edit o i-delete ang iyong sariling mga komento anumang oras.",
+  "cmt.namePlaceholder": "Ang iyong pangalan (ipapakita sa iyong mga komento)",
+  "cmt.bodyPlaceholder": "Magdagdag ng komento, tip o tanong…",
+  "cmt.post": "I-post ang komento",
+  "cmt.posting": "Ini-post…",
+  "cmt.reply": "Sumagot",
+  "cmt.save": "I-save",
+  "cmt.cancel": "Kanselahin",
+  "cmt.edit": "I-edit",
+  "cmt.delete": "I-delete",
+  "cmt.deleted": "Na-delete ang komentong ito.",
+  "cmt.empty": "Wala pang komento — ikaw ang mauna.",
+  "cmt.edited": "na-edit",
+  "cmt.justNow": "kakalipas lang",
+  "cmt.minutes": "{n}m ang nakalipas",
+  "cmt.hours": "{n}h ang nakalipas",
+  "cmt.days": "{n}d ang nakalipas",
+  "cmt.confirmDelete": "I-delete ang komentong ito?",
+  "cmt.confirmDeleteThread": "I-delete ang komentong ito at lahat ng mga sagot nito?",
+};
+
+export default fil;

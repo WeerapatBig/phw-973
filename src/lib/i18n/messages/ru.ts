@@ -1,0 +1,68 @@
+import type { Dict } from "./en";
+
+const ru: Partial<Dict> = {
+  "nav.home": "Главная",
+  "nav.guide": "Гайд",
+  "nav.rules": "Правила",
+  "nav.discord": "Discord",
+
+  "profile.title": "Язык и имя",
+  "profile.guest": "Гость",
+
+  "onb.welcome": "Добро пожаловать в Phoenix of War 973",
+  "onb.langTitle": "Выберите язык",
+  "onb.langHint": "Это можно изменить в любое время на верхней панели.",
+  "onb.continue": "Продолжить",
+  "onb.nameTitle": "Кто вы?",
+  "onb.nameHint": "Это имя отображается в ваших комментариях и лайках. Оно хранится только в этом браузере.",
+  "onb.namePlaceholder": "Ваше игровое имя",
+  "onb.start": "Начать",
+  "onb.back": "Назад",
+  "onb.skip": "Пропустить",
+
+  "hub.categories": "Категории",
+  "hub.searchPlaceholder": "Поиск по всем гайдам…",
+  "hub.resultsOne": "Найден 1 гайд",
+  "hub.resultsMany": "Найдено гайдов: {n}",
+  "hub.resultsFor": "Результаты по «{q}» во всех категориях.",
+  "hub.noMatch": "Нет гайдов, соответствующих «{q}».",
+  "hub.untitledCategory": "(категория без названия)",
+  "hub.untitledGuide": "(гайд без названия)",
+  "hub.noGuides": "В этой категории пока нет гайдов.",
+  "hub.nothingYet": "Здесь пока ничего не написано.",
+  "hub.commentsOne": "1 комментарий",
+  "hub.commentsMany": "Комментариев: {n}",
+
+  "reader.breadcrumbGuide": "Гайд",
+  "reader.breadcrumbCategory": "Категория",
+  "reader.backToGuide": "Назад к руководству",
+  "reader.loadingComments": "Загрузка комментариев…",
+
+  "heart.heart": "Нравится",
+  "heart.hearted": "Понравилось",
+  "heart.heartTitle": "Поставить лайк гайду",
+  "heart.unheartTitle": "Убрать лайк",
+
+  "cmt.title": "Комментарии",
+  "cmt.note": "Будьте вежливы и придерживайтесь темы. Вы можете редактировать или удалять свои комментарии в любое время.",
+  "cmt.namePlaceholder": "Ваше имя (видно в комментариях)",
+  "cmt.bodyPlaceholder": "Добавьте комментарий, совет или вопрос…",
+  "cmt.post": "Отправить комментарий",
+  "cmt.posting": "Отправка…",
+  "cmt.reply": "Ответить",
+  "cmt.save": "Сохранить",
+  "cmt.cancel": "Отмена",
+  "cmt.edit": "Изменить",
+  "cmt.delete": "Удалить",
+  "cmt.deleted": "Этот комментарий был удалён.",
+  "cmt.empty": "Комментариев пока нет — будьте первым.",
+  "cmt.edited": "изменено",
+  "cmt.justNow": "только что",
+  "cmt.minutes": "{n} мин назад",
+  "cmt.hours": "{n} ч назад",
+  "cmt.days": "{n} дн назад",
+  "cmt.confirmDelete": "Удалить этот комментарий?",
+  "cmt.confirmDeleteThread": "Удалить этот комментарий и все ответы на него?",
+};
+
+export default ru;

@@ -1,4 +1,32 @@
-node_modules/
-.vercel/
-.env
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# db / devtooling
+/coverage
+*.tsbuildinfo
+
+# misc
 .DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# env files — never commit SUPABASE_SERVICE_ROLE_KEY or ADMIN_PASSWORD
+.env
+.env*
+!.env.example
+
+# vercel
+.vercel
