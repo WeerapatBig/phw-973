@@ -7,7 +7,8 @@
   var pw = '';            // in memory only, for this tab, until sign-out
   var doc = null;         // the guide document being edited
   var sha = null;         // git sha of content/guide.json when we loaded it
-  var current = 0;        // index of the section being edited
+  var group = 0;          // index of the main topic being edited
+  var current = 0;        // index of the section inside it
   var dirty = false;
 
   var $ = function (id) { return document.getElementById(id); };
@@ -409,22 +410,82 @@
 
   /* ---------------- section + block panes ---------------- */
 
+  function curGroup() { return doc.groups[group]; }
+  function curSections() { return (curGroup() || {}).sections || []; }
+
   function drawSections() {
     var list = $('sec-list');
     list.innerHTML = '';
-    doc.sections.forEach(function (s, i) {
-      var b = el('button', 'adm-sec-btn' + (i === current ? ' on' : ''));
-      b.appendChild(el('span', null, s.title || '(untitled)'));
-      b.addEventListener('click', function () { current = i; drawSections(); drawPane(); });
-      list.appendChild(b);
+
+    doc.groups.forEach(function (g, gi) {
+      var head = el('button', 'adm-grp-btn' + (gi === group ? ' on' : ''));
+      head.appendChild(el('span', null, g.title || '(untitled topic)'));
+      head.addEventListener('click', function () {
+        group = gi; current = 0; drawSections(); drawPane();
+      });
+      list.appendChild(head);
+
+      if (gi !== group) return;
+
+      g.sections.forEach(function (s, i) {
+        var b = el('button', 'adm-sec-btn' + (i === current ? ' on' : ''));
+        b.appendChild(el('span', null, s.title || '(untitled)'));
+        b.addEventListener('click', function () { current = i; drawSections(); drawPane(); });
+        list.appendChild(b);
+      });
+
+      var add = el('button', 'adm-sec-btn adm-sec-add', '+ Add section here');
+      add.addEventListener('click', function () {
+        var title = prompt('Name of the new section:');
+        if (!title) return;
+        g.sections.push({ id: slug(title), nav: title, title: title, blocks: [] });
+        current = g.sections.length - 1;
+        markDirty(); drawSections(); drawPane();
+      });
+      list.appendChild(add);
     });
   }
 
   function drawPane() {
     var pane = $('pane');
     pane.innerHTML = '';
-    var s = doc.sections[current];
-    if (!s) { pane.appendChild(el('p', 'adm-empty', 'No section selected.')); return; }
+    var g = curGroup();
+    if (!g) { pane.appendChild(el('p', 'adm-empty', 'No topic selected.')); return; }
+
+    /* ---- the topic itself ---- */
+    var gbox = el('div', 'adm-block');
+    var grow = el('div', 'adm-block-head');
+    grow.appendChild(el('span', 'adm-kind', 'Main topic'));
+    [['▲', -1], ['▼', 1]].forEach(function (p) {
+      var btn = el('button', 'adm-icon', p[0]);
+      btn.disabled = (p[1] < 0 && group === 0) || (p[1] > 0 && group === doc.groups.length - 1);
+      btn.addEventListener('click', function () {
+        if (move(doc.groups, group, p[1])) { group += p[1]; markDirty(); drawSections(); drawPane(); }
+      });
+      grow.appendChild(btn);
+    });
+    var delGrp = el('button', 'adm-icon danger', '×');
+    delGrp.title = 'Delete this whole topic';
+    delGrp.addEventListener('click', function () {
+      if (doc.groups.length < 2) return alert('There has to be at least one topic.');
+      if (!confirm('Delete the topic "' + g.title + '" and all ' + g.sections.length + ' of its sections?')) return;
+      doc.groups.splice(group, 1);
+      group = Math.max(0, group - 1);
+      current = 0;
+      markDirty(); drawSections(); drawPane();
+    });
+    grow.appendChild(delGrp);
+    gbox.appendChild(grow);
+    gbox.appendChild(labelled('Topic name', input(g.title, function (v) { g.title = v; drawSections(); })));
+    gbox.appendChild(el('div', 'adm-label', 'Intro shown under the title'));
+    gbox.appendChild(richText(g.intro, function (v) { g.intro = v; }, 2));
+    pane.appendChild(gbox);
+
+    var s = curSections()[current];
+    if (!s) {
+      pane.appendChild(el('p', 'adm-empty', 'This topic has no sections yet — add one on the left.'));
+      return;
+    }
 
     // section header controls
     var head = el('div', 'adm-block');
@@ -432,9 +493,9 @@
     hrow.appendChild(el('span', 'adm-kind', 'Section'));
     [['▲', -1], ['▼', 1]].forEach(function (p) {
       var btn = el('button', 'adm-icon', p[0]);
-      btn.disabled = (p[1] < 0 && current === 0) || (p[1] > 0 && current === doc.sections.length - 1);
+      btn.disabled = (p[1] < 0 && current === 0) || (p[1] > 0 && current === curSections().length - 1);
       btn.addEventListener('click', function () {
-        if (move(doc.sections, current, p[1])) { current += p[1]; markDirty(); drawSections(); drawPane(); }
+        if (move(curSections(), current, p[1])) { current += p[1]; markDirty(); drawSections(); drawPane(); }
       });
       hrow.appendChild(btn);
     });
@@ -442,7 +503,7 @@
     delSec.title = 'Delete this whole section';
     delSec.addEventListener('click', function () {
       if (!confirm('Delete the section "' + s.title + '" and everything in it?')) return;
-      doc.sections.splice(current, 1);
+      curSections().splice(current, 1);
       current = Math.max(0, current - 1);
       markDirty(); drawSections(); drawPane();
     });
@@ -454,6 +515,22 @@
     })));
     head.appendChild(labelled('Menu label', input(s.nav, function (v) { s.nav = v; },
       'Shown in the Contents list')));
+
+    // move a section to another topic
+    if (doc.groups.length > 1) {
+      head.appendChild(labelled('Move to topic', select(
+        doc.groups.map(function (gg, gi) { return [String(gi), gg.title || '(untitled)']; }),
+        String(group),
+        function (v) {
+          var to = Number(v);
+          if (to === group) return;
+          var moved = curSections().splice(current, 1)[0];
+          doc.groups[to].sections.push(moved);
+          group = to;
+          current = doc.groups[to].sections.length - 1;
+          markDirty(); drawSections(); drawPane();
+        })));
+    }
     pane.appendChild(head);
 
     // blocks
@@ -498,8 +575,9 @@
 
   function load() {
     return api('/api/load', {}).then(function (r) {
-      doc = r.doc;
+      doc = PHW.normalize(r.doc);   // folds an older flat file into one topic
       sha = r.sha;
+      group = 0;
       current = 0;
       markClean('Loaded');
       drawSections();
@@ -511,7 +589,10 @@
     showErr('');
     $('btn-save').disabled = true;
     $('state').textContent = 'Saving…';
-    doc.sections.forEach(function (s) { if (!s.id) s.id = slug(s.title); });
+    doc.groups.forEach(function (g) {
+      if (!g.id) g.id = slug(g.title);
+      g.sections.forEach(function (s) { if (!s.id) s.id = slug(s.title); });
+    });
 
     api('/api/save', { doc: doc, sha: sha }).then(function (r) {
       sha = r.sha;
@@ -556,17 +637,18 @@
   });
 
   $('btn-add-sec').addEventListener('click', function () {
-    var title = prompt('Name of the new section:');
+    var title = prompt('Name of the new main topic (for example: Guide Season 4):');
     if (!title) return;
-    doc.sections.push({ id: slug(title), nav: title, title: title, blocks: [] });
-    current = doc.sections.length - 1;
+    doc.groups.push({ id: slug(title), title: title, intro: '', sections: [] });
+    group = doc.groups.length - 1;
+    current = 0;
     markDirty();
     drawSections();
     drawPane();
   });
 
   $('btn-preview').addEventListener('click', function () {
-    PHW.render(doc, { body: $('preview-body') });
+    PHW.renderGroup(curGroup(), $('preview-body'));
     $('preview-dlg').showModal();
   });
   $('preview-close').addEventListener('click', function () { $('preview-dlg').close(); });

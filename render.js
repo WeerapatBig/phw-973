@@ -96,29 +96,62 @@ window.PHW = (function () {
     return sec;
   }
 
-  function render(doc, targets) {
-    if (targets.eyebrow) targets.eyebrow.textContent = doc.page.eyebrow || '';
-    if (targets.title) targets.title.textContent = doc.page.title || '';
-    if (targets.intro) targets.intro.innerHTML = doc.page.intro || '';
-
-    if (targets.toc) {
-      targets.toc.innerHTML = '';
-      doc.sections.forEach(function (s) {
-        var a = el('a', null, s.nav || s.title);
-        a.href = '#' + s.id;
-        targets.toc.appendChild(a);
-      });
+  // Guide documents used to be a flat list of sections. Anything still in that
+  // shape is folded into one group so old files keep working untouched.
+  function normalize(doc) {
+    if (!doc.groups) {
+      doc.groups = [{
+        id: 'season-3',
+        title: 'Guide Season 3',
+        intro: (doc.page && doc.page.intro) || '',
+        sections: doc.sections || []
+      }];
     }
+    delete doc.sections;
+    if (doc.page) delete doc.page.intro;
+    doc.groups.forEach(function (g) { g.sections = g.sections || []; });
+    return doc;
+  }
 
-    targets.body.innerHTML = '';
-    doc.sections.forEach(function (s) { targets.body.appendChild(renderSection(s)); });
+  function groupOfSection(doc, sectionId) {
+    for (var i = 0; i < doc.groups.length; i++) {
+      var g = doc.groups[i];
+      if (g.id === sectionId) return i;
+      for (var j = 0; j < g.sections.length; j++) {
+        if (g.sections[j].id === sectionId) return i;
+      }
+    }
+    return -1;
+  }
 
-    // a #hash in the URL was useless before the content existed — honour it now
-    if (location.hash) {
-      var t = document.getElementById(location.hash.slice(1));
-      if (t) t.scrollIntoView();
+  // Renders one group's sections into `target`.
+  function renderGroup(group, target) {
+    target.innerHTML = '';
+    (group.sections || []).forEach(function (s) { target.appendChild(renderSection(s)); });
+    if (!group.sections || !group.sections.length) {
+      target.appendChild(el('p', 'wip', 'Nothing has been written here yet.'));
     }
   }
 
-  return { render: render, renderBlock: renderBlock, blockTypes: Object.keys(blockRenderers) };
+  // Which section are you reading? Given each section's top edge in viewport
+  // coordinates (document order), it is the last one that has passed under the
+  // sticky header. Kept pure so check.js can exercise it without a browser.
+  function pickCurrent(tops, offset) {
+    if (!tops.length) return null;
+    var cur = tops[0].id;
+    for (var i = 0; i < tops.length; i++) {
+      if (tops[i].top <= offset) cur = tops[i].id;
+    }
+    return cur;
+  }
+
+  return {
+    normalize: normalize,
+    pickCurrent: pickCurrent,
+    groupOfSection: groupOfSection,
+    renderGroup: renderGroup,
+    renderSection: renderSection,
+    renderBlock: renderBlock,
+    blockTypes: Object.keys(blockRenderers)
+  };
 })();

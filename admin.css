@@ -120,3 +120,19 @@ textarea.adm-field { min-height: 88px; resize: vertical; line-height: 1.6; }
   .adm-cols { grid-template-columns: 1fr; }
   .adm-side { position: static; }
 }
+
+/* main topics sit above their sections in the sidebar */
+.adm-grp-btn {
+  display: flex; width: 100%; text-align: left;
+  padding: 10px 12px; margin: 14px 0 6px; font: 600 14px var(--font-body);
+  background: transparent; color: var(--text);
+  border: 1px solid var(--line); border-radius: 6px; cursor: pointer;
+}
+.adm-grp-btn:first-child { margin-top: 0; }
+.adm-grp-btn:hover { border-color: var(--flame-dim); color: var(--flame); }
+.adm-grp-btn.on { color: var(--flame); border-color: var(--flame-dim); background: var(--bg-2); }
+.adm-grp-btn span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.adm-sec-btn { margin-left: 10px; width: calc(100% - 10px); }
+.adm-sec-add { color: var(--ash); font-style: italic; }
+.adm-sec-add:hover { color: var(--flame); }

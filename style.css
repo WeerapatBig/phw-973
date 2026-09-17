@@ -124,11 +124,6 @@ dl.facts dd { margin: 0; }
 
 .toc { position: sticky; top: 88px; font-size: 14px; }
 .toc p { color: var(--ash); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; margin: 0 0 10px; }
-.toc a {
-  display: block; padding: 6px 0; color: var(--muted);
-  text-decoration: none; border-left: 2px solid var(--line); padding-left: 12px;
-}
-.toc a:hover { color: var(--text); border-color: var(--flame); }
 
 .guide-body h2 { font-size: 26px; margin: 0 0 12px; scroll-margin-top: 90px; }
 .guide-body section { padding: 0 0 48px; border: 0; }
@@ -157,7 +152,6 @@ td { color: var(--muted); }
 @media (max-width: 720px) {
   .guide-layout { grid-template-columns: 1fr; gap: 28px; }
   .toc { position: static; }
-  .toc a { display: inline-block; border: 0; padding: 4px 10px 4px 0; }
   .hero { padding: 64px 0 52px; }
 }
 
@@ -289,4 +283,45 @@ dialog.lb::backdrop { background: rgba(0, 0, 0, 0.85); }
   font-family: var(--font-body); font-size: 15px; font-weight: 600;
   letter-spacing: 0.04em; color: var(--flame);
   margin: 26px 0 8px;
+}
+
+/* ---------- collapsible contents + scroll spy ---------- */
+
+.toc-group { margin-bottom: 6px; }
+
+.toc-group-head {
+  display: flex; align-items: center; gap: 8px; width: 100%; text-align: left;
+  padding: 8px 10px; cursor: pointer;
+  font: 600 13px/1.35 var(--font-body); letter-spacing: .02em;
+  color: var(--text); background: transparent;
+  border: 1px solid var(--line); border-radius: 6px;
+}
+.toc-group-head:hover { border-color: var(--flame-dim); color: var(--flame); }
+.toc-group.open > .toc-group-head { color: var(--flame); border-color: var(--flame-dim); background: var(--bg-2); }
+
+.toc-caret {
+  display: inline-block; font-size: 15px; line-height: 1;
+  transition: transform .18s ease; color: var(--ash);
+}
+.toc-group.open .toc-caret { transform: rotate(90deg); color: var(--flame); }
+
+.toc-links { display: none; margin: 4px 0 0 10px; }
+.toc-group.open .toc-links { display: block; }
+
+.toc-links a {
+  display: block; padding: 6px 0 6px 12px;
+  color: var(--muted); text-decoration: none; font-size: 14px;
+  border-left: 2px solid var(--line);
+}
+.toc-links a:hover { color: var(--text); border-color: var(--flame-dim); }
+.toc-links a[aria-current="true"] {
+  color: var(--flame); border-color: var(--flame); background: var(--bg-2);
+}
+
+/* the group heading also opens the page, so give the body room to breathe */
+#pg-intro[hidden] { display: none; }
+
+@media (max-width: 720px) {
+  .toc-links { margin-left: 4px; }
+  .toc-links a { display: block; }
 }

@@ -1,671 +1,677 @@
 {
   "page": {
     "eyebrow": "How to Play",
-    "title": "Season 3 Guide",
-    "intro": "Hello everyone — I hope you are all doing well. Below is the complete guide to Season 3 and everything you need to do."
+    "title": "Season 3 Guide"
   },
-  "sections": [
+  "groups": [
     {
-      "id": "features",
-      "nav": "1 · Features & Notes",
-      "title": "Season features & notes",
-      "blocks": [
+      "id": "season-3",
+      "title": "Guide Season 3",
+      "intro": "Hello everyone — I hope you are all doing well. Below is the complete guide to Season 3 and everything you need to do.",
+      "sections": [
         {
-          "type": "text",
-          "html": "This guide covers the following:"
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "<strong>Season features and notes</strong>",
-            "<strong>Season policies</strong>",
-            "<strong>Season skills</strong>",
-            "<strong>Season heroes</strong>"
-          ]
-        },
-        {
-          "type": "text",
-          "html": "Season 3 contains a complete story. Playing through it earns you prizes — and <strong>Nien</strong>."
-        }
-      ]
-    },
-    {
-      "id": "nien",
-      "nav": "2 · Nien",
-      "title": "Nien",
-      "blocks": [
-        {
-          "type": "text",
-          "html": "Nien is a new element, specific to Season 3 only. It is the element your <strong>season skills</strong> are developed with."
-        },
-        {
-          "type": "text",
-          "html": "<strong>Where to earn Nien:</strong>"
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "<strong>Shadow Fortresses</strong> — fortresses scattered across the Season 3 map, such as the Spire Tower. You need to take part in destroying one to win the prize.",
-            "<strong>Daily tasks</strong> — the Daily Tasks Chest."
-          ]
-        },
-        {
-          "type": "figures",
-          "layout": "grid",
-          "items": [
+          "id": "features",
+          "nav": "1 · Features & Notes",
+          "title": "Season features & notes",
+          "blocks": [
             {
-              "src": "img/s3/1-1.jpg",
-              "alt": "Shadow Fortress reward panel showing Nien, a key, wood, gems, gold and speed-ups",
-              "caption": "A Shadow Fortress and its reward list — Nien is the first item."
+              "type": "text",
+              "html": "This guide covers the following:"
             },
             {
-              "src": "img/s3/1-2.jpg",
-              "alt": "Spirit-Speaker policy: increases the amount of Nien gathered from Daily Quests and Chests",
-              "caption": "Spirit-Speaker — increases the Nien you gather from Daily Quests and Chests."
-            }
-          ]
-        },
-        {
-          "type": "figures",
-          "layout": "one",
-          "items": [
-            {
-              "src": "img/s3/1-3.png",
-              "alt": "Infographic: max Spirit-Speaker first — level 10 gives +100% Nien from Daily Quests and Chests",
-              "caption": "Max Spirit-Speaker first — at level 10 every Daily Quest and Chest pays double Nien for the rest of the season."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "map",
-      "nav": "3 · The Map",
-      "title": "The Season 3 map",
-      "blocks": [
-        {
-          "type": "text",
-          "html": "Season 3 has the <strong>largest map in the game</strong> — twice the size of the Season 2 map — containing <strong>19 regions</strong>. It is natural for it to take time to explore everything."
-        },
-        {
-          "type": "tip",
-          "warn": false,
-          "html": "<strong>Explore Zone 2 first.</strong> It is the zone closest to you, on your left and right. Start there before going wider."
-        },
-        {
-          "type": "figures",
-          "layout": "one",
-          "items": [
-            {
-              "src": "img/s3/2.jpg",
-              "alt": "Season 3 map layout with numbered regions 1 to 5",
-              "caption": "The Season 3 map and its numbered zones."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "exploring",
-      "nav": "4 · Exploring",
-      "title": "Exploring: caves & villages",
-      "blocks": [
-        {
-          "type": "tip",
-          "warn": false,
-          "html": "<strong>Season 3 is the last season with fog.</strong> From Season 4 onwards there is no fog to unravel — so make your exploration here count."
-        },
-        {
-          "type": "heading",
-          "text": "Caves",
-          "small": false
-        },
-        {
-          "type": "text",
-          "html": "When you explore any cave, you are given two options:"
-        },
-        {
-          "type": "choices",
-          "items": [
-            {
-              "label": "Option 1",
-              "html": "Play the card game. Don't. You will lose — and even when you win, you win nothing permanent.",
-              "good": false
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "<strong>Season features and notes</strong>",
+                "<strong>Season policies</strong>",
+                "<strong>Season skills</strong>",
+                "<strong>Season heroes</strong>"
+              ]
             },
             {
-              "label": "Option 2 ✓",
-              "html": "Leave the cave. This guarantees resources and speed-ups, consistently and with no loss. Always take this one.",
-              "good": true
+              "type": "text",
+              "html": "Season 3 contains a complete story. Playing through it earns you prizes — and <strong>Nien</strong>."
             }
           ]
         },
         {
-          "type": "heading",
-          "text": "Villages",
-          "small": false
-        },
-        {
-          "type": "text",
-          "html": "Exploring a village always gives you three options:"
-        },
-        {
-          "type": "choices",
-          "items": [
+          "id": "nien",
+          "nav": "2 · Nien",
+          "title": "Nien",
+          "blocks": [
             {
-              "label": "Option 1",
-              "html": "Gold, plus another gift.",
-              "good": false
+              "type": "text",
+              "html": "Nien is a new element, specific to Season 3 only. It is the element your <strong>season skills</strong> are developed with."
             },
             {
-              "label": "Option 2",
-              "html": "Speed-ups.",
-              "good": false
+              "type": "text",
+              "html": "<strong>Where to earn Nien:</strong>"
             },
             {
-              "label": "Option 3",
-              "html": "Something else.",
-              "good": false
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "<strong>Shadow Fortresses</strong> — fortresses scattered across the Season 3 map, such as the Spire Tower. You need to take part in destroying one to win the prize.",
+                "<strong>Daily tasks</strong> — the Daily Tasks Chest."
+              ]
+            },
+            {
+              "type": "figures",
+              "layout": "grid",
+              "items": [
+                {
+                  "src": "img/s3/1-1.jpg",
+                  "alt": "Shadow Fortress reward panel showing Nien, a key, wood, gems, gold and speed-ups",
+                  "caption": "A Shadow Fortress and its reward list — Nien is the first item."
+                },
+                {
+                  "src": "img/s3/1-2.jpg",
+                  "alt": "Spirit-Speaker policy: increases the amount of Nien gathered from Daily Quests and Chests",
+                  "caption": "Spirit-Speaker — increases the Nien you gather from Daily Quests and Chests."
+                }
+              ]
+            },
+            {
+              "type": "figures",
+              "layout": "one",
+              "items": [
+                {
+                  "src": "img/s3/1-3.png",
+                  "alt": "Infographic: max Spirit-Speaker first — level 10 gives +100% Nien from Daily Quests and Chests",
+                  "caption": "Max Spirit-Speaker first — at level 10 every Daily Quest and Chest pays double Nien for the rest of the season."
+                }
+              ]
             }
           ]
         },
         {
-          "type": "text",
-          "html": "Explore a few villages and pick the <em>same</em> option each time, to check whether the system has changed and the rewards are now random or not."
-        }
-      ]
-    },
-    {
-      "id": "policies",
-      "nav": "5 · Season Policies",
-      "title": "Season policies",
-      "blocks": [
-        {
-          "type": "text",
-          "html": "Season 3 policies have far more options than Season 2 — the tree is about <strong>three times larger</strong>. Five decisions in it matter more than the rest."
-        },
-        {
-          "type": "heading",
-          "text": "Note 1 — Elixir: take speed, never storage",
-          "small": false
-        },
-        {
-          "type": "text",
-          "html": "Wherever a policy makes you choose between <em>larger elixir storage</em> and <em>faster elixir production</em>, always take the production speed."
-        },
-        {
-          "type": "choices",
-          "items": [
+          "id": "map",
+          "nav": "3 · The Map",
+          "title": "The Season 3 map",
+          "blocks": [
             {
-              "label": "Capacity",
-              "html": "Raises your elixir storage limit (+10%). Skip it.",
-              "good": false
+              "type": "text",
+              "html": "Season 3 has the <strong>largest map in the game</strong> — twice the size of the Season 2 map — containing <strong>19 regions</strong>. It is natural for it to take time to explore everything."
             },
             {
-              "label": "Speed ✓",
-              "html": "Raises elixir production speed. Take this one.",
-              "good": true
+              "type": "tip",
+              "warn": false,
+              "html": "<strong>Explore Zone 2 first.</strong> It is the zone closest to you, on your left and right. Start there before going wider."
+            },
+            {
+              "type": "figures",
+              "layout": "one",
+              "items": [
+                {
+                  "src": "img/s3/2.jpg",
+                  "alt": "Season 3 map layout with numbered regions 1 to 5",
+                  "caption": "The Season 3 map and its numbered zones."
+                }
+              ]
             }
           ]
         },
         {
-          "type": "tip",
-          "warn": false,
-          "html": "Your daily elixir production reaches serious numbers — enough to heal <strong>500K to 1M soldiers in one day</strong> — and your storage refills every <strong>10 hours instead of 24</strong>."
-        },
-        {
-          "type": "figures",
-          "layout": "grid",
-          "items": [
+          "id": "exploring",
+          "nav": "4 · Exploring",
+          "title": "Exploring: caves & villages",
+          "blocks": [
             {
-              "src": "img/s3/3-1.jpg",
-              "alt": "Policy choice: elixir capacity on the left, elixir production speed circled on the right",
-              "caption": "The choice — production speed (circled) over capacity."
+              "type": "tip",
+              "warn": false,
+              "html": "<strong>Season 3 is the last season with fog.</strong> From Season 4 onwards there is no fog to unravel — so make your exploration here count."
             },
             {
-              "src": "img/s3/3-2.jpg",
-              "alt": "Healing hut showing 967,317 elixir produced per day and a 10 hour refill timer",
-              "caption": "The result — 967K elixir a day, refilling on a 10-hour timer."
+              "type": "heading",
+              "text": "Caves",
+              "small": false
+            },
+            {
+              "type": "text",
+              "html": "When you explore any cave, you are given two options:"
+            },
+            {
+              "type": "choices",
+              "items": [
+                {
+                  "label": "Option 1",
+                  "html": "Play the card game. Don't. You will lose — and even when you win, you win nothing permanent.",
+                  "good": false
+                },
+                {
+                  "label": "Option 2 ✓",
+                  "html": "Leave the cave. This guarantees resources and speed-ups, consistently and with no loss. Always take this one.",
+                  "good": true
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "text": "Villages",
+              "small": false
+            },
+            {
+              "type": "text",
+              "html": "Exploring a village always gives you three options:"
+            },
+            {
+              "type": "choices",
+              "items": [
+                {
+                  "label": "Option 1",
+                  "html": "Gold, plus another gift.",
+                  "good": false
+                },
+                {
+                  "label": "Option 2",
+                  "html": "Speed-ups.",
+                  "good": false
+                },
+                {
+                  "label": "Option 3",
+                  "html": "Something else.",
+                  "good": false
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "html": "Explore a few villages and pick the <em>same</em> option each time, to check whether the system has changed and the rewards are now random or not."
             }
           ]
         },
         {
-          "type": "heading",
-          "text": "Note 2 — Daily resources: scale with your army",
-          "small": false
-        },
-        {
-          "type": "text",
-          "html": "Wherever a policy makes you choose between daily resources accumulating at a <em>fixed rate</em> and accumulating <em>based on the size of your army</em>, always take the army-size option."
-        },
-        {
-          "type": "choices",
-          "items": [
+          "id": "policies",
+          "nav": "5 · Season Policies",
+          "title": "Season policies",
+          "blocks": [
             {
-              "label": "Fixed rate",
-              "html": "Adds storage days at a set amount. Skip it.",
-              "good": false
+              "type": "text",
+              "html": "Season 3 policies have far more options than Season 2 — the tree is about <strong>three times larger</strong>. Five decisions in it matter more than the rest."
             },
             {
-              "label": "By army size ✓",
-              "html": "Daily resource healing scales with your total army. Take this one.",
-              "good": true
+              "type": "heading",
+              "text": "Note 1 — Elixir: take speed, never storage",
+              "small": false
+            },
+            {
+              "type": "text",
+              "html": "Wherever a policy makes you choose between <em>larger elixir storage</em> and <em>faster elixir production</em>, always take the production speed."
+            },
+            {
+              "type": "choices",
+              "items": [
+                {
+                  "label": "Capacity",
+                  "html": "Raises your elixir storage limit (+10%). Skip it.",
+                  "good": false
+                },
+                {
+                  "label": "Speed ✓",
+                  "html": "Raises elixir production speed. Take this one.",
+                  "good": true
+                }
+              ]
+            },
+            {
+              "type": "tip",
+              "warn": false,
+              "html": "Your daily elixir production reaches serious numbers — enough to heal <strong>500K to 1M soldiers in one day</strong> — and your storage refills every <strong>10 hours instead of 24</strong>."
+            },
+            {
+              "type": "figures",
+              "layout": "grid",
+              "items": [
+                {
+                  "src": "img/s3/3-1.jpg",
+                  "alt": "Policy choice: elixir capacity on the left, elixir production speed circled on the right",
+                  "caption": "The choice — production speed (circled) over capacity."
+                },
+                {
+                  "src": "img/s3/3-2.jpg",
+                  "alt": "Healing hut showing 967,317 elixir produced per day and a 10 hour refill timer",
+                  "caption": "The result — 967K elixir a day, refilling on a 10-hour timer."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "text": "Note 2 — Daily resources: scale with your army",
+              "small": false
+            },
+            {
+              "type": "text",
+              "html": "Wherever a policy makes you choose between daily resources accumulating at a <em>fixed rate</em> and accumulating <em>based on the size of your army</em>, always take the army-size option."
+            },
+            {
+              "type": "choices",
+              "items": [
+                {
+                  "label": "Fixed rate",
+                  "html": "Adds storage days at a set amount. Skip it.",
+                  "good": false
+                },
+                {
+                  "label": "By army size ✓",
+                  "html": "Daily resource healing scales with your total army. Take this one.",
+                  "good": true
+                }
+              ]
+            },
+            {
+              "type": "tip",
+              "warn": false,
+              "html": "This lets you heal <strong>5M to 10M soldiers with resources in a single day</strong>."
+            },
+            {
+              "type": "figures",
+              "layout": "grid",
+              "items": [
+                {
+                  "src": "img/s3/3-3.jpg",
+                  "alt": "Policy choice: fixed storage days on the left, daily healing scaled by army size circled on the right",
+                  "caption": "The choice — scaling with army size (circled)."
+                },
+                {
+                  "src": "img/s3/3-4.jpg",
+                  "alt": "Healing hut showing 9,294,395 daily resource healing remaining",
+                  "caption": "The result — over 9.2M daily healing with resources."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "text": "Note 3 — Energy recovery, not a bigger warehouse",
+              "small": false
+            },
+            {
+              "type": "text",
+              "html": "Take the <strong>energy recovery</strong> policy on the Way of Hsi-Ho branch (season skills). Do not take the one that makes your warehouse bigger."
+            },
+            {
+              "type": "tip",
+              "warn": false,
+              "html": "Recovering energy lets you <strong>activate season skills faster</strong> — and that is what matters."
+            },
+            {
+              "type": "figures",
+              "layout": "one",
+              "items": [
+                {
+                  "src": "img/s3/4.jpg",
+                  "alt": "Spiritual Surge policy: increases energy recovery speed for Way of Hsi-Ho",
+                  "caption": "The energy recovery policy — +5% energy recovery speed per level."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "text": "Note 4 — Cut the right skill’s cooldown",
+              "small": false
+            },
+            {
+              "type": "text",
+              "html": "You will find a policy that lets you reduce the activation time of one season skill. Take the <strong>last option — Plotter / Plutomancer Speed (Eternal Treasure)</strong>."
+            },
+            {
+              "type": "tip",
+              "warn": false,
+              "html": "This one is very important: it lets you use the <strong>elixir storehouse</strong> season skill much sooner. The wait drops from <strong>8 hours to 4</strong>."
+            },
+            {
+              "type": "figures",
+              "layout": "one",
+              "items": [
+                {
+                  "src": "img/s3/5.jpg",
+                  "alt": "Plutomancer Speed policy reducing the Eternal Treasure skill cooldown from 8 hours to 4",
+                  "caption": "Plutomancer Speed — the bottom option, cutting Eternal Treasure’s wait to 4 hours."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "text": "Note 5 — The three books",
+              "small": false
+            },
+            {
+              "type": "text",
+              "html": "In the middle of the policies section you get to pick <strong>one book out of three</strong>. Skip the first one; which of the other two you take depends on how you play."
+            },
+            {
+              "type": "choices",
+              "items": [
+                {
+                  "label": "Book 1 ✗",
+                  "html": "<strong>Benevolence</strong> (brown) — forget about this one.",
+                  "good": false
+                },
+                {
+                  "label": "Book 2",
+                  "html": "<strong>Comfort</strong> (blue, middle) — take this if you <em>balance</em> resource spending and elixir use.",
+                  "good": true
+                },
+                {
+                  "label": "Book 3",
+                  "html": "<strong>Diligence</strong> (gold, right) — take this if you spend <em>a lot</em> of resources.",
+                  "good": true
+                }
+              ]
+            },
+            {
+              "type": "figures",
+              "layout": "narrow",
+              "items": [
+                {
+                  "src": "img/s3/6-1.jpg",
+                  "alt": "The three book policies in the tree with the first one crossed out",
+                  "caption": "Where they sit in the tree — the first one is crossed out."
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "html": "Side by side, so you can compare what each one actually gives you:"
+            },
+            {
+              "type": "figures",
+              "layout": "full",
+              "items": [
+                {
+                  "src": "img/s3/6-2.jpg",
+                  "alt": "Comparison of the three books with the blue middle book circled",
+                  "caption": "<strong style=\"color:var(--flame)\">Book 2 — Comfort (blue, middle).</strong> +1M daily resource healing, +20K elixir/day, +100% elixir capacity, −10% resource healing cost."
+                },
+                {
+                  "src": "img/s3/6-3.jpg",
+                  "alt": "Comparison of the three books with the gold right-hand book circled",
+                  "caption": "<strong style=\"color:var(--flame)\">Book 3 — Diligence (gold, right).</strong> +5M daily resource healing, −20% resource healing cost, +50% endurance cap."
+                }
+              ]
             }
           ]
         },
         {
-          "type": "tip",
-          "warn": false,
-          "html": "This lets you heal <strong>5M to 10M soldiers with resources in a single day</strong>."
-        },
-        {
-          "type": "figures",
-          "layout": "grid",
-          "items": [
+          "id": "skills",
+          "nav": "6 · Season Skills",
+          "title": "Season skills — Way of Hsi-Ho",
+          "blocks": [
             {
-              "src": "img/s3/3-3.jpg",
-              "alt": "Policy choice: fixed storage days on the left, daily healing scaled by army size circled on the right",
-              "caption": "The choice — scaling with army size (circled)."
+              "type": "text",
+              "html": "On the Season 3 screen, down the right-hand side, you will find a section called <strong>Way of Hsi-Ho</strong>."
             },
             {
-              "src": "img/s3/3-4.jpg",
-              "alt": "Healing hut showing 9,294,395 daily resource healing remaining",
-              "caption": "The result — over 9.2M daily healing with resources."
+              "type": "tip",
+              "warn": false,
+              "html": "<strong>To unlock it</strong>, you must first play through part of the season’s story content. And note that <strong>skill names change with your game language</strong> — the names below are the English ones."
+            },
+            {
+              "type": "figures",
+              "layout": "one",
+              "items": [
+                {
+                  "src": "img/s3/7-1.jpg",
+                  "alt": "Season screen with the Way of Hsi-Ho entry at the bottom of the right-hand menu",
+                  "caption": "Season screen — Way of Hsi-Ho is the last entry on the right."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "text": "The six skills",
+              "small": false
+            },
+            {
+              "type": "text",
+              "html": "Opening the section shows <strong>six skills</strong>. Who takes which one:"
+            },
+            {
+              "type": "table",
+              "head": [
+                "Skill",
+                "Take it on",
+                "Why"
+              ],
+              "rows": [
+                [
+                  "<span class=\"dot dot-red\"></span><strong style=\"color:var(--text)\">Rays of Remedy</strong>",
+                  "Main account",
+                  "Battlefield healing"
+                ],
+                [
+                  "<span class=\"dot dot-red\"></span><strong style=\"color:var(--text)\">Timeless Treasury</strong>",
+                  "Main account",
+                  "The weekly elixir shop"
+                ],
+                [
+                  "<span class=\"dot dot-red\"></span><strong style=\"color:var(--text)\">Temporal Trap</strong>",
+                  "Main account",
+                  "Freezes nearby enemy legions"
+                ],
+                [
+                  "<span class=\"dot dot-yellow\"></span><strong style=\"color:var(--text)\">Fighting Phantasm</strong>",
+                  "Farm",
+                  "The Ghost skill — see Note 1"
+                ],
+                [
+                  "<span class=\"dot dot-yellow\"></span><strong style=\"color:var(--text)\">Seasonal Shift</strong>",
+                  "Farm",
+                  "Refills city resource buildings"
+                ],
+                [
+                  "<span class=\"dot dot-green\"></span><strong style=\"color:var(--text)\">Dimensional Duel</strong>",
+                  "Archer &amp; Magic only",
+                  "Gives back part of the troops’ healing through the cooling skill"
+                ]
+              ]
+            },
+            {
+              "type": "figures",
+              "layout": "one",
+              "items": [
+                {
+                  "src": "img/s3/7-2.jpg",
+                  "alt": "Way of Hsi-Ho screen with the six season skills circled in red, yellow and green",
+                  "caption": "<span class=\"dot dot-red\"></span>red = main account &nbsp; <span class=\"dot dot-yellow\"></span>yellow = farm &nbsp; <span class=\"dot dot-green\"></span>green = Archer &amp; Magic troops only"
+                }
+              ]
+            },
+            {
+              "type": "tip",
+              "warn": false,
+              "html": "The six come as <strong>three either/or pairs</strong> — each skill’s own panel says you must choose between it and its partner. That is exactly why one of each pair goes on your main and the other on your farm: Rays of Remedy&nbsp;/&nbsp;Fighting Phantasm, Timeless Treasury&nbsp;/&nbsp;Seasonal Shift, Temporal Trap&nbsp;/&nbsp;Dimensional Duel."
+            },
+            {
+              "type": "heading",
+              "text": "Attributes — 8 per skill, pick 3",
+              "small": false
+            },
+            {
+              "type": "text",
+              "html": "Every skill has <strong>8 attributes</strong>, and you get to choose <strong>3</strong> of them."
+            },
+            {
+              "type": "heading",
+              "text": "Note 1 — Get the Ghost skill on your farm",
+              "small": true
+            },
+            {
+              "type": "text",
+              "html": "You need <strong>Fighting Phantasm</strong> on your farm so you can summon the Ghost there, then kill it from your main account and earn merit."
+            },
+            {
+              "type": "heading",
+              "text": "Note 2 — The most important one",
+              "small": true
+            },
+            {
+              "type": "tip",
+              "warn": false,
+              "html": "<strong>Timeless Treasury can only be activated once a week.</strong> Stockpile plenty of merit first, then open the shop and buy a lot of elixir."
+            },
+            {
+              "type": "heading",
+              "text": "Note 3 — Rays of Remedy depends on your T4",
+              "small": true
+            },
+            {
+              "type": "choices",
+              "items": [
+                {
+                  "label": "<span class=\"dot dot-black\"></span>Black",
+                  "html": "",
+                  "good": false
+                },
+                {
+                  "label": "<span class=\"dot dot-red\"></span>Red",
+                  "html": "",
+                  "good": true
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "text": "Note 4 — Yellow means farm",
+              "small": true
+            },
+            {
+              "type": "text",
+              "html": "<span class=\"dot dot-yellow\"></span>Yellow-circled attributes are the ones to take <strong>on the farm only</strong>."
+            },
+            {
+              "type": "heading",
+              "text": "The six wheels",
+              "small": false
+            },
+            {
+              "type": "text",
+              "html": "The recommended 3 attributes are circled on each one:"
+            },
+            {
+              "type": "figures",
+              "layout": "full",
+              "items": [
+                {
+                  "src": "img/s3/7-8.jpg",
+                  "alt": "Rays of Remedy attribute wheel with black and red circled attributes",
+                  "caption": "<strong style=\"color:var(--flame)\">Rays of Remedy</strong> — main account. Black circles if you have plenty of T4, red circles if you don’t. 3h cooldown, 30 energy."
+                },
+                {
+                  "src": "img/s3/7-3.jpg",
+                  "alt": "Timeless Treasury attribute wheel with three attributes circled in red",
+                  "caption": "<strong style=\"color:var(--flame)\">Timeless Treasury</strong> — main account. The secret shop stays open 24h; cooldown 6d 16h, 5 energy. This is the weekly one."
+                },
+                {
+                  "src": "img/s3/7-5.jpg",
+                  "alt": "Temporal Trap attribute wheel with three attributes circled in red",
+                  "caption": "<strong style=\"color:var(--flame)\">Temporal Trap</strong> — main account. Freezes up to 5 nearby legions for 10 seconds; 60min cooldown, 10 energy."
+                },
+                {
+                  "src": "img/s3/7-6.jpg",
+                  "alt": "Dimensional Duel attribute wheel with three attributes circled in red",
+                  "caption": "<strong style=\"color:var(--flame)\">Dimensional Duel</strong> — Archer &amp; Magic only. 60min cooldown, 10 energy."
+                },
+                {
+                  "src": "img/s3/7-7.jpg",
+                  "alt": "Fighting Phantasm attribute wheel with three attributes circled in yellow",
+                  "caption": "<strong style=\"color:var(--flame)\">Fighting Phantasm</strong> — farm. Summons the Ghost legion for 60 minutes; 3h cooldown, 30 energy."
+                },
+                {
+                  "src": "img/s3/7-4.jpg",
+                  "alt": "Seasonal Shift attribute wheel with three attributes circled in yellow",
+                  "caption": "<strong style=\"color:var(--flame)\">Seasonal Shift</strong> — farm. Refills every resource building in your city to max; resets 00:00 UTC, 5 energy."
+                }
+              ]
             }
           ]
         },
         {
-          "type": "heading",
-          "text": "Note 3 — Energy recovery, not a bigger warehouse",
-          "small": false
-        },
-        {
-          "type": "text",
-          "html": "Take the <strong>energy recovery</strong> policy on the Way of Hsi-Ho branch (season skills). Do not take the one that makes your warehouse bigger."
-        },
-        {
-          "type": "tip",
-          "warn": false,
-          "html": "Recovering energy lets you <strong>activate season skills faster</strong> — and that is what matters."
-        },
-        {
-          "type": "figures",
-          "layout": "one",
-          "items": [
+          "id": "heroes",
+          "nav": "7 · Season Heroes",
+          "title": "Season heroes",
+          "blocks": [
             {
-              "src": "img/s3/4.jpg",
-              "alt": "Spiritual Surge policy: increases energy recovery speed for Way of Hsi-Ho",
-              "caption": "The energy recovery policy — +5% energy recovery speed per level."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Note 4 — Cut the right skill’s cooldown",
-          "small": false
-        },
-        {
-          "type": "text",
-          "html": "You will find a policy that lets you reduce the activation time of one season skill. Take the <strong>last option — Plotter / Plutomancer Speed (Eternal Treasure)</strong>."
-        },
-        {
-          "type": "tip",
-          "warn": false,
-          "html": "This one is very important: it lets you use the <strong>elixir storehouse</strong> season skill much sooner. The wait drops from <strong>8 hours to 4</strong>."
-        },
-        {
-          "type": "figures",
-          "layout": "one",
-          "items": [
-            {
-              "src": "img/s3/5.jpg",
-              "alt": "Plutomancer Speed policy reducing the Eternal Treasure skill cooldown from 8 hours to 4",
-              "caption": "Plutomancer Speed — the bottom option, cutting Eternal Treasure’s wait to 4 hours."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Note 5 — The three books",
-          "small": false
-        },
-        {
-          "type": "text",
-          "html": "In the middle of the policies section you get to pick <strong>one book out of three</strong>. Skip the first one; which of the other two you take depends on how you play."
-        },
-        {
-          "type": "choices",
-          "items": [
-            {
-              "label": "Book 1 ✗",
-              "html": "<strong>Benevolence</strong> (brown) — forget about this one.",
-              "good": false
+              "type": "text",
+              "html": "Season 3 releases a lot of heroes, but <strong>three of them matter most</strong>."
             },
             {
-              "label": "Book 2",
-              "html": "<strong>Comfort</strong> (blue, middle) — take this if you <em>balance</em> resource spending and elixir use.",
-              "good": true
+              "type": "heading",
+              "text": "1 · Musihang",
+              "small": false
             },
             {
-              "label": "Book 3",
-              "html": "<strong>Diligence</strong> (gold, right) — take this if you spend <em>a lot</em> of resources.",
-              "good": true
+              "type": "text",
+              "html": "A <strong>free hero</strong>, handed to you at the start of the season along with plenty of cards to take her all the way to max level."
+            },
+            {
+              "type": "heading",
+              "text": "Note 1 — Survivability",
+              "small": true
+            },
+            {
+              "type": "text",
+              "html": "<strong>Musihang and Thea are the best magic heroes for survival</strong> — they can stay alive for an hour before dying, depending on the situation and how much counter-damage you are taking."
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "<strong>Talent tree</strong> — available in the <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\">Discord talent-tree archive</a>.",
+                "<strong>Pet</strong> — use the sand lizard with the shield skill."
+              ]
+            },
+            {
+              "type": "heading",
+              "text": "Note 2 — Do not evolve her too early",
+              "small": true
+            },
+            {
+              "type": "text",
+              "html": "The free cards let you push Musihang to max level fast. But the Epic → Legendary upgrade (the $1 one) is a trap if you take it at the wrong time."
+            },
+            {
+              "type": "tip",
+              "warn": true,
+              "html": "<strong>Don’t upgrade Musihang from Epic to Legendary until she is already close to max.</strong> When she evolves from epic to legendary, <strong>her skills revert to 1000</strong> — you lose the progress you paid for."
+            },
+            {
+              "type": "figures",
+              "layout": "full",
+              "items": [
+                {
+                  "src": "img/s3/8-2.jpg",
+                  "alt": "Musihang's talent tree screen",
+                  "caption": "Musihang’s talent tree — the full build is in the Discord talent-tree archive."
+                },
+                {
+                  "src": "img/s3/8-1.jpg",
+                  "alt": "The screen offering to upgrade Musihang to a legendary hero, warning that her training will be reset",
+                  "caption": "The Epic → Legendary screen. Note the line underneath — it warns you that legendary Musihang’s training gets reset."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "text": "2 · The tanks — Gurish & Skogol",
+              "small": false
+            },
+            {
+              "type": "text",
+              "html": "These two are <strong>jokers</strong>: they will keep working for you for many seasons to come, so develop them properly rather than treating them as a season rental."
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "<strong>Talent trees</strong> — also in the <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\">Discord talent-tree archive</a>."
+              ]
+            },
+            {
+              "type": "tip",
+              "warn": false,
+              "html": "Talent trees for all of these live in the alliance Discord — <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\"><strong>open the talent-tree archive</strong></a>. You need to be a member of the server for the link to open."
             }
           ]
-        },
-        {
-          "type": "figures",
-          "layout": "narrow",
-          "items": [
-            {
-              "src": "img/s3/6-1.jpg",
-              "alt": "The three book policies in the tree with the first one crossed out",
-              "caption": "Where they sit in the tree — the first one is crossed out."
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "html": "Side by side, so you can compare what each one actually gives you:"
-        },
-        {
-          "type": "figures",
-          "layout": "full",
-          "items": [
-            {
-              "src": "img/s3/6-2.jpg",
-              "alt": "Comparison of the three books with the blue middle book circled",
-              "caption": "<strong style=\"color:var(--flame)\">Book 2 — Comfort (blue, middle).</strong> +1M daily resource healing, +20K elixir/day, +100% elixir capacity, −10% resource healing cost."
-            },
-            {
-              "src": "img/s3/6-3.jpg",
-              "alt": "Comparison of the three books with the gold right-hand book circled",
-              "caption": "<strong style=\"color:var(--flame)\">Book 3 — Diligence (gold, right).</strong> +5M daily resource healing, −20% resource healing cost, +50% endurance cap."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "skills",
-      "nav": "6 · Season Skills",
-      "title": "Season skills — Way of Hsi-Ho",
-      "blocks": [
-        {
-          "type": "text",
-          "html": "On the Season 3 screen, down the right-hand side, you will find a section called <strong>Way of Hsi-Ho</strong>."
-        },
-        {
-          "type": "tip",
-          "warn": false,
-          "html": "<strong>To unlock it</strong>, you must first play through part of the season’s story content. And note that <strong>skill names change with your game language</strong> — the names below are the English ones."
-        },
-        {
-          "type": "figures",
-          "layout": "one",
-          "items": [
-            {
-              "src": "img/s3/7-1.jpg",
-              "alt": "Season screen with the Way of Hsi-Ho entry at the bottom of the right-hand menu",
-              "caption": "Season screen — Way of Hsi-Ho is the last entry on the right."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "The six skills",
-          "small": false
-        },
-        {
-          "type": "text",
-          "html": "Opening the section shows <strong>six skills</strong>. Who takes which one:"
-        },
-        {
-          "type": "table",
-          "head": [
-            "Skill",
-            "Take it on",
-            "Why"
-          ],
-          "rows": [
-            [
-              "<span class=\"dot dot-red\"></span><strong style=\"color:var(--text)\">Rays of Remedy</strong>",
-              "Main account",
-              "Battlefield healing"
-            ],
-            [
-              "<span class=\"dot dot-red\"></span><strong style=\"color:var(--text)\">Timeless Treasury</strong>",
-              "Main account",
-              "The weekly elixir shop"
-            ],
-            [
-              "<span class=\"dot dot-red\"></span><strong style=\"color:var(--text)\">Temporal Trap</strong>",
-              "Main account",
-              "Freezes nearby enemy legions"
-            ],
-            [
-              "<span class=\"dot dot-yellow\"></span><strong style=\"color:var(--text)\">Fighting Phantasm</strong>",
-              "Farm",
-              "The Ghost skill — see Note 1"
-            ],
-            [
-              "<span class=\"dot dot-yellow\"></span><strong style=\"color:var(--text)\">Seasonal Shift</strong>",
-              "Farm",
-              "Refills city resource buildings"
-            ],
-            [
-              "<span class=\"dot dot-green\"></span><strong style=\"color:var(--text)\">Dimensional Duel</strong>",
-              "Archer &amp; Magic only",
-              "Gives back part of the troops’ healing through the cooling skill"
-            ]
-          ]
-        },
-        {
-          "type": "figures",
-          "layout": "one",
-          "items": [
-            {
-              "src": "img/s3/7-2.jpg",
-              "alt": "Way of Hsi-Ho screen with the six season skills circled in red, yellow and green",
-              "caption": "<span class=\"dot dot-red\"></span>red = main account &nbsp; <span class=\"dot dot-yellow\"></span>yellow = farm &nbsp; <span class=\"dot dot-green\"></span>green = Archer &amp; Magic troops only"
-            }
-          ]
-        },
-        {
-          "type": "tip",
-          "warn": false,
-          "html": "The six come as <strong>three either/or pairs</strong> — each skill’s own panel says you must choose between it and its partner. That is exactly why one of each pair goes on your main and the other on your farm: Rays of Remedy&nbsp;/&nbsp;Fighting Phantasm, Timeless Treasury&nbsp;/&nbsp;Seasonal Shift, Temporal Trap&nbsp;/&nbsp;Dimensional Duel."
-        },
-        {
-          "type": "heading",
-          "text": "Attributes — 8 per skill, pick 3",
-          "small": false
-        },
-        {
-          "type": "text",
-          "html": "Every skill has <strong>8 attributes</strong>, and you get to choose <strong>3</strong> of them."
-        },
-        {
-          "type": "heading",
-          "text": "Note 1 — Get the Ghost skill on your farm",
-          "small": true
-        },
-        {
-          "type": "text",
-          "html": "You need <strong>Fighting Phantasm</strong> on your farm so you can summon the Ghost there, then kill it from your main account and earn merit."
-        },
-        {
-          "type": "heading",
-          "text": "Note 2 — The most important one",
-          "small": true
-        },
-        {
-          "type": "tip",
-          "warn": false,
-          "html": "<strong>Timeless Treasury can only be activated once a week.</strong> Stockpile plenty of merit first, then open the shop and buy a lot of elixir."
-        },
-        {
-          "type": "heading",
-          "text": "Note 3 — Rays of Remedy depends on your T4",
-          "small": true
-        },
-        {
-          "type": "choices",
-          "items": [
-            {
-              "label": "<span class=\"dot dot-black\"></span>Black",
-              "html": "",
-              "good": false
-            },
-            {
-              "label": "<span class=\"dot dot-red\"></span>Red",
-              "html": "",
-              "good": true
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Note 4 — Yellow means farm",
-          "small": true
-        },
-        {
-          "type": "text",
-          "html": "<span class=\"dot dot-yellow\"></span>Yellow-circled attributes are the ones to take <strong>on the farm only</strong>."
-        },
-        {
-          "type": "heading",
-          "text": "The six wheels",
-          "small": false
-        },
-        {
-          "type": "text",
-          "html": "The recommended 3 attributes are circled on each one:"
-        },
-        {
-          "type": "figures",
-          "layout": "full",
-          "items": [
-            {
-              "src": "img/s3/7-8.jpg",
-              "alt": "Rays of Remedy attribute wheel with black and red circled attributes",
-              "caption": "<strong style=\"color:var(--flame)\">Rays of Remedy</strong> — main account. Black circles if you have plenty of T4, red circles if you don’t. 3h cooldown, 30 energy."
-            },
-            {
-              "src": "img/s3/7-3.jpg",
-              "alt": "Timeless Treasury attribute wheel with three attributes circled in red",
-              "caption": "<strong style=\"color:var(--flame)\">Timeless Treasury</strong> — main account. The secret shop stays open 24h; cooldown 6d 16h, 5 energy. This is the weekly one."
-            },
-            {
-              "src": "img/s3/7-5.jpg",
-              "alt": "Temporal Trap attribute wheel with three attributes circled in red",
-              "caption": "<strong style=\"color:var(--flame)\">Temporal Trap</strong> — main account. Freezes up to 5 nearby legions for 10 seconds; 60min cooldown, 10 energy."
-            },
-            {
-              "src": "img/s3/7-6.jpg",
-              "alt": "Dimensional Duel attribute wheel with three attributes circled in red",
-              "caption": "<strong style=\"color:var(--flame)\">Dimensional Duel</strong> — Archer &amp; Magic only. 60min cooldown, 10 energy."
-            },
-            {
-              "src": "img/s3/7-7.jpg",
-              "alt": "Fighting Phantasm attribute wheel with three attributes circled in yellow",
-              "caption": "<strong style=\"color:var(--flame)\">Fighting Phantasm</strong> — farm. Summons the Ghost legion for 60 minutes; 3h cooldown, 30 energy."
-            },
-            {
-              "src": "img/s3/7-4.jpg",
-              "alt": "Seasonal Shift attribute wheel with three attributes circled in yellow",
-              "caption": "<strong style=\"color:var(--flame)\">Seasonal Shift</strong> — farm. Refills every resource building in your city to max; resets 00:00 UTC, 5 energy."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "heroes",
-      "nav": "7 · Season Heroes",
-      "title": "Season heroes",
-      "blocks": [
-        {
-          "type": "text",
-          "html": "Season 3 releases a lot of heroes, but <strong>three of them matter most</strong>."
-        },
-        {
-          "type": "heading",
-          "text": "1 · Musihang",
-          "small": false
-        },
-        {
-          "type": "text",
-          "html": "A <strong>free hero</strong>, handed to you at the start of the season along with plenty of cards to take her all the way to max level."
-        },
-        {
-          "type": "heading",
-          "text": "Note 1 — Survivability",
-          "small": true
-        },
-        {
-          "type": "text",
-          "html": "<strong>Musihang and Thea are the best magic heroes for survival</strong> — they can stay alive for an hour before dying, depending on the situation and how much counter-damage you are taking."
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "<strong>Talent tree</strong> — available in the <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\">Discord talent-tree archive</a>.",
-            "<strong>Pet</strong> — use the sand lizard with the shield skill."
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Note 2 — Do not evolve her too early",
-          "small": true
-        },
-        {
-          "type": "text",
-          "html": "The free cards let you push Musihang to max level fast. But the Epic → Legendary upgrade (the $1 one) is a trap if you take it at the wrong time."
-        },
-        {
-          "type": "tip",
-          "warn": true,
-          "html": "<strong>Don’t upgrade Musihang from Epic to Legendary until she is already close to max.</strong> When she evolves from epic to legendary, <strong>her skills revert to 1000</strong> — you lose the progress you paid for."
-        },
-        {
-          "type": "figures",
-          "layout": "full",
-          "items": [
-            {
-              "src": "img/s3/8-2.jpg",
-              "alt": "Musihang's talent tree screen",
-              "caption": "Musihang’s talent tree — the full build is in the Discord talent-tree archive."
-            },
-            {
-              "src": "img/s3/8-1.jpg",
-              "alt": "The screen offering to upgrade Musihang to a legendary hero, warning that her training will be reset",
-              "caption": "The Epic → Legendary screen. Note the line underneath — it warns you that legendary Musihang’s training gets reset."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "2 · The tanks — Gurish & Skogol",
-          "small": false
-        },
-        {
-          "type": "text",
-          "html": "These two are <strong>jokers</strong>: they will keep working for you for many seasons to come, so develop them properly rather than treating them as a season rental."
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "<strong>Talent trees</strong> — also in the <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\">Discord talent-tree archive</a>."
-          ]
-        },
-        {
-          "type": "tip",
-          "warn": false,
-          "html": "Talent trees for all of these live in the alliance Discord — <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\"><strong>open the talent-tree archive</strong></a>. You need to be a member of the server for the link to open."
         }
       ]
     }
