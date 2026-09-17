@@ -57,4 +57,19 @@ assert.strictEqual(PHW.groupOfSection(doc, 'intro'), 1, 'finds a section in a la
 assert.strictEqual(PHW.groupOfSection(doc, 's4'), 1, 'a topic id resolves to that topic');
 assert.strictEqual(PHW.groupOfSection(doc, 'nope'), -1, 'an unknown id resolves to nothing');
 
+/* ---- the save endpoint must accept what the editor actually sends ---- */
+// This is the check that was missing when a model change (sections -> groups)
+// left api/save.js rejecting every real save with a 400.
+const { validDoc } = require('./api/_lib');
+
+const live = JSON.parse(fs.readFileSync(__dirname + '/content/guide.json', 'utf8'));
+assert.ok(validDoc(live), 'the guide file on disk must be one the save endpoint accepts');
+assert.ok(validDoc(PHW.normalize(JSON.parse(JSON.stringify(old)))),
+  'a normalized legacy file must be saveable too');
+
+assert.ok(!validDoc(null), 'nothing is not a document');
+assert.ok(!validDoc({ sections: [] }), 'the old flat shape is no longer accepted');
+assert.ok(!validDoc({ groups: [{ title: 'no sections array' }] }), 'a topic must carry a sections list');
+assert.ok(validDoc({ groups: [] }), 'an empty guide is still a valid document');
+
 console.log('all checks passed');

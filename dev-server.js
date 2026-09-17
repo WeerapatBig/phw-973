@@ -11,6 +11,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const { validDoc } = require('./api/_lib');
 
 const ROOT = __dirname;
 const PORT = process.env.PORT || 4173;
@@ -46,6 +47,10 @@ const api = {
   },
 
   save(body, res) {
+    // same rule the real endpoint applies, so local testing matches production
+    if (!validDoc(body.doc)) {
+      return send(res, 400, { error: 'Missing or malformed guide document' });
+    }
     const current = fs.readFileSync(GUIDE);
     if (body.sha !== shaOf(current)) {
       return send(res, 409, { error: 'conflict: the guide changed since you loaded it' });

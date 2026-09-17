@@ -1,5 +1,5 @@
 // Commits the edited guide document back to the repo.
-const { rejected, putFile } = require('./_lib');
+const { rejected, validDoc, putFile } = require('./_lib');
 
 const FILE = 'content/guide.json';
 
@@ -7,7 +7,7 @@ module.exports = async (req, res) => {
   if (rejected(req, res)) return;
 
   const { doc, sha } = req.body || {};
-  if (!doc || !Array.isArray(doc.sections)) {
+  if (!validDoc(doc)) {
     return res.status(400).json({ error: 'Missing or malformed guide document' });
   }
   if (!sha) {

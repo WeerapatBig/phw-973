@@ -32,6 +32,13 @@ function rejected(req, res) {
   return false;
 }
 
+// The one definition of a usable guide document. save.js and dev-server.js both
+// use it, so the local mock cannot drift away from the real endpoint again.
+function validDoc(doc) {
+  return !!doc && Array.isArray(doc.groups) &&
+    doc.groups.every(function (g) { return g && Array.isArray(g.sections); });
+}
+
 async function gh(path, options = {}) {
   const r = await fetch(API + path, {
     ...options,
@@ -60,4 +67,4 @@ function putFile(path, base64, message, sha) {
   });
 }
 
-module.exports = { REPO, BRANCH, rejected, gh, getFile, putFile };
+module.exports = { REPO, BRANCH, rejected, validDoc, gh, getFile, putFile };
