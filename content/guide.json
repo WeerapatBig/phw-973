@@ -673,7 +673,7 @@
             },
             {
               "type": "text",
-              "html": "Thank you for reading this and thank you for your time.\n<br>\nWritten by <strong>Super Beta27</strong>\n<br>\nEdited by <strong>HaremEd</strong>"
+              "html": "Thank you for reading this and thank you for your time.\n<br>\n<div style=\"font-size: 80%;\">\n  <p>Written by <strong>Super Beta27</strong></p>\n  <p>Edited by <strong>HaremEd</strong></p>\n</div>"
             }
           ]
         }
