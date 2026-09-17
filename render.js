@@ -76,7 +76,9 @@ window.PHW = (function () {
         tbody.appendChild(tr);
       });
       t.appendChild(tbody);
-      return t;
+      var wrap = el('div', 'table-wrap');
+      wrap.appendChild(t);
+      return wrap;
     }
   };
 

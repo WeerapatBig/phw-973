@@ -18,16 +18,23 @@
 
   /* ---------- table of contents ---------- */
 
+  // phones get the contents collapsed so the guide itself is the first thing on screen
+
+  function isNarrow() { return window.matchMedia('(max-width: 720px)').matches; }
+
+  
+
   function buildToc() {
     var root = $('pg-toc');
     root.innerHTML = '';
 
     doc.groups.forEach(function (g, gi) {
-      var wrap = el('div', 'toc-group' + (gi === active ? ' open' : ''));
+      var openHere = gi === active && !isNarrow();
+      var wrap = el('div', 'toc-group' + (openHere ? ' open' : ''));
 
       var head = el('button', 'toc-group-head');
       head.type = 'button';
-      head.setAttribute('aria-expanded', gi === active ? 'true' : 'false');
+      head.setAttribute('aria-expanded', openHere ? 'true' : 'false');
       head.appendChild(el('span', 'toc-caret', '›'));
       head.appendChild(el('span', null, g.title));
       head.addEventListener('click', function () {

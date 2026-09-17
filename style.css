@@ -325,3 +325,72 @@ dialog.lb::backdrop { background: rgba(0, 0, 0, 0.85); }
   .toc-links { margin-left: 4px; }
   .toc-links a { display: block; }
 }
+
+/* ================= mobile ================= */
+
+/* tables scroll inside their own box instead of squashing the page */
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 8px 0; }
+.table-wrap table { min-width: 420px; }
+
+@media (max-width: 600px) {
+  /* --- header: one row, thumb-sized taps --- */
+  .site-header .wrap {
+    min-height: 56px; gap: 6px; padding: 0 14px;
+    flex-wrap: nowrap;
+  }
+  .brand { font-size: 14px; letter-spacing: .04em; gap: 6px; }
+  .nav { gap: 2px; flex: none; }
+  .nav a {
+    padding: 12px 9px; font-size: 13px;
+    min-height: 44px; display: flex; align-items: center;
+  }
+
+  /* --- hero: stop it eating the whole first screen --- */
+  .hero { padding: 40px 0 34px !important; }
+  .hero h1 { font-size: clamp(28px, 8vw, 36px); }
+  .hero .sub { margin-bottom: 18px; font-size: 12px; }
+  .motto { font-size: 16px !important; }
+  .btn-row { margin-top: 24px; gap: 10px; }
+  .btn { padding: 13px 20px; min-height: 46px; display: inline-flex; align-items: center; }
+
+  /* --- sections --- */
+  section { padding: 40px 0; }
+  .wrap { padding: 0 16px; }
+  .card { padding: 18px 16px; }
+
+  /* label above value, so long answers get the full width */
+  dl.facts { grid-template-columns: 1fr; gap: 2px 0; }
+  dl.facts dt { margin-top: 12px; }
+  dl.facts dt:first-child { margin-top: 0; }
+
+  /* --- contents list --- */
+  .toc-group-head { min-height: 46px; font-size: 14px; }
+  .toc-links a { padding: 12px 0 12px 12px; min-height: 44px; display: flex; align-items: center; }
+
+  /* --- guide body --- */
+  .guide-body h2 { font-size: 22px; }
+  .guide-body section + section { padding-top: 32px; }
+  .tip { padding: 13px 15px; }
+  .choice { grid-template-columns: 1fr; gap: 4px; padding: 13px 15px; }
+  .figs { gap: 12px; }
+  .figs.one, .figs.narrow { grid-template-columns: minmax(0, 1fr); }
+  .figs.narrow figure { max-width: 240px; }
+
+  /* --- image viewer --- */
+  .lb-bar { padding: 10px 12px; gap: 6px; }
+  .lb-btn { min-width: 44px; height: 44px; }
+  .lb-cap { font-size: 13px; }
+}
+
+/* A grid item defaults to min-width:auto, so one wide child (a table) stretches
+   the whole column and the page scrolls sideways. Let the columns shrink. */
+.guide-layout > * { min-width: 0; }
+.table-wrap { max-width: 100%; }
+
+/* the full name does not fit beside the nav on a phone */
+.brand-short { display: none; }
+@media (max-width: 600px) {
+  .brand-long { display: none; }
+  .brand-short { display: inline; }
+  .brand { white-space: nowrap; font-size: 16px; }
+}

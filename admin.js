@@ -623,6 +623,12 @@
     window.scrollTo(0, 0);
   }
 
+  // on a phone the topic list would push the editor off-screen, so fold it away
+
+  $('side-details').open = !window.matchMedia('(max-width: 820px)').matches;
+
+  
+
   $('btn-start').addEventListener('click', function () { showHelp(false); });
   $('btn-help').addEventListener('click', function () { showHelp(true); });
 

@@ -36,9 +36,9 @@
     <span class="adm-spacer"></span>
     <button class="btn-sm" id="btn-help" hidden>Help</button>
     <button class="btn-sm" id="btn-preview" hidden>Preview</button>
-    <button class="btn-sm primary" id="btn-save" hidden disabled>Save &amp; publish</button>
-    <button class="btn-sm primary" id="btn-start">Start editing &rarr;</button>
-    <button class="btn-sm" id="btn-out">Sign out</button>
+    <button class="btn-sm primary" id="btn-save" hidden disabled>Save<span class="wide-only"> &amp; publish</span></button>
+    <button class="btn-sm primary" id="btn-start">Start<span class="wide-only"> editing</span> &rarr;</button>
+    <button class="btn-sm" id="btn-out"><span class="wide-only">Sign out</span><span class="narrow-only">Exit</span></button>
   </div>
 
   <p class="adm-err" id="err"></p>
@@ -89,7 +89,7 @@
       Each block has <span class="help-key">▲</span> <span class="help-key">▼</span> to move it and
       <span class="help-key">×</span> to delete it.
     </p>
-    <table>
+    <div class="table-wrap"><table>
       <thead><tr><th>Block</th><th>Use it for</th></tr></thead>
       <tbody>
         <tr><td><strong>Paragraph</strong></td><td>Ordinary text. Most of the guide is this.</td></tr>
@@ -100,7 +100,7 @@
         <tr><td><strong>Images</strong></td><td>Screenshots. See below.</td></tr>
         <tr><td><strong>Table</strong></td><td>Comparisons. Separate the columns with the <span class="help-key">|</span> key, one row per line.</td></tr>
       </tbody>
-    </table>
+    </table></div>
     <div class="tip">
       <p>
         <strong>Use callout boxes sparingly.</strong> If half the page is a callout box, none of it
@@ -190,7 +190,7 @@
     </div>
 
     <h2>9. If something goes wrong</h2>
-    <table>
+    <div class="table-wrap"><table>
       <thead><tr><th>What you see</th><th>What it means</th></tr></thead>
       <tbody>
         <tr><td>Wrong password</td><td>Check for a stray space. The password is case sensitive.</td></tr>
@@ -199,7 +199,7 @@
         <tr><td>The file is too big to send</td><td>Rare, since images are shrunk automatically. Save it as a JPG and try again.</td></tr>
         <tr><td>Could not save…</td><td>Check your internet, then try once more. If it keeps failing, the site owner needs to look at the server settings.</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
     <h2>10. Habits worth keeping</h2>
     <ul>
@@ -219,9 +219,11 @@
   <!-- ===== the editor ===== -->
   <div class="adm-cols" id="workspace" hidden>
     <aside class="adm-side">
-      <h2>Topics &amp; sections</h2>
-      <div id="sec-list"></div>
-      <button class="btn-sm" style="width:100%;margin-top:16px" id="btn-add-sec">+ New main topic</button>
+      <details id="side-details" open>
+        <summary>Topics &amp; sections</summary>
+        <div id="sec-list"></div>
+        <button class="btn-sm" style="width:100%;margin-top:16px" id="btn-add-sec">+ New main topic</button>
+      </details>
     </aside>
 
     <div id="pane"></div>
