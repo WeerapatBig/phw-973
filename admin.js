@@ -612,6 +612,20 @@
 
   /* ---------------- wiring ---------------- */
 
+  function showHelp(on) {
+    $('help').hidden = !on;
+    $('workspace').hidden = on;
+    $('bar-title').textContent = on ? 'How to use this editor' : 'Guide editor';
+    $('btn-start').hidden = !on;
+    ['state', 'btn-help', 'btn-preview', 'btn-save'].forEach(function (id) {
+      $(id).hidden = on;
+    });
+    window.scrollTo(0, 0);
+  }
+
+  $('btn-start').addEventListener('click', function () { showHelp(false); });
+  $('btn-help').addEventListener('click', function () { showHelp(true); });
+
   $('login-form').addEventListener('submit', function (e) {
     e.preventDefault();
     var btn = $('login-btn');
@@ -621,6 +635,7 @@
     load().then(function () {
       $('login').hidden = true;
       $('editor').hidden = false;
+      showHelp(true);          // new officers read the manual before the editor
     }, function (err) {
       pw = '';
       btn.disabled = false;

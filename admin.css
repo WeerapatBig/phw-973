@@ -136,3 +136,49 @@ textarea.adm-field { min-height: 88px; resize: vertical; line-height: 1.6; }
 .adm-sec-btn { margin-left: 10px; width: calc(100% - 10px); }
 .adm-sec-add { color: var(--ash); font-style: italic; }
 .adm-sec-add:hover { color: var(--flame); }
+
+/* ---- the manual ---- */
+.adm-help { max-width: 760px; margin: 0 auto; padding-bottom: 60px; }
+.adm-help h2 {
+  font-size: 22px; margin: 42px 0 12px; padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+.adm-help h2:first-of-type { border-top: 0; padding-top: 0; }
+.adm-help p, .adm-help li { color: var(--muted); }
+.adm-help li { margin-bottom: 8px; }
+.adm-help strong { color: var(--text); }
+.adm-help table { margin-top: 8px; }
+.adm-help td strong { color: var(--flame); }
+
+.help-lead { font-size: 17px; line-height: 1.75; }
+.help-end { margin-top: 40px; padding-top: 22px; border-top: 1px solid var(--line); }
+.help-dirty { color: var(--flame) !important; }
+
+.help-flow {
+  display: flex; gap: 12px; flex-wrap: wrap; margin: 26px 0 8px;
+}
+.help-flow div {
+  flex: 1; min-width: 150px; display: flex; align-items: center; gap: 12px;
+  background: var(--bg-2); border: 1px solid var(--line);
+  border-radius: 8px; padding: 14px 16px;
+}
+.help-flow b {
+  display: grid; place-items: center; flex: none;
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--flame); color: #170c04; font-size: 13px;
+}
+.help-flow span { color: var(--text); font-size: 14px; }
+
+.help-key {
+  display: inline-block; padding: 1px 7px; margin: 0 1px;
+  font: 600 12px var(--font-body); color: var(--text);
+  background: var(--bg-2); border: 1px solid var(--line); border-radius: 4px;
+}
+
+.help-tree {
+  background: var(--bg-2); border: 1px solid var(--line); border-radius: 8px;
+  padding: 16px 18px; margin: 16px 0; overflow-x: auto;
+  font: 13px/1.85 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--text);
+}
+.help-tree span { color: var(--ash); }

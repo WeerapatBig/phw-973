@@ -18,9 +18,12 @@ dev-server.js       Local preview, stands in for api/* — never used in product
 
 ## Editing the guide
 
-Officers go to `https://<the site>/admin.html`, enter the admin password, edit, then
-press **Save & publish**. That commits to this repo and Vercel redeploys — the change is
-live in about a minute.
+Officers go to `https://<the site>/admin.html` and enter the admin password. They land on
+a built-in manual covering the whole editor; **Start editing** opens the editor and the
+**Help** button returns to the manual at any time.
+
+Edit, then press **Save & publish**. That commits to this repo and Vercel redeploys — the
+change is live in about a minute.
 
 Everything is versioned in git, so any bad edit can be undone by reverting the commit.
 
