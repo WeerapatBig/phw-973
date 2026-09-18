@@ -32,7 +32,21 @@ function mapPath(locale: string) {
 }
 
 async function ensureDir() {
-  await mkdir(DIR, { recursive: true });
+  try {
+    await mkdir(DIR, { recursive: true });
+  } catch {
+    // Ignore read-only filesystem errors on serverless platforms (e.g. Vercel)
+  }
+}
+
+async function writeToDisk(locale: LocaleCode, body: string) {
+  try {
+    await ensureDir();
+    await writeFile(mapPath(locale), body, "utf8");
+  } catch {
+    // Silently ignore EROFS (read-only file system) on serverless environments;
+    // translations will persist via Supabase Storage / Postgres.
+  }
 }
 
 async function readFromDisk(locale: LocaleCode): Promise<LocaleMapFile | null> {
@@ -82,8 +96,7 @@ export async function loadLocaleMap(locale: LocaleCode): Promise<Record<string, 
   if (local?.strings) return local.strings;
   const remote = await readFromStorage(locale);
   if (remote?.strings) {
-    await ensureDir();
-    await writeFile(mapPath(locale), JSON.stringify(remote, null, 2), "utf8");
+    writeToDisk(locale, JSON.stringify(remote, null, 2));
     return remote.strings;
   }
   return {};
@@ -100,8 +113,7 @@ export async function saveLocaleMap(
     strings,
   };
   const body = JSON.stringify(payload, null, 2);
-  await ensureDir();
-  await writeFile(mapPath(locale), body, "utf8");
+  await writeToDisk(locale, body);
   await writeToStorage(locale, body);
 }
 
@@ -122,3 +134,4 @@ export async function mergeIntoLocaleMap(
     return merged;
   });
 }
+
