@@ -1,6 +1,6 @@
 {
   "locale": "es",
-  "updatedAt": "2026-09-18T05:56:13.404Z",
+  "updatedAt": "2026-09-18T07:45:45.067Z",
   "strings": {
     "Season 3 Guide": "Guía de la Temporada 3",
     "Guide": "Guía",
@@ -225,6 +225,8 @@
     "New here? Start with the Season 3 Guide — everything you need for the season, in one place.": "¿Eres nuevo aquí? Empieza con la Guía de la Temporada 3: todo lo que necesitas para la temporada, en un solo lugar.",
     "Phoenix of War 973 · From ashes, to flame.": "Phoenix of War 973 · De las cenizas, a la llama.",
     "Guides for Season 3": "Guías para la Temporada 3",
-    "Thank you for reading this and thank you for your time.\n<br>\n<span style=\"font-size: 80%;\">Written by <strong>Super Beta27</strong></span>\n<br>\n<span style=\"font-size: 80%;\">Edited by <strong>HaremEd</strong></span>": "Gracias por leer esto y gracias por tu tiempo.\n<br>\n<span style=\"font-size: 80%;\">Escrito por <strong>Super Beta27</strong></span>\n<br>\n<span style=\"font-size: 80%;\">Editado por <strong>HaremEd</strong></span>"
+    "Thank you for reading this and thank you for your time.\n<br>\n<span style=\"font-size: 80%;\">Written by <strong>Super Beta27</strong></span>\n<br>\n<span style=\"font-size: 80%;\">Edited by <strong>HaremEd</strong></span>": "Gracias por leer esto y gracias por tu tiempo.\n<br>\n<span style=\"font-size: 80%;\">Escrito por <strong>Super Beta27</strong></span>\n<br>\n<span style=\"font-size: 80%;\">Editado por <strong>HaremEd</strong></span>",
+    "sample": "muestra",
+    "Thank you for reading this and thank you for your time.\n<br>\n<span style=\"font-size: 80%;\">Written by <strong>Super Beta27</strong></span>\n<br>\n<span style=\"font-size: 80%;\">Edited by <strong>HaremEd</strong></span>\n<br>\n<span style=\"font-size: 80%;\">Improved by <strong>福riv</strong></span>": "Gracias por leer esto y gracias por tu tiempo.\n<br>\n<span style=\"font-size: 80%;\">Escrito por <strong>Super Beta27</strong></span>\n<br>\n<span style=\"font-size: 80%;\">Editado por <strong>HaremEd</strong></span>\n<br>\n<span style=\"font-size: 80%;\">Mejorado por <strong>福riv</strong></span>"
   }
 }
