@@ -36,7 +36,16 @@ export function normalizeDoc(
     g.sections = g.sections || [];
     for (const s of g.sections) s.blocks = s.blocks || [];
   }
+  // Pinned topics always lead the list (their first page); the rest keep their
+  // natural order. Stable, so documents without any pinned topic are untouched.
+  pinSort(doc.groups);
   return doc;
+}
+
+// Pinned groups stay at the top of the topic list (first page) no matter when
+// they were added; everything else keeps its natural order.
+export function pinSort<T extends { pinned?: boolean }>(items: T[]): T[] {
+  return items.sort((a, b) => (a.pinned === b.pinned ? 0 : a.pinned ? -1 : 1));
 }
 
 // The guide and the alliance-rules page share this document shape, so the same

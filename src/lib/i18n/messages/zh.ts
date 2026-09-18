@@ -1,6 +1,8 @@
 import type { Dict } from "./en";
 
 const zh: Partial<Dict> = {
+  "ui.translating": "翻译中…",
+
   "nav.home": "首页",
   "nav.guide": "攻略",
   "nav.rules": "规则",

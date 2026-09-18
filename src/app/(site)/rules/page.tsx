@@ -18,5 +18,5 @@ export default async function RulesPage() {
   const doc = normalizeRules(row?.doc ?? null);
   const locale = await getLocale();
   const { source, translated } = await localized("rules", doc, locale);
-  return <TranslatedGuideViewer source={source} translated={translated} />;
+  return <TranslatedGuideViewer source={source} translated={translated} target="rules" />;
 }

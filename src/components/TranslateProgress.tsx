@@ -1,15 +1,18 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useT } from "./i18n/LocaleProvider";
 
-// A small circular progress ring, pinned to the bottom-right above everything
-// else, shown while a content translation is being fetched. There is no real
-// progress signal from the server (it is a single request), so the ring eases
-// towards 90% and completes when the request resolves.
+// A small circular progress ring + "Translating…" label, pinned to the
+// bottom-right above everything else, shown while a content translation is
+// being fetched. There is no real progress signal from the server (it is a
+// single request), so the ring eases towards 90% and completes when the
+// request resolves.
 const R = 20;
 const C = 2 * Math.PI * R;
 
 export function TranslateProgress({ active }: { active: boolean }) {
+  const t = useT();
   const [mounted, setMounted] = useState(false);
   const [pct, setPct] = useState(0);
   const frame = useRef<number | null>(null);
@@ -49,22 +52,32 @@ export function TranslateProgress({ active }: { active: boolean }) {
   const shown = Math.round(pct);
 
   return (
-    <div className="tprog" role="progressbar" aria-label="Translating" aria-valuemin={0} aria-valuemax={100} aria-valuenow={shown}>
-      <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
-        <circle className="tprog-track" cx="24" cy="24" r={R} fill="none" strokeWidth="3" />
-        <circle
-          className="tprog-bar"
-          cx="24"
-          cy="24"
-          r={R}
-          fill="none"
-          strokeWidth="3"
-          strokeLinecap="round"
-          strokeDasharray={C}
-          strokeDashoffset={C * (1 - pct / 100)}
-        />
-      </svg>
-      <span className="tprog-num">{shown}</span>
+    <div
+      className="tprog"
+      role="progressbar"
+      aria-label={t("ui.translating")}
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-valuenow={shown}
+    >
+      <div className="tprog-ring">
+        <svg viewBox="0 0 48 48" width="40" height="40" aria-hidden="true">
+          <circle className="tprog-track" cx="24" cy="24" r={R} fill="none" strokeWidth="3" />
+          <circle
+            className="tprog-bar"
+            cx="24"
+            cy="24"
+            r={R}
+            fill="none"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeDasharray={C}
+            strokeDashoffset={C * (1 - pct / 100)}
+          />
+        </svg>
+        <span className="tprog-num">{shown}</span>
+      </div>
+      <span className="tprog-label">{t("ui.translating")}</span>
     </div>
   );
 }

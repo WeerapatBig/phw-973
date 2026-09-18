@@ -1,6 +1,6 @@
 {
   "locale": "nl",
-  "updatedAt": "2026-09-17T23:54:58.527Z",
+  "updatedAt": "2026-09-18T05:56:04.951Z",
   "strings": {
     "Alliance Family": "Alliantiefamilie",
     "Phoenix of War 973": "Phoenix of War 973",
@@ -223,6 +223,8 @@
     "These two are <strong>jokers</strong>: they will keep working for you for many seasons to come, so develop them properly rather than treating them as a season rental.": "Deze twee zijn <strong>jokers</strong>: ze zullen nog vele seizoenen voor je blijven werken, dus ontwikkel ze goed in plaats van ze als een seizoenshuurling te behandelen.",
     "<strong>Talent trees</strong> — also in the <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\">Discord talent-tree archive</a>.": "<strong>Talentbomen</strong> — ook in het <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\">Discord talent-tree archive</a>.",
     "Talent trees for all of these live in the alliance Discord — <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\"><strong>open the talent-tree archive</strong></a>. You need to be a member of the server for the link to open.": "Talentbomen voor al deze helden staan in de alliantie Discord — <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\"><strong>open het talent-tree archive</strong></a>. Je moet lid zijn van de server om de link te kunnen openen.",
-    "Thank you for reading this and thank you for your time.\n<br>\n<div style=\"font-size: 80%;\">\n  <p>Written by <strong>Super Beta27</strong></p>\n  <p>Edited by <strong>HaremEd</strong></p>\n</div>": "Bedankt voor het lezen en bedankt voor je tijd.\n<br>\n<div style=\"font-size: 80%;\">\n  <p>Geschreven door <strong>Super Beta27</strong></p>\n  <p>Bewerkt door <strong>HaremEd</strong></p>\n</div>"
+    "Thank you for reading this and thank you for your time.\n<br>\n<div style=\"font-size: 80%;\">\n  <p>Written by <strong>Super Beta27</strong></p>\n  <p>Edited by <strong>HaremEd</strong></p>\n</div>": "Bedankt voor het lezen en bedankt voor je tijd.\n<br>\n<div style=\"font-size: 80%;\">\n  <p>Geschreven door <strong>Super Beta27</strong></p>\n  <p>Bewerkt door <strong>HaremEd</strong></p>\n</div>",
+    "Guides for Season 3": "Gidsen voor Seizoen 3",
+    "Thank you for reading this and thank you for your time.\n<br>\n<span style=\"font-size: 80%;\">Written by <strong>Super Beta27</strong></span>\n<br>\n<span style=\"font-size: 80%;\">Edited by <strong>HaremEd</strong></span>": "Bedankt voor het lezen hiervan en bedankt voor je tijd.\n<br>\n<span style=\"font-size: 80%;\">Geschreven door <strong>Super Beta27</strong></span>\n<br>\n<span style=\"font-size: 80%;\">Bewerkt door <strong>HaremEd</strong></span>"
   }
 }

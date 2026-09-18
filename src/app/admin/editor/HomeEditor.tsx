@@ -1,7 +1,7 @@
 "use client";
 
 import type { HomeDoc, HomeFact, HubLink } from "@/lib/types";
-import { Dropzone, Labelled, TextInput } from "./fields";
+import { Dropzone, Labelled, TextInput, deleteStoredImage } from "./fields";
 import { assetUrl } from "@/lib/assets";
 
 function HubLinks({
@@ -174,7 +174,11 @@ export function HomeEditor({
         <Dropzone
           password={password}
           onError={onError}
-          onPath={(p) => { doc.about.image = p; touch(); }}
+          onPath={(p) => {
+            deleteStoredImage(doc.about.image, password);
+            doc.about.image = p;
+            touch();
+          }}
         />
       </div>
 

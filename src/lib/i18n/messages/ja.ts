@@ -1,6 +1,8 @@
 import type { Dict } from "./en";
 
 const ja: Partial<Dict> = {
+  "ui.translating": "翻訳中…",
+
   "nav.home": "ホーム",
   "nav.guide": "ガイド",
   "nav.rules": "ルール",

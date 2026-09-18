@@ -1,6 +1,6 @@
 {
   "locale": "id",
-  "updatedAt": "2026-09-17T23:50:06.536Z",
+  "updatedAt": "2026-09-18T05:55:54.049Z",
   "strings": {
     "Season 3 Guide": "Panduan Musim 3",
     "Guide": "Panduan",
@@ -177,6 +177,10 @@
     "These two are <strong>jokers</strong>: they will keep working for you for many seasons to come, so develop them properly rather than treating them as a season rental.": "Keduanya adalah <strong>joker</strong>: mereka akan terus bekerja untukmu selama banyak musim ke depan, jadi kembangkan mereka dengan benar daripada memperlakukan mereka sebagai sewaan musiman.",
     "<strong>Talent trees</strong> — also in the <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\">Discord talent-tree archive</a>.": "<strong>Pohon bakat</strong> — juga ada di <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\">arsip pohon bakat Discord</a>.",
     "Talent trees for all of these live in the alliance Discord — <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\"><strong>open the talent-tree archive</strong></a>. You need to be a member of the server for the link to open.": "Pohon bakat untuk semua ini ada di Discord aliansi — <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\"><strong>buka arsip pohon bakat</strong></a>. Kamu harus menjadi anggota server agar tautan tersebut dapat dibuka.",
-    "Thank you for reading this and thank you for your time.\n<br>\n<div style=\"font-size: 80%;\">\n  <p>Written by <strong>Super Beta27</strong></p>\n  <p>Edited by <strong>HaremEd</strong></p>\n</div>": "Terima kasih telah membaca ini dan terima kasih atas waktumu.\n<br>\n<div style=\"font-size: 80%;\">\n  <p>Ditulis oleh <strong>Super Beta27</strong></p>\n  <p>Disunting oleh <strong>HaremEd</strong></p>\n</div>"
+    "Thank you for reading this and thank you for your time.\n<br>\n<div style=\"font-size: 80%;\">\n  <p>Written by <strong>Super Beta27</strong></p>\n  <p>Edited by <strong>HaremEd</strong></p>\n</div>": "Terima kasih telah membaca ini dan terima kasih atas waktumu.\n<br>\n<div style=\"font-size: 80%;\">\n  <p>Ditulis oleh <strong>Super Beta27</strong></p>\n  <p>Disunting oleh <strong>HaremEd</strong></p>\n</div>",
+    "Alliance Rules": "Aturan Aliansi",
+    "Guides": "Panduan",
+    "Guides for Season 3": "Panduan untuk Musim 3",
+    "Thank you for reading this and thank you for your time.\n<br>\n<span style=\"font-size: 80%;\">Written by <strong>Super Beta27</strong></span>\n<br>\n<span style=\"font-size: 80%;\">Edited by <strong>HaremEd</strong></span>": "Terima kasih telah membaca ini dan terima kasih atas waktu Anda.\n<br>\n<span style=\"font-size: 80%;\">Ditulis oleh <strong>Super Beta27</strong></span>\n<br>\n<span style=\"font-size: 80%;\">Disunting oleh <strong>HaremEd</strong></span>"
   }
 }

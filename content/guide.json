@@ -1,13 +1,12 @@
 {
   "page": {
     "eyebrow": "Guide",
-    "title": "Season 3 Guide"
+    "title": "Guides"
   },
   "groups": [
     {
       "id": "season-3",
-      "title": "Guide Season 3",
-      "intro": "Hello everyone — I hope you are all doing well. Below is the complete guide to Season 3 and everything you need to do.",
+      "title": "Guides",
       "sections": [
         {
           "id": "features",
@@ -673,7 +672,7 @@
             },
             {
               "type": "text",
-              "html": "Thank you for reading this and thank you for your time.\n<br>\n<div style=\"font-size: 80%;\">\n  <p>Written by <strong>Super Beta27</strong></p>\n  <p>Edited by <strong>HaremEd</strong></p>\n</div>"
+              "html": "Thank you for reading this and thank you for your time.\n<br>\n<span style=\"font-size: 80%;\">Written by <strong>Super Beta27</strong></span>\n<br>\n<span style=\"font-size: 80%;\">Edited by <strong>HaremEd</strong></span>"
             }
           ]
         }

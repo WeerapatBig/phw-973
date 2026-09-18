@@ -11,6 +11,7 @@ import {
   RichText,
   Select,
   TextInput,
+  deleteStoredImage,
 } from "./fields";
 import { assetUrl } from "@/lib/assets";
 
@@ -205,7 +206,13 @@ function FiguresEditor({
             </IconButton>
             <IconButton
               danger
-              onClick={() => { b.items.splice(i, 1); touch(); bump(); }}
+              onClick={() => {
+                const removed = b.items[i];
+                b.items.splice(i, 1);
+                deleteStoredImage(removed?.src, password);
+                touch();
+                bump();
+              }}
             >
               ×
             </IconButton>
@@ -227,7 +234,12 @@ function FiguresEditor({
           <Dropzone
             password={password}
             onError={onError}
-            onPath={(p) => { f.src = p; bump(); touch(); }}
+            onPath={(p) => {
+              deleteStoredImage(f.src, password);
+              f.src = p;
+              bump();
+              touch();
+            }}
           />
         </div>
       ))}

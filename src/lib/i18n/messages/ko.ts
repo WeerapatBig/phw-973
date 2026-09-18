@@ -1,6 +1,8 @@
 import type { Dict } from "./en";
 
 const ko: Partial<Dict> = {
+  "ui.translating": "번역 중…",
+
   "nav.home": "홈",
   "nav.guide": "가이드",
   "nav.rules": "규칙",

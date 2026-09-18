@@ -12,6 +12,27 @@ const ALLOWED: Record<string, string | undefined> = {
 // base64 inflates by ~33% on the wire; 3 MB decoded keeps requests sane.
 const MAX_BYTES = 3 * 1024 * 1024;
 
+// Which role the current SUPABASE_SERVICE_ROLE_KEY actually carries, read from
+// the JWT payload without verifying it. If the env var is missing, mis-set, or
+// not a JWT, this fails open (null) and the upload itself reports the error.
+// The point is to catch the common deployment mistake: SUPABASE_SERVICE_ROLE_KEY
+// holding the ANON key, which Supabase Storage rejects with "new row violates
+// row-level security policy". Only role "service_role" bypasses RLS.
+function storedKeyRole(token: string | undefined): string | null {
+  if (!token) return null;
+  const parts = token.split(".");
+  if (parts.length !== 3) return null;
+  for (const enc of ["base64url", "base64"] as const) {
+    try {
+      const payload = JSON.parse(Buffer.from(parts[1], enc).toString("utf8"));
+      return typeof payload.role === "string" ? payload.role : null;
+    } catch {
+      // try the lenient decoder
+    }
+  }
+  return null;
+}
+
 // Uploads one image to the Supabase Storage "uploads" bucket and returns the
 // public URL the editor stores in figures blocks.
 export async function POST(req: Request) {
@@ -57,13 +78,35 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Server is missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY" }, { status: 500 });
   }
 
+  const role = storedKeyRole(process.env.SUPABASE_SERVICE_ROLE_KEY);
+  if (role && role !== "service_role") {
+    return NextResponse.json(
+      {
+        error:
+          "SUPABASE_SERVICE_ROLE_KEY in this deployment is not Supabase's service-role secret — the upload was refused by row-level security. Copy the service_role key from Supabase → Project Settings → API, set it as SUPABASE_SERVICE_ROLE_KEY in Vercel (Settings → Environment Variables), and redeploy.",
+      },
+      { status: 500 }
+    );
+  }
+
   const { error } = await sb.storage.from("uploads").upload(path, bytes, {
     contentType,
     upsert: false,
     cacheControl: "3600",
   });
   if (error) {
-    return NextResponse.json({ error: error.message || "Upload failed" }, { status: 502 });
+    const hint =
+      "Check that SUPABASE_SERVICE_ROLE_KEY in this deployment is the real service_role secret (Settings → API) and that the uploads bucket exists (run supabase/schema.sql in the Supabase SQL editor).";
+    return NextResponse.json({ error: `${error.message || "Upload failed"}. ${hint}` }, { status: 502 });
+  }
+
+  // A bucket created by hand in the dashboard can end up private, which makes
+  // the public image URL 404 for visitors even though the upload worked. The
+  // service key may flip it to public; harmless when it already is.
+  try {
+    await sb.storage.updateBucket("uploads", { public: true });
+  } catch {
+    // best effort — a broken bucket is fixed once the officer runs schema.sql
   }
 
   const url = `${process.env.SUPABASE_URL}/storage/v1/object/public/uploads/${path}`;

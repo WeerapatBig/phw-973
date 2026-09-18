@@ -1,6 +1,6 @@
 {
   "locale": "ru",
-  "updatedAt": "2026-09-17T23:40:49.971Z",
+  "updatedAt": "2026-09-18T05:55:31.458Z",
   "strings": {
     "Alliance Family": "Семья альянсов",
     "Phoenix of War 973": "Phoenix of War 973",
@@ -224,6 +224,8 @@
     "<strong>Talent trees</strong> — also in the <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\">Discord talent-tree archive</a>.": "<strong>Деревья талантов</strong> — также в <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\">архиве деревьев талантов Discord</a>.",
     "Talent trees for all of these live in the alliance Discord — <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\"><strong>open the talent-tree archive</strong></a>. You need to be a member of the server for the link to open.": "Деревья талантов для всех этих героев находятся в Discord альянса — <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\"><strong>откройте архив деревьев талантов</strong></a>. Чтобы ссылка открылась, вы должны быть участником сервера.",
     "Thank you for reading this and thank you for your time.\n<br>\n<div style=\"font-size: 80%;\">\n  <p>Written by <strong>Super Beta27</strong></p>\n  <p>Edited by <strong>HaremEd</strong></p>\n</div>": "Спасибо за прочтение и за ваше время.\n<br>\n<div style=\"font-size: 80%;\">\n  <p>Автор: <strong>Super Beta27</strong></p>\n  <p>Редактор: <strong>HaremEd</strong></p>\n</div>",
-    "Alliance Rules": "Правила альянса"
+    "Alliance Rules": "Правила альянса",
+    "Guides for Season 3": "Руководства для 3-го сезона",
+    "Thank you for reading this and thank you for your time.\n<br>\n<span style=\"font-size: 80%;\">Written by <strong>Super Beta27</strong></span>\n<br>\n<span style=\"font-size: 80%;\">Edited by <strong>HaremEd</strong></span>": "Спасибо, что прочитали это, и спасибо за ваше время.\n<br>\n<span style=\"font-size: 80%;\">Автор: <strong>Super Beta27</strong></span>\n<br>\n<span style=\"font-size: 80%;\">Редактор: <strong>HaremEd</strong></span>"
   }
 }

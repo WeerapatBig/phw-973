@@ -1,6 +1,6 @@
 {
   "locale": "pt",
-  "updatedAt": "2026-09-17T23:51:26.369Z",
+  "updatedAt": "2026-09-18T05:45:48.063Z",
   "strings": {
     "Alliance Family": "Família de Alianças",
     "Phoenix of War 973": "Phoenix of War 973",
@@ -224,6 +224,8 @@
     "<strong>Talent trees</strong> — also in the <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\">Discord talent-tree archive</a>.": "<strong>Árvores de talentos</strong> — também no <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\">arquivo de árvores de talentos do Discord</a>.",
     "Talent trees for all of these live in the alliance Discord — <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\"><strong>open the talent-tree archive</strong></a>. You need to be a member of the server for the link to open.": "As árvores de talentos para todos eles estão no Discord da aliança — <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\"><strong>abra o arquivo de árvores de talentos</strong></a>. Você precisa ser um membro do servidor para que o link abra.",
     "Thank you for reading this and thank you for your time.\n<br>\n<div style=\"font-size: 80%;\">\n  <p>Written by <strong>Super Beta27</strong></p>\n  <p>Edited by <strong>HaremEd</strong></p>\n</div>": "Obrigado por ler isto e obrigado pelo seu tempo.\n<br>\n<div style=\"font-size: 80%;\">\n  <p>Escrito por <strong>Super Beta27</strong></p>\n  <p>Editado por <strong>HaremEd</strong></p>\n</div>",
-    "Alliance Rules": "Regras da Aliança"
+    "Alliance Rules": "Regras da Aliança",
+    "Guides for Season 3": "Guias para a Temporada 3",
+    "Thank you for reading this and thank you for your time.\n<br>\n<span style=\"font-size: 80%;\">Written by <strong>Super Beta27</strong></span>\n<br>\n<span style=\"font-size: 80%;\">Edited by <strong>HaremEd</strong></span>": "Obrigado por ler isto e obrigado pelo seu tempo.\n<br>\n<span style=\"font-size: 80%;\">Escrito por <strong>Super Beta27</strong></span>\n<br>\n<span style=\"font-size: 80%;\">Editado por <strong>HaremEd</strong></span>"
   }
 }

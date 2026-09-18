@@ -4,7 +4,7 @@ import Link from "next/link";
 
 // The built-in manual officers see before editing. Port of the manual that used
 // to live in admin.html.
-export function Manual() {
+export function Manual({ onStart }: { onStart: () => void }) {
   return (
     <div className="adm-help">
       <p className="help-lead">
@@ -58,6 +58,14 @@ export function Manual() {
           guide; <strong>Title</strong> is the big heading in the page itself. They are usually
           similar — the menu label is just shorter, e.g. title <em>&ldquo;Season policies&rdquo;</em>, menu label{" "}
           <em>&ldquo;5 · Season Policies&rdquo;</em>.
+        </p>
+      </div>
+
+      <div className="tip">
+        <p>
+          <strong>Description</strong> is the two or three lines shown at the top of the
+          topic on the site, before its first section. Write what the topic covers;
+          leave it blank if the topic title already says enough.
         </p>
       </div>
 
@@ -313,9 +321,12 @@ export function Manual() {
       </ul>
 
       <p className="help-end">
-        That is everything. Press <strong>Start editing</strong> in the top bar whenever you are ready
-        — you can come back here any time with the <strong>Help</strong> button.
+        That is everything. Press <strong>Start editing</strong> below whenever you are ready — you can
+        come back here any time with <strong>How to use this editor</strong> in the menu on the left.
       </p>
+      <button type="button" className="btn-sm primary" onClick={onStart} style={{ marginTop: 20 }}>
+        Start editing &rarr;
+      </button>
     </div>
   );
 }

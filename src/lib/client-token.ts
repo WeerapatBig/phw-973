@@ -1,7 +1,3 @@
-// A random id kept in the browser. It is how a commenter proves a comment is
-// theirs (to edit or delete it) and how a heart cannot be given twice, without
-// asking anyone to make an account. It never leaves this device.
-
 const TOKEN_KEY = "phw.token";
 const NAME_KEY = "phw.name";
 

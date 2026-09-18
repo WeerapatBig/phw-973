@@ -1,6 +1,6 @@
 {
   "locale": "fil",
-  "updatedAt": "2026-09-17T23:40:00.954Z",
+  "updatedAt": "2026-09-18T06:49:17.838Z",
   "strings": {
     "Alliance Family": "Pamilya ng Alyansa",
     "Phoenix of War 973": "Phoenix of War 973",
@@ -224,6 +224,22 @@
     "<strong>Talent trees</strong> — also in the <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\">Discord talent-tree archive</a>.": "<strong>Talent trees</strong> — nasa <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\">Discord talent-tree archive</a> din.",
     "Talent trees for all of these live in the alliance Discord — <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\"><strong>open the talent-tree archive</strong></a>. You need to be a member of the server for the link to open.": "Ang mga talent tree para sa lahat ng ito ay nasa alliance Discord — <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\"><strong>buksan ang talent-tree archive</strong></a>. Kailangan mong maging miyembro ng server para bumukas ang link.",
     "Thank you for reading this and thank you for your time.\n<br>\n<div style=\"font-size: 80%;\">\n  <p>Written by <strong>Super Beta27</strong></p>\n  <p>Edited by <strong>HaremEd</strong></p>\n</div>": "Salamat sa pagbabasa nito at salamat sa iyong oras.\n<br>\n<div style=\"font-size: 80%;\">\n  <p>Isinulat ni <strong>Super Beta27</strong></p>\n  <p>Inedit ni <strong>HaremEd</strong></p>\n</div>",
-    "Alliance Rules": "Mga Panuntunan ng Alyansa"
+    "Alliance Rules": "Mga Panuntunan ng Alyansa",
+    "Guides for Season 3": "Mga gabay para sa Season 3",
+    "Thank you for reading this and thank you for your time.\n<br>\n<span style=\"font-size: 80%;\">Written by <strong>Super Beta27</strong></span>\n<br>\n<span style=\"font-size: 80%;\">Edited by <strong>HaremEd</strong></span>": "Salamat sa pagbabasa nito at salamat sa iyong oras.\n<br>\n<span style=\"font-size: 80%;\">Isinulat ni <strong>Super Beta27</strong></span>\n<br>\n<span style=\"font-size: 80%;\">Inedit ni <strong>HaremEd</strong></span>",
+    "sample": "halimbawa",
+    "sample guide": "gabay sa halimbawa",
+    "sample2": "halimbawa2",
+    "ddd": "ddd",
+    "dddasd": "dddasd",
+    "asdas": "asdas",
+    "asda": "asda",
+    "asd": "asd",
+    "sfs": "sfs",
+    "sdfs": "sdfs",
+    "sfsdf": "sfsdf",
+    "sdfsf": "sdfsf",
+    "sdsd": "sdsd",
+    "my cat": "ang pusa ko"
   }
 }

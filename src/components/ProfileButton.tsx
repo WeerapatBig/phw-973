@@ -1,27 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { getName } from "@/lib/client-token";
-import { CHANGED_EVENT, OPEN_EVENT, useT } from "./i18n/LocaleProvider";
-import { GlobeIcon } from "./icons";
+import { LOCALES } from "@/lib/i18n";
+import { OPEN_EVENT, useLocale } from "./i18n/LocaleProvider";
+import { Flag } from "./Flag";
 
-// Header control: shows who you are and reopens the language/name dialog.
+// Header control: shows currently selected language flag + name and opens language picker.
 export function ProfileButton() {
-  const t = useT();
-  const [name, setName] = useState("");
+  const { locale, t } = useLocale();
+  const current = LOCALES.find((l) => l.code === locale) || LOCALES[0];
 
-  useEffect(() => {
-    const sync = () => setName(getName());
-    sync();
-    window.addEventListener(CHANGED_EVENT, sync);
-    window.addEventListener("storage", sync);
-    return () => {
-      window.removeEventListener(CHANGED_EVENT, sync);
-      window.removeEventListener("storage", sync);
-    };
-  }, []);
-
-  const title = t("profile.title");
+  const title = t("profile.title") || "Change language";
   return (
     <button
       type="button"
@@ -30,8 +18,8 @@ export function ProfileButton() {
       aria-label={title}
       onClick={() => window.dispatchEvent(new Event(OPEN_EVENT))}
     >
-      <GlobeIcon />
-      <span className="profile-name">{name || t("profile.guest")}</span>
+      <Flag code={current.code} />
+      <span className="profile-name">{current.label}</span>
     </button>
   );
 }

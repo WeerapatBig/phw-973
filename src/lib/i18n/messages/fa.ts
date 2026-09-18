@@ -1,6 +1,8 @@
 import type { Dict } from "./en";
 
 const fa: Partial<Dict> = {
+  "ui.translating": "در حال ترجمه…",
+
   "nav.home": "خانه",
   "nav.guide": "راهنما",
   "nav.rules": "قوانین",

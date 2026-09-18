@@ -34,7 +34,7 @@ function Figure({ f }: { f: { src: string; alt?: string; caption?: string } }) {
           decoding="async"
         />
       </FigureLink>
-      {f.caption ? <figcaption>{f.caption}</figcaption> : null}
+      {f.caption ? <figcaption dangerouslySetInnerHTML={{ __html: f.caption }} /> : null}
     </figure>
   );
 }
@@ -72,7 +72,7 @@ export function GuideBlock({ b }: { b: Block }) {
         <div className="choices">
           {b.items.map((c, i) => (
             <div key={i} className={c.good ? "choice good" : "choice"}>
-              <b>{c.label}</b>
+              <b dangerouslySetInnerHTML={{ __html: c.label }} />
               <span dangerouslySetInnerHTML={{ __html: c.html }} />
             </div>
           ))}

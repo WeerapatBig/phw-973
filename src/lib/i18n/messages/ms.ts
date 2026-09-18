@@ -1,6 +1,8 @@
 import type { Dict } from "./en";
 
 const ms: Partial<Dict> = {
+  "ui.translating": "Menterjemah…",
+
   "nav.home": "Laman Utama",
   "nav.guide": "Panduan",
   "nav.rules": "Peraturan",

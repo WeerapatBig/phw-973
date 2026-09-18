@@ -1,6 +1,8 @@
 import type { Dict } from "./en";
 
 const sv: Partial<Dict> = {
+  "ui.translating": "Översätter…",
+
   "nav.home": "Hem",
   "nav.guide": "Guide",
   "nav.rules": "Regler",

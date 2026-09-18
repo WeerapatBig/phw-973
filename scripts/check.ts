@@ -21,15 +21,9 @@ import {
   sectionText,
   searchGuides,
 } from "../src/lib/content";
-import {
-  buildCommentTree,
-  countComments,
-  cleanCommentBody,
-  cleanAuthor,
-} from "../src/lib/comments";
 import { validGuideDoc } from "../src/lib/validate";
 import { contentHash, mapTranslations } from "../src/lib/translate-walk";
-import type { FlatComment, GuideDoc } from "../src/lib/types";
+import type { GuideDoc } from "../src/lib/types";
 
 /* ---- pickCurrent: which section is the reader in? ---- */
 const S = [{ id: "a", top: -500 }, { id: "b", top: -100 }, { id: "c", top: 400 }];
@@ -177,28 +171,6 @@ assert.equal(searchGuides(searchDoc, "cavalry city").length, 0, "words in differ
 assert.equal(searchGuides(searchDoc, "farm").length, 2, "a match is returned from every category, not just one");
 assert.ok(sectionText(searchDoc.groups[1].sections[0]).includes("archers"), "sectionText flattens lists");
 assert.ok(!sectionText(searchDoc.groups[0].sections[0]).includes("<strong>"), "sectionText strips markup");
-
-/* ---- comments: flat rows become a nested, ordered thread ---- */
-const flat: FlatComment[] = [
-  { id: "1", parentId: null, author: "A", body: "root", hearts: 2, createdAt: "2024-01-01T00:00:00Z" },
-  { id: "2", parentId: "1", author: "B", body: "reply", hearts: 0, createdAt: "2024-01-03T00:00:00Z" },
-  { id: "3", parentId: null, author: "C", body: "second root", hearts: 0, createdAt: "2024-01-02T00:00:00Z" },
-];
-const tree = buildCommentTree(flat);
-assert.equal(tree.length, 2, "two roots");
-assert.equal(tree[0].id, "1", "roots are ordered by time");
-assert.equal(tree[0].replies.length, 1, "a reply nests under its parent");
-assert.equal(tree[0].replies[0].id, "2", "the reply is the right one");
-assert.equal(countComments(tree), 3, "replies are counted too");
-
-const orphan = buildCommentTree([{ id: "x", parentId: "gone", author: "A", body: "b", hearts: 0, createdAt: "2024-01-01T00:00:00Z" }]);
-assert.equal(orphan.length, 1, "a reply to a missing parent becomes a root rather than vanishing");
-assert.equal(buildCommentTree([]).length, 0, "no comments, no thread");
-
-assert.equal(cleanCommentBody("  hello \n\n\n\nworld  "), "hello\n\nworld", "blank lines are collapsed and trimmed");
-assert.equal(cleanCommentBody("x".repeat(5000)).length, 4000, "the body length is capped");
-assert.equal(cleanAuthor("   "), "Anonymous", "an empty name is not allowed");
-assert.equal(cleanAuthor("  Big   Boss "), "Big Boss", "names are tidied");
 
 /* ---- content translation: only prose is touched, structure is preserved ---- */
 

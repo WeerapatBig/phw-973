@@ -1,6 +1,8 @@
 import type { Dict } from "./en";
 
 const vi: Partial<Dict> = {
+  "ui.translating": "Đang dịch…",
+
   "nav.home": "Trang chủ",
   "nav.guide": "Hướng dẫn",
   "nav.rules": "Quy tắc",

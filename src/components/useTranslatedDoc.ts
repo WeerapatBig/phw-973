@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useLocale } from "./i18n/LocaleProvider";
-import type { LocaleCode } from "@/lib/i18n";
 
 type Scope = "guide" | "home" | "rules";
 
@@ -10,8 +9,29 @@ type Scope = "guide" | "home" | "rules";
 // the visitor returns, without waiting on another /api/translate round trip.
 const docCache = new Map<string, unknown>();
 
-function cacheKey(scope: Scope, locale: string) {
-  return `${scope}:${locale}`;
+// Cheap fingerprint of the English source. Including it in the cache key makes
+// sure a translation built from an older version of the document is never
+// served once the content has changed — the current source is the only truth.
+function sourceHash(value: unknown): string {
+  try {
+    return JSON.stringify(value);
+  } catch {
+    return String(value);
+  }
+}
+
+function cacheKey(scope: Scope, locale: string, hash: string) {
+  return `${scope}:${locale}:${hash}`;
+}
+
+// Store a translated doc and drop earlier versions for the same scope+locale,
+// so the cache only ever holds the version matching the current source.
+function setDocCache(scope: Scope, locale: string, hash: string, doc: unknown) {
+  const prefix = `${scope}:${locale}:`;
+  for (const k of docCache.keys()) {
+    if (k.startsWith(prefix) && k !== cacheKey(scope, locale, hash)) docCache.delete(k);
+  }
+  docCache.set(cacheKey(scope, locale, hash), doc);
 }
 
 // Keeps a content document in sync with the visitor's language. The server
@@ -27,15 +47,17 @@ export function useTranslatedDoc<T>(
   const { locale } = useLocale();
   const mountedLocaleRef = useRef<string | null>(null);
 
+  const hash = sourceHash(source);
+
   // Store server-provided initial translation into memory cache for the mounted locale
   if (mountedLocaleRef.current === null) {
     mountedLocaleRef.current = locale;
     if (initial && locale !== "en") {
-      docCache.set(cacheKey(scope, locale), initial);
+      setDocCache(scope, locale, hash, initial);
     }
   }
 
-  const key = cacheKey(scope, locale);
+  const key = cacheKey(scope, locale, hash);
 
   const getDocForLocale = (): T => {
     if (locale === "en") return source;
@@ -73,7 +95,7 @@ export function useTranslatedDoc<T>(
         if (!alive) return;
         setLoading(false);
         if (json?.status !== "ready" || !json.doc) return;
-        docCache.set(key, json.doc as T);
+        setDocCache(scope, locale, hash, json.doc);
         setDoc(json.doc as T);
       })
       .catch(() => {
@@ -83,7 +105,7 @@ export function useTranslatedDoc<T>(
     return () => {
       alive = false;
     };
-  }, [scope, locale, key, source]);
+  }, [scope, locale, key, hash, source]);
 
   return { doc, loading };
 }

@@ -1,6 +1,8 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { useToasts } from "./toast";
+import { uploadObjectPath } from "@/lib/uploads";
 
 // The widest the site ever shows an image is about 700px, so 1600 is already
 // generous on a retina screen. Shrinking here keeps phone screenshots (often
@@ -165,6 +167,26 @@ export function IconButton({
 
 /* ---------------- image upload ---------------- */
 
+// Best-effort removal of an earlier upload from the Storage bucket. Skipped for
+// local public/img files and external URLs. Callers deliberately do not await
+// this: if the delete fails the leftover file is harmless, and an edit should
+// never be blocked on cleanup.
+export async function deleteStoredImage(
+  src: string | undefined,
+  password: string
+): Promise<void> {
+  if (!uploadObjectPath(src)) return;
+  try {
+    await fetch("/api/admin/delete", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ password, src }),
+    });
+  } catch {
+    // cleanup is best-effort
+  }
+}
+
 function shrink(file: File): Promise<{ blob: Blob; ext: string }> {
   // Animated GIFs would lose their animation on a canvas — send them as they are.
   if (file.type === "image/gif") {
@@ -245,6 +267,7 @@ export function Dropzone({
   const [busy, setBusy] = useState(false);
   const [over, setOver] = useState(false);
   const picker = useRef<HTMLInputElement>(null);
+  const notify = useToasts();
 
   function take(file: File | null) {
     if (!file) return;
@@ -253,6 +276,7 @@ export function Dropzone({
       .then((p) => {
         setBusy(false);
         onPath(p);
+        notify("Image added — press Save & publish to keep it");
       })
       .catch((e) => {
         setBusy(false);

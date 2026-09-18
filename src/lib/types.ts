@@ -32,6 +32,7 @@ export interface Group {
   id: string;
   title: string;
   intro?: string;
+  pinned?: boolean; // stays at the top of the topic list (first page)
   sections: Section[];
 }
 
@@ -89,38 +90,6 @@ export interface EventItem {
 
 export interface EventsDoc {
   events: EventItem[];
-}
-
-// A comment as the browser sees it. Replies are nested into `replies`.
-// Per-guide interaction counts, keyed by "category/guide" (see guideKey).
-export type GuideStats = Record<string, { comments: number; hearts: number }>;
-
-export interface CommentNode {
-  id: string;
-  parentId: string | null;
-  author: string;
-  body: string;
-  hearts: number;
-  hearted?: boolean;
-  mine?: boolean;
-  edited?: boolean;
-  deleted?: boolean;
-  createdAt: string;
-  replies: CommentNode[];
-}
-
-// One row as it comes back from the comments table, before it is nested.
-export interface FlatComment {
-  id: string;
-  parentId: string | null;
-  author: string;
-  body: string;
-  hearts: number;
-  hearted?: boolean;
-  mine?: boolean;
-  edited?: boolean;
-  deleted?: boolean;
-  createdAt: string;
 }
 
 export interface HomeDoc {

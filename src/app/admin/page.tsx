@@ -6,12 +6,13 @@ import type { GuideDoc, HomeDoc } from "@/lib/types";
 import { normalize, normalizeHome, normalizeRules, slug } from "@/lib/content";
 import { GuideEditor } from "./editor/GuideEditor";
 import { HomeEditor } from "./editor/HomeEditor";
-import { CommentsAdmin } from "./editor/CommentsAdmin";
 import { Manual } from "./editor/Manual";
+import { Dialogs, useDialogs } from "./editor/dialog";
+import { Toasts, notify } from "./editor/toast";
 import { GuideGroup } from "@/components/GuideGroup";
 import { LightboxProvider } from "@/components/Lightbox";
 
-type Tab = "guide" | "rules" | "home" | "comments";
+type Tab = "guide" | "rules" | "home";
 type View = "help" | "edit";
 
 async function post(path: string, body: unknown): Promise<{ ok: boolean; status: number; data: Record<string, unknown> }> {
@@ -45,7 +46,6 @@ export default function AdminPage() {
 
   const [stateMsg, setStateMsg] = useState("");
   const [dirty, setDirty] = useState(false);
-  const [err, setErr] = useState("");
   const [saving, setSaving] = useState(false);
   const [preview, setPreview] = useState<Tab | null>(null);
   // The editor edits the loaded document in place, so a state change is what
@@ -59,19 +59,27 @@ export default function AdminPage() {
     bump((n) => n + 1);
   }
 
-  async function login(e: React.FormEvent) {
-    e.preventDefault();
+  async function performLogin(passwordToUse: string): Promise<boolean> {
     setBusyLogin(true);
     setLoginErr("");
-    const pw = loginPw;
-    const { ok, data } = await post("/api/admin/load", { password: pw });
+    const { ok, data } = await post("/api/admin/load", { password: passwordToUse });
+    setBusyLogin(false);
     if (!ok) {
-      setBusyLogin(false);
       const msg = String(data?.error || "Could not load the site content.");
       setLoginErr(/password/i.test(msg) ? "Wrong password." : msg);
-      return;
+      try {
+        sessionStorage.removeItem("phw_admin_pw");
+      } catch {
+        // ignore
+      }
+      return false;
     }
-    setPw(pw);
+    try {
+      sessionStorage.setItem("phw_admin_pw", passwordToUse);
+    } catch {
+      // ignore
+    }
+    setPw(passwordToUse);
     const g = (data.guide as { doc?: unknown; version?: number | null } | null) ?? null;
     const h = (data.home as { doc?: unknown; version?: number | null } | null) ?? null;
     const r = (data.rules as { doc?: unknown; version?: number | null } | null) ?? null;
@@ -85,16 +93,32 @@ export default function AdminPage() {
     setSecIdx(0);
     setTab("guide");
     setView("help");
+    setStateMsg("Loaded");
     setPhase("editor");
+    return true;
   }
 
+  async function login(e: React.FormEvent) {
+    e.preventDefault();
+    await performLogin(loginPw);
+  }
+
+  useEffect(() => {
+    try {
+      const saved = sessionStorage.getItem("phw_admin_pw");
+      if (saved) {
+        performLogin(saved);
+      }
+    } catch {
+      // ignore
+    }
+  }, []);
+
   async function save() {
-    if (tab === "comments") return;
     const target = tab;
     const doc = target === "guide" ? guide : target === "rules" ? rules : home;
     const version = target === "guide" ? guideVer : target === "rules" ? rulesVer : homeVer;
     if (!doc) return;
-    setErr("");
     setSaving(true);
 
     if (target === "guide" || target === "rules") {
@@ -115,14 +139,12 @@ export default function AdminPage() {
     if (!ok) {
       const msg = String(data?.error || `Something went wrong (HTTP ${status || "unknown"}).`);
       setStateMsg("Not saved");
-      if (/conflict/i.test(msg)) {
-        setErr(
-          "Someone else saved changes while you were editing. " +
-            "Copy anything you need, then reload this page to get their version."
-        );
-      } else {
-        setErr("Could not save: " + msg);
-      }
+      notify(
+        /conflict/i.test(msg)
+          ? "Someone else saved changes while you were editing. Copy anything you need, then reload this page to get their version."
+          : "Could not save: " + msg,
+        "error"
+      );
       return;
     }
     if (target === "guide") setGuideVer(data.version as number);
@@ -130,10 +152,15 @@ export default function AdminPage() {
     else setHomeVer(data.version as number);
     setStateMsg("Published — the site is live");
     setDirty(false);
+    notify("Published — the site is live");
   }
 
   function signOut() {
-    if (dirty && !window.confirm("You have unsaved changes. Sign out anyway?")) return;
+    try {
+      sessionStorage.removeItem("phw_admin_pw");
+    } catch {
+      // ignore
+    }
     window.location.reload();
   }
 
@@ -175,12 +202,20 @@ export default function AdminPage() {
     );
   }
 
-  const showTab = (t: Tab) => {
+  const go = (t: Tab) => {
     setTab(t);
-    setView(t === "guide" ? view : "edit");
+    setView("edit");
     setGIdx(0);
     setSecIdx(0);
-    setErr("");
+    window.scrollTo(0, 0);
+  };
+
+  const goHelp = () => {
+    setTab("guide");
+    setView("help");
+    setGIdx(0);
+    setSecIdx(0);
+    window.scrollTo(0, 0);
   };
 
   const heading =
@@ -190,155 +225,190 @@ export default function AdminPage() {
         ? "Alliance rules editor"
         : tab === "home"
           ? "Home page editor"
-          : tab === "comments"
-            ? "Comments moderation"
-            : "Guide editor";
+          : "Guide editor";
+
+  const navOn = (t: Tab, help = false) =>
+    tab === t && view === (help ? "help" : "edit");
 
   return (
-    <div className="adm-shell">
-      <div className="adm-bar">
-        <h1>{heading}</h1>
-        {dirty ? (
-          <span className="adm-state dirty">{stateMsg}</span>
-        ) : (
-          <span className="adm-state">{stateMsg}</span>
-        )}
+    <Toasts>
+      <Dialogs>
+      <div className="adm-shell">
+        <header className="adm-appbar">
+        <Link
+          className="adm-brand"
+          href="/"
+          title="Phoenix of War 973 — back to the site"
+        >
+          <span className="adm-brand-full">Phoenix of War </span>PHW <em>973</em>
+        </Link>
         <span className="adm-spacer" />
-        <div className="adm-tabs">
-          <button
-            type="button"
-            className={"btn-sm" + (tab === "guide" ? " primary" : "")}
-            onClick={() => showTab("guide")}
-          >
-            Guide
-          </button>
-          <button
-            type="button"
-            className={"btn-sm" + (tab === "rules" ? " primary" : "")}
-            onClick={() => showTab("rules")}
-          >
-            Rules
-          </button>
-          <button
-            type="button"
-            className={"btn-sm" + (tab === "home" ? " primary" : "")}
-            onClick={() => showTab("home")}
-          >
-            Home
-          </button>
-          <button
-            type="button"
-            className={"btn-sm" + (tab === "comments" ? " primary" : "")}
-            onClick={() => showTab("comments")}
-          >
-            Comments
-          </button>
-        </div>
-        {tab === "guide" ? (
-          <button type="button" className="btn-sm" onClick={() => { setView("help"); window.scrollTo(0, 0); }}>
-            Help
-          </button>
-        ) : null}
-        {tab !== "comments" ? (
-          <button
-            type="button"
-            className="btn-sm"
-            onClick={() => setPreview((p) => (p ? null : tab))}
-          >
-            Preview
-          </button>
-        ) : null}
+        <span className={"adm-state" + (dirty ? " dirty" : "")}>{stateMsg}</span>
+        <button
+          type="button"
+          className="btn-sm"
+          onClick={() => setPreview((p) => (p ? null : tab))}
+        >
+          Preview
+        </button>
         <button
           type="button"
           className="btn-sm primary"
           onClick={save}
-          disabled={!dirty || saving || tab === "comments"}
+          disabled={!dirty || saving}
         >
-          {saving ? "Saving…" : (
-            <>
-              Save<span className="wide-only"> &amp; publish</span>
-            </>
-          )}
+          {saving ? "Saving…" : "Save & publish"}
         </button>
-        {tab === "guide" && view === "help" ? (
-          <button type="button" className="btn-sm primary" onClick={() => setView("edit")}>
-            Start<span className="wide-only"> editing</span> &rarr;
-          </button>
-        ) : null}
-        <button type="button" className="btn-sm" onClick={signOut}>
-          <span className="wide-only">Sign out</span>
-          <span className="narrow-only">Exit</span>
-        </button>
+      </header>
+
+      <div className="adm-layout">
+        <nav className="adm-nav">
+          <div className="adm-nav-group">
+            <p className="adm-nav-label">Content</p>
+            <button
+              type="button"
+              className={"adm-nav-item" + (navOn("guide") ? " on" : "")}
+              aria-current={navOn("guide") ? "page" : undefined}
+              onClick={() => go("guide")}
+            >
+              Guide
+            </button>
+            <button
+              type="button"
+              className={"adm-nav-item" + (navOn("rules") ? " on" : "")}
+              aria-current={navOn("rules") ? "page" : undefined}
+              onClick={() => go("rules")}
+            >
+              Rules
+            </button>
+            <button
+              type="button"
+              className={"adm-nav-item" + (navOn("home") ? " on" : "")}
+              aria-current={navOn("home") ? "page" : undefined}
+              onClick={() => go("home")}
+            >
+              Home
+            </button>
+          </div>
+          <div className="adm-nav-group">
+            <p className="adm-nav-label">Help</p>
+            <button
+              type="button"
+              className={"adm-nav-item" + (navOn("guide", true) ? " on" : "")}
+              aria-current={navOn("guide", true) ? "page" : undefined}
+              onClick={goHelp}
+            >
+              How to use this editor
+            </button>
+          </div>
+          <div className="adm-nav-group">
+            <p className="adm-nav-label">Session</p>
+            <SignOutButton dirty={dirty} onSignOut={signOut} />
+          </div>
+        </nav>
+
+        <main className="adm-main">
+          <p className="adm-eyebrow">Content editor</p>
+          <h1 className="adm-title">{heading}</h1>
+          <p className="adm-tagline">
+            {view === "help"
+              ? "Everything you need to know before editing the guide."
+              : "Changes go live on the site when you press Save & publish."}
+          </p>
+
+          {tab === "guide" && view === "help" ? (
+            <Manual onStart={() => go("guide")} />
+          ) : tab === "guide" && guide ? (
+            <GuideEditor
+              doc={guide}
+              touch={touch}
+              password={pw}
+              onError={(m) => notify(m, "error")}
+              group={gIdx}
+              current={secIdx}
+              setGroup={setGIdx}
+              setCurrent={setSecIdx}
+            />
+          ) : tab === "rules" && rules ? (
+            <GuideEditor
+              doc={rules}
+              touch={touch}
+              password={pw}
+              onError={(m) => notify(m, "error")}
+              group={gIdx}
+              current={secIdx}
+              setGroup={setGIdx}
+              setCurrent={setSecIdx}
+            />
+          ) : home ? (
+            <HomeEditor doc={home} touch={touch} password={pw} onError={(m) => notify(m, "error")} />
+          ) : null}
+
+          {preview &&
+          (preview === "guide" ? guide : preview === "rules" ? rules : home) ? (
+            <LightboxProvider>
+              <dialog
+                className="lb"
+                open
+                onKeyDown={(e) => {
+                  if (e.key === "Escape") setPreview(null);
+                }}
+              >
+                <div className="lb-bar">
+                  <strong style={{ flex: 1, font: "600 14px var(--font-body)" }}>
+                    Preview — this is how the page will look
+                  </strong>
+                  <button type="button" className="lb-btn lb-close" onClick={() => setPreview(null)}>
+                    &times;
+                  </button>
+                </div>
+                <div style={{ overflow: "auto", padding: "28px 20px" }}>
+                  <div className="wrap">
+                    {preview === "guide" && guide ? (
+                      <div className="guide-body">
+                        <GuideGroup group={guide.groups[gIdx] || { id: "empty", title: "", sections: [] }} />
+                      </div>
+                    ) : preview === "rules" && rules ? (
+                      <div className="guide-body">
+                        <GuideGroup group={rules.groups[gIdx] || { id: "empty", title: "", sections: [] }} />
+                      </div>
+                    ) : (
+                      <HomePreview doc={home!} />
+                    )}
+                  </div>
+                </div>
+              </dialog>
+            </LightboxProvider>
+          ) : null}
+        </main>
       </div>
-
-      <p className="adm-err">{err}</p>
-
-      {tab === "guide" && view === "help" ? (
-        <Manual />
-      ) : tab === "guide" && guide ? (
-        <GuideEditor
-          doc={guide}
-          touch={touch}
-          password={pw}
-          onError={setErr}
-          group={gIdx}
-          current={secIdx}
-          setGroup={setGIdx}
-          setCurrent={setSecIdx}
-        />
-      ) : tab === "rules" && rules ? (
-        <GuideEditor
-          doc={rules}
-          touch={touch}
-          password={pw}
-          onError={setErr}
-          group={gIdx}
-          current={secIdx}
-          setGroup={setGIdx}
-          setCurrent={setSecIdx}
-        />
-      ) : tab === "comments" ? (
-        <CommentsAdmin password={pw} onError={setErr} />
-      ) : home ? (
-        <HomeEditor doc={home} touch={touch} password={pw} onError={setErr} />
-      ) : null}
-
-      {preview && home ? (
-        <LightboxProvider>
-          <dialog
-            className="lb"
-            open
-            onKeyDown={(e) => {
-              if (e.key === "Escape") setPreview(null);
-            }}
-          >
-            <div className="lb-bar">
-              <strong style={{ flex: 1, font: "600 14px var(--font-body)" }}>
-                Preview — this is how the page will look
-              </strong>
-              <button type="button" className="lb-btn lb-close" onClick={() => setPreview(null)}>
-                &times;
-              </button>
-            </div>
-            <div style={{ overflow: "auto", padding: "28px 20px" }}>
-              <div className="wrap">
-                {preview === "guide" && guide ? (
-                  <div className="guide-body">
-                    <GuideGroup group={guide.groups[gIdx] || { id: "empty", title: "", sections: [] }} />
-                  </div>
-                ) : preview === "rules" && rules ? (
-                  <div className="guide-body">
-                    <GuideGroup group={rules.groups[gIdx] || { id: "empty", title: "", sections: [] }} />
-                  </div>
-                ) : (
-                  <HomePreview doc={home} />
-                )}
-              </div>
-            </div>
-          </dialog>
-        </LightboxProvider>
-      ) : null}
     </div>
+      </Dialogs>
+    </Toasts>
+  );
+}
+
+function SignOutButton({ dirty, onSignOut }: { dirty: boolean; onSignOut: () => void }) {
+  const ask = useDialogs();
+  return (
+    <button
+      type="button"
+      className="adm-nav-item"
+      onClick={async () => {
+        if (dirty) {
+          const ok = await ask.confirm({
+            title: "Sign out",
+            message: "You have unsaved changes. Sign out anyway?",
+            yesLabel: "Sign out",
+            danger: true,
+          });
+          if (!ok) return;
+        }
+        onSignOut();
+      }}
+    >
+      Sign out
+    </button>
   );
 }
 

@@ -1,6 +1,8 @@
 // The English baseline. Every other language falls back to these keys, so a
 // missing translation shows English rather than a blank or a raw key.
 const en = {
+  "ui.translating": "Translating…",
+
   "nav.home": "Home",
   "nav.guide": "Guide",
   "nav.rules": "Rules",
