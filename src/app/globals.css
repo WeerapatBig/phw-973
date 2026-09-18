@@ -876,6 +876,8 @@ textarea.adm-field { min-height: 88px; resize: vertical; line-height: 1.6; }
 .adm-grp-btn.on { color: var(--flame); border-color: var(--flame-dim); background: var(--bg-2); }
 .adm-grp-btn.pinned { border-left: 3px solid var(--flame); }
 .adm-grp-btn span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.adm-grp-btn .adm-grp-caret { flex: none; margin-left: auto; overflow: visible; white-space: normal; color: var(--ash); transition: transform .18s ease; }
+.adm-grp-btn.expanded .adm-grp-caret { transform: rotate(90deg); color: var(--flame); }
 
 .adm-sec-btn { margin-left: 10px; width: calc(100% - 10px); }
 .adm-sec-add { color: var(--ash); font-style: italic; }

@@ -1,6 +1,6 @@
 {
   "locale": "zh",
-  "updatedAt": "2026-09-18T06:38:24.073Z",
+  "updatedAt": "2026-09-18T07:05:20.885Z",
   "strings": {
     "Season 3 Guide": "第三赛季指南",
     "Guide": "指南",
@@ -239,6 +239,8 @@
     "sfs": "sfs",
     "sdfs": "sdfs",
     "sfsdf": "sfsdf",
-    "sdfsf": "sdfsf"
+    "sdfsf": "sdfsf",
+    "sdsd": "sdsd",
+    "my cat": "我的猫"
   }
 }

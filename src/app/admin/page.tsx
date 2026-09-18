@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import type { GuideDoc, HomeDoc } from "@/lib/types";
 import { normalize, normalizeHome, normalizeRules, slug } from "@/lib/content";
@@ -347,37 +347,14 @@ export default function AdminPage() {
           {preview &&
           (preview === "guide" ? guide : preview === "rules" ? rules : home) ? (
             <LightboxProvider>
-              <dialog
-                className="lb"
-                open
-                onKeyDown={(e) => {
-                  if (e.key === "Escape") setPreview(null);
-                }}
-              >
-                <div className="lb-bar">
-                  <strong style={{ flex: 1, font: "600 14px var(--font-body)" }}>
-                    Preview — this is how the page will look
-                  </strong>
-                  <button type="button" className="lb-btn lb-close" onClick={() => setPreview(null)}>
-                    &times;
-                  </button>
-                </div>
-                <div style={{ overflow: "auto", padding: "28px 20px" }}>
-                  <div className="wrap">
-                    {preview === "guide" && guide ? (
-                      <div className="guide-body">
-                        <GuideGroup group={guide.groups[gIdx] || { id: "empty", title: "", sections: [] }} />
-                      </div>
-                    ) : preview === "rules" && rules ? (
-                      <div className="guide-body">
-                        <GuideGroup group={rules.groups[gIdx] || { id: "empty", title: "", sections: [] }} />
-                      </div>
-                    ) : (
-                      <HomePreview doc={home!} />
-                    )}
-                  </div>
-                </div>
-              </dialog>
+              <AdminPreview
+                preview={preview}
+                guide={guide}
+                rules={rules}
+                home={home}
+                gIdx={gIdx}
+                onClose={() => setPreview(null)}
+              />
             </LightboxProvider>
           ) : null}
         </main>
@@ -409,6 +386,73 @@ function SignOutButton({ dirty, onSignOut }: { dirty: boolean; onSignOut: () => 
     >
       Sign out
     </button>
+  );
+}
+
+// The admin preview: the current topic (Guide / Rules) or the whole home page,
+// exactly as readers will see them. Like the public lightbox it is a real
+// dialog opened with showModal(), so it sits on top of everything with a
+// backdrop instead of blending into the editor layout.
+function AdminPreview({
+  preview,
+  guide,
+  rules,
+  home,
+  gIdx,
+  onClose,
+}: {
+  preview: Tab;
+  guide: GuideDoc | null;
+  rules: GuideDoc | null;
+  home: HomeDoc | null;
+  gIdx: number;
+  onClose: () => void;
+}) {
+  const dlg = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    const el = dlg.current;
+    if (!el) return;
+    el.showModal();
+    return () => el.close();
+  }, [preview]);
+
+  return (
+    <dialog
+      ref={dlg}
+      className="lb"
+      onCancel={(e) => {
+        e.preventDefault();
+        onClose();
+      }}
+      onClick={(e) => {
+        if (e.target === dlg.current) onClose();
+      }}
+    >
+      <div className="lb-bar">
+        <strong style={{ flex: 1, font: "600 14px var(--font-body)" }}>
+          Preview — this is how the page will look
+        </strong>
+        <button type="button" className="lb-btn lb-close" onClick={onClose}>
+          &times;
+        </button>
+      </div>
+      <div style={{ overflow: "auto", padding: "28px 20px" }}>
+        <div className="wrap">
+          {preview === "guide" && guide ? (
+            <div className="guide-body">
+              <GuideGroup group={guide.groups[gIdx] || { id: "empty", title: "", sections: [] }} />
+            </div>
+          ) : preview === "rules" && rules ? (
+            <div className="guide-body">
+              <GuideGroup group={rules.groups[gIdx] || { id: "empty", title: "", sections: [] }} />
+            </div>
+          ) : (
+            <HomePreview doc={home!} />
+          )}
+        </div>
+      </div>
+    </dialog>
   );
 }
 

@@ -1,6 +1,6 @@
 {
   "locale": "hi",
-  "updatedAt": "2026-09-18T05:56:16.649Z",
+  "updatedAt": "2026-09-18T07:04:52.414Z",
   "strings": {
     "Guides": "गाइड्स",
     "Guide": "गाइड",
@@ -176,6 +176,20 @@
     "These two are <strong>jokers</strong>: they will keep working for you for many seasons to come, so develop them properly rather than treating them as a season rental.": "ये दोनों <strong>जोकर</strong> हैं: वे आने वाले कई सीजनों तक आपके लिए काम करते रहेंगे, इसलिए उन्हें सीजन रेंटल के रूप में मानने के बजाय उन्हें ठीक से विकसित करें।",
     "<strong>Talent trees</strong> — also in the <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\">Discord talent-tree archive</a>.": "<strong>टैलेंट ट्री</strong> — यह भी <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\">Discord टैलेंट-ट्री आर्काइव</a> में है।",
     "Talent trees for all of these live in the alliance Discord — <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\"><strong>open the talent-tree archive</strong></a>. You need to be a member of the server for the link to open.": "इन सभी के लिए टैलेंट ट्री एलायंस Discord में मौजूद हैं — <a href=\"https://discord.com/channels/1541802044237680700/1541865320031981618\" target=\"_blank\" rel=\"noopener\"><strong>टैलेंट-ट्री आर्काइव खोलें</strong></a>। लिंक खुलने के लिए आपको सर्वर का सदस्य होना आवश्यक है।",
-    "Thank you for reading this and thank you for your time.\n<br>\n<span style=\"font-size: 80%;\">Written by <strong>Super Beta27</strong></span>\n<br>\n<span style=\"font-size: 80%;\">Edited by <strong>HaremEd</strong></span>": "इसे पढ़ने के लिए धन्यवाद और आपके समय के लिए धन्यवाद।\n<br>\n<span style=\"font-size: 80%;\"><strong>Super Beta27</strong> द्वारा लिखित</span>\n<br>\n<span style=\"font-size: 80%;\"><strong>HaremEd</strong> द्वारा संपादित</span>"
+    "Thank you for reading this and thank you for your time.\n<br>\n<span style=\"font-size: 80%;\">Written by <strong>Super Beta27</strong></span>\n<br>\n<span style=\"font-size: 80%;\">Edited by <strong>HaremEd</strong></span>": "इसे पढ़ने के लिए धन्यवाद और आपके समय के लिए धन्यवाद।\n<br>\n<span style=\"font-size: 80%;\"><strong>Super Beta27</strong> द्वारा लिखित</span>\n<br>\n<span style=\"font-size: 80%;\"><strong>HaremEd</strong> द्वारा संपादित</span>",
+    "sample": "नमूना",
+    "sdsd": "sdsd",
+    "sample guide": "नमूना गाइड",
+    "sample2": "sample2",
+    "my cat": "मेरी बिल्ली",
+    "ddd": "ddd",
+    "dddasd": "dddasd",
+    "asdas": "asdas",
+    "asda": "asda",
+    "asd": "asd",
+    "sfs": "sfs",
+    "sdfs": "sdfs",
+    "sfsdf": "sfsdf",
+    "sdfsf": "sdfsf"
   }
 }

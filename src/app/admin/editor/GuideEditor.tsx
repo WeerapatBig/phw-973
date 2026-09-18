@@ -20,8 +20,8 @@ function sectionSrcs(s: { cover?: string; blocks?: Block[] }): string[] {
   return out;
 }
 
-// The admin topic list shows the newest topics first and paginates 10 at a
-// time; keep the number in sync with the sidebar pagination below.
+// The admin topic list shows the newest topics first and paginates a handful
+// at a time; keep the number in sync with the sidebar pagination below.
 const TOPICS_PER_PAGE = 5;
 
 export function GuideEditor({
@@ -47,6 +47,10 @@ export function GuideEditor({
   const ask = useDialogs();
   const notify = useToasts();
   const [tocPage, setTocPage] = useState(0);
+  // Which topic's sections are unfolded in the sidebar. Null = all collapsed.
+  // Clicking an expanded topic again collapses it; clicking another topic moves
+  // the expanded state (and the selection) to it — accordion behaviour.
+  const [expanded, setExpanded] = useState<number | null>(() => group);
 
   const topicPages = Math.max(1, Math.ceil(doc.groups.length / TOPICS_PER_PAGE));
   const topicPage = Math.min(tocPage, topicPages - 1);
@@ -61,9 +65,11 @@ export function GuideEditor({
       detailsRef.current.open = !window.matchMedia("(max-width: 820px)").matches;
   }, []);
 
-  // Move to a topic and keep the sidebar paginated onto the page that holds it.
+  // Move to a topic, keep the sidebar paginated onto the page that holds it,
+  // and unfold that topic's sections in the sidebar.
   const jump = (gi: number) => {
     setGroup(gi);
+    setExpanded(gi);
     setTocPage(Math.floor(gi / TOPICS_PER_PAGE));
   };
 
@@ -119,13 +125,33 @@ export function GuideEditor({
       void ask.alert("Cannot delete", "There has to be at least one topic.");
       return;
     }
+    // Topics that actually hold content need one extra typed confirmation so a
+    // stray click can never wipe a finished topic. Empty topics delete straight
+    // after the confirm dialog.
+    const hasContent =
+      (g.sections?.length ?? 0) > 0 || (g.intro || "").trim().length > 0;
     const ok = await ask.confirm({
       title: "Delete topic",
-      message: `Delete the topic "${g.title}" and all ${g.sections.length} of its sections?`,
+      message: hasContent
+        ? `Delete the topic "${g.title}" and all ${g.sections.length} of its sections?`
+        : `Delete the empty topic "${g.title}"?`,
       yesLabel: "Delete",
       danger: true,
     });
     if (!ok) return;
+    if (hasContent) {
+      const typed = await ask.prompt({
+        title: "Permanently delete",
+        label: `Delete "${g.title}" permanently? Type "DELETE" to confirm.`,
+        placeholder: "DELETE",
+        yesLabel: "Delete permanently",
+      });
+      if (typed === null) return;
+      if (typed !== "DELETE") {
+        notify('Not deleted — type "DELETE" exactly to confirm the deletion.', "error");
+        return;
+      }
+    }
     for (const sec of g.sections) {
       for (const src of sectionSrcs(sec)) void deleteStoredImage(src, password);
     }
@@ -152,12 +178,28 @@ export function GuideEditor({
                 <div key={abs}>
                   <button
                     type="button"
-                    className={"adm-grp-btn" + (abs === group ? " on" : "") + (gg.pinned ? " pinned" : "")}
-                    onClick={() => select(abs, 0)}
+                    className={
+                      "adm-grp-btn" +
+                      (expanded === abs ? " expanded" : "") +
+                      (abs === group ? " on" : "") +
+                      (gg.pinned ? " pinned" : "")
+                    }
+                    onClick={() => {
+                      if (expanded === abs) {
+                        setExpanded(null);
+                        return;
+                      }
+                      setExpanded(abs);
+                      if (group !== abs) {
+                        jump(abs);
+                        setCurrent(0);
+                      }
+                    }}
                   >
                     <span>{gg.title || "(untitled topic)"}</span>
+                    <span className="adm-grp-caret">›</span>
                   </button>
-                  {abs === group ? (
+                  {expanded === abs ? (
                     <>
                       {gg.sections.map((sec, si) => (
                         <button
